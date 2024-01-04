@@ -41,17 +41,23 @@
     <div class="jumbotron pagejumbotron">
     <h1>Downloading Data</h1>
 <H2>Overview</H2>
-There are many supported ways to download datasets from BIL including anonymous ftp, 
-and Globus Online. This section discusses how to locate datasets in BIL and download them using these methods.   
+There are many supported ways to download datasets from BIL. 
+This section discusses how to locate datasets in BIL and download them using these methods.   
 <ol>
-<li><a href="#Locating">Locating Data:</a> Datasets in BIL are uniquely referred to by a combination of a 16 digit unique identifier and the dataset name separated by a period.</li>
+<li><a href="#Locating">Locating Data</a> 
+	First, find the location of the dataset of interest using the <a href="https://api.brainimagelibrary.org/web/">Brain
+	Inventory</a> or the <a href="https://www.brainimagelibrary.org/metadataapi.html">metadata API</a> If using the API, 
+	look for the field "bildirectory" under the "Dataset" subsection. 
+</li>
 <li><a href="#HTTPS">Using a web browser: HTTPS</a> How to download datasets using a web browser.</li>
-<li><a href="#FTP">Anonymous FTP:</a> How to download datasets using anonymous FTP.</li>
+<!-- <li><a href="#FTP">Anonymous FTP:</a> How to download datasets using anonymous FTP.</li>
 <ol type="A">
-<!-- <li><a href="#WEB">Using a web browser: anonymous FTP</a> How to download datasets using anonymous FTP through a web browser.</li> -->
-<li><a href="#WGET">Using wget:</a> How to download datasets using unix wget command.</li>
-<li><a href="#OtherClients">Using other clients:</a>Advice on how to download datasets using other ftp clients.</li>
-</ol>
+<li><a href="#WEB">Using a web browser: anonymous FTP</a> How to download datasets using anonymous FTP 
+	through a web browser.</li>
+-->
+<li><a href="#WGET">Using wget</a> How to download datasets using unix wget command.</li>
+<!-- <li><a href="#OtherClients">Using other clients:</a>Advice on how to download datasets using other ftp clients.</li>
+</ol> -->
 <li><a href="#GLOBUS">Globus:</a> How to download datasets using Globus.</li>
 <li><a href="#FMT">Download Formats:</a> A brief description of the download formats.</li>
 <li><a href="#Help">Assistance and Help</a></li>
@@ -63,16 +69,14 @@ and Globus Online. This section discusses how to locate datasets in BIL and down
 <H2>Download Steps</H2>
 <ol>
 <li id="Locating"><b>Locating Data</b>
-<p>Datasets in BIL are uniquely referred to by a combination of a 16 digit unique identifier and the dataset name 
-separated by a period:</p>
-<p>&lt;16-digit-unique-identifier&gt.&lt;Dataset-Name&gt;</p>
-<p>The file path to BIL entries will be:<br /> 
-  /bil/data/&lt;c1c2&gt;/&lt;c3c4&gt;/&lt;16-digit-unique-identifier&gt/&lt;Dataset-Name&gt;</p>
-
-<p>where &lt;c1c2&gt; are replaced by the first and second characters of the unique identifier and &lt;c3c4&gt; are 
-  replaced by the third and fourth characters of the unique identifier. </p>
-
-  <p>For example, the dataset: abcded0123456789.example_dataset_01 would be found down the following path:</p>
+<p>Find the location of the dataset of interest using the <a href="https://api.brainimagelibrary.org/web/">Brain
+	Inventory</a> web search tool or the <a href="https://www.brainimagelibrary.org/metadataapi.html">metadata API</a> 
+</p>
+<p>If using the metadata API, look for the field "bildirectory" under the "Dataset" subsection. </p>
+	
+  <p>The path shown will be in the form:<br />
+	  /bil/data/&lt;c1c2&gt;/&lt;c3c4&gt;/&lt;16-digit-submission-identifier&gt;/&lt;subdirectoryName&gt;</p>
+<p>where &lt;c1c2&gt; are replaced by the first and second characters of the submission identifier and &lt;c3c4&gt; are replaced by the third and fourth characters of the unique identifier..  For example:</p>
   <p>/bil/data/ab/cd/abcdef0123456789/example_dataset_01/</p>
 </li>
 <li id="HTTPS"><b>Using a web browser: HTTPS</b> 
@@ -114,8 +118,10 @@ separated by a period:</p>
     /bil/data path.</p>
  
   <p>For example, to retreive the example dataset mentioned above with wget, enter:</p>
-<p><code>wget -r ftp://download.brainimagelibrary.org:8811/ab/cd/abcdef0123456789/example_dataset_01/</code></p>
+<p><code>wget -r https://download.brainimagelibrary.org/ab/cd/abcdef0123456789/example_dataset_01/
+	</code></p>
 </li>
+<!--	
 <li id="OtherClients"><b>Using other clients:</b>
   <p>
   Due to the variety of FTP clients produced, we can only offer the following general advice:
@@ -128,6 +134,7 @@ separated by a period:</p>
 </li>
 </ol>
 </li>
+-->
 <li id="GLOBUS"><b>Using Globus:</b>
 
   <P>Login to the Globus transfer web service at www.globus.org. Select an Endpoint field and select 'Brain Image Library Download' (a shortcut is available as bil#download). Upon successful connection to the Brain Image Library Download server, you will land in the /bil/data directory, which lists the first layer of the 00..ff directory hierarchy. Navigate (or type the path in the Path field) to the directory containing the dataset(s) that you wish to download.</p>
