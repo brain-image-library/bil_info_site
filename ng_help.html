@@ -55,17 +55,21 @@
 	      </div>
         <h3>Frequently Asked Questions</h3>
         <dl>
-          <dt>I can not see the image</dt>
+          <dt>Can you help me see the image? All I see is a black image.</dt>
           <dd>Most images deposited into BIL are fairly raw, in the sense that they have not been manually adjusted for optimal display. 
             For some data, the effect of this is that the data shows up in neuroglancer as a black rectangle. 
             If this is the case, the data can be viewed by adjusting neuroglancer parameters. The most important 
             parameters to adjust are the <em>channel[number]_lut</em> values in neuroglancer. Here is an example using dataset 
-            "ace-bed-map" <a href="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bed/map/asset/brainpi/ace-bed-map.omehans">before
+            <a href="https://api.brainimagelibrary.org/web/view?bildid=ace-bed-map">"ace-bed-map"</a> <a href="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bed/map/asset/brainpi/ace-bed-map.omehans">before
             lut adjustment</a> and <a href="https://ng.brainimagelibrary.org/v/base/#!%7B%22dimensions%22:%7B%22x%22:%5B8.75e-7%2C%22m%22%5D%2C%22y%22:%5B8.75e-7%2C%22m%22%5D%2C%22z%22:%5B0.0001%2C%22m%22%5D%7D%2C%22position%22:%5B8000.5%2C6000.5%2C70.5%5D%2C%22crossSectionScale%22:50%2C%22projectionScale%22:30000%2C%22layers%22:%5B%7B%22type%22:%22image%22%2C%22source%22:%22precomputed://https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bed/map/asset/brainpi/ace-bed-map.omehans%22%2C%22tab%22:%22rendering%22%2C%22shader%22:%22#uicontrol%20bool%20channel0_visable%20checkbox%28default=true%29%3B%5Cn#uicontrol%20bool%20channel1_visable%20checkbox%28default=true%29%3B%5Cn#uicontrol%20bool%20channel2_visable%20checkbox%28default=true%29%3B%5Cn%5Cn#uicontrol%20invlerp%20channel0_lut%20%28range=%5B0%2C183%5D%2Cwindow=%5B0%2C255%5D%2Cchannel=%5B0%5D%29%3B%5Cn#uicontrol%20invlerp%20channel1_lut%20%28range=%5B0%2C169%5D%2Cwindow=%5B0%2C255%5D%2Cchannel=%5B1%5D%29%3B%5Cn#uicontrol%20invlerp%20channel2_lut%20%28range=%5B0%2C106%5D%2Cwindow=%5B0%2C255%5D%2Cchannel=%5B2%5D%29%3B%5Cn%5Cn#uicontrol%20vec3%20channel0_color%20color%28default=%5C%22#FF0000%5C%22%29%3B%5Cn#uicontrol%20vec3%20channel1_color%20color%28default=%5C%22#00FF00%5C%22%29%3B%5Cn#uicontrol%20vec3%20channel2_color%20color%28default=%5C%22#0000FF%5C%22%29%3B%5Cn%5Cnvec3%20channel0%20=%20vec3%280%29%3B%5Cnvec3%20channel1%20=%20vec3%280%29%3B%5Cnvec3%20channel2%20=%20vec3%280%29%3B%5Cn%5Cn%5Cnvoid%20main%28%29%20%7B%5Cn%5Cnif%20%28channel0_visable%20==%20true%29%5Cnchannel0%20=%20channel0_color%20%2A%20%28%28toNormalized%28getDataValue%280%29%29%20+%20channel0_lut%28%29%29%29%3B%5Cn%5Cnif%20%28channel1_visable%20==%20true%29%5Cnchannel1%20=%20channel1_color%20%2A%20%28%28toNormalized%28getDataValue%281%29%29%20+%20channel1_lut%28%29%29%29%3B%5Cn%5Cnif%20%28channel2_visable%20==%20true%29%5Cnchannel2%20=%20channel2_color%20%2A%20%28%28toNormalized%28getDataValue%282%29%29%20+%20channel2_lut%28%29%29%29%3B%5Cn%5Cnvec3%20rgb%20=%20%28channel0%20+%20channel1%20+%20channel2%29%3B%5Cn%5Cnvec3%20render%20=%20min%28rgb%2Cvec3%281%29%29%3B%5Cn%5CnemitRGB%28render%29%3B%5Cn%7D%22%2C%22shaderControls%22:%7B%22channel0_lut%22:%7B%22range%22:%5B0%2C10%5D%7D%2C%22channel1_lut%22:%7B%22range%22:%5B0%2C25%5D%7D%2C%22channel2_lut%22:%7B%22range%22:%5B0%2C5%5D%7D%7D%2C%22channelDimensions%22:%7B%22c%5E%22:%5B1%2C%22%22%5D%7D%2C%22name%22:%22ace-bed-map.omehans%22%7D%5D%2C%22selectedLayer%22:%7B%22visible%22:true%2C%22layer%22:%22ace-bed-map.omehans%22%7D%2C%22layout%22:%22xy%22%7D">after
-            adjusting</a> the maximum channel1_lut value to 10, the maximum channel2_lut value to 25 and the maximum channel3_lut value to 5. 
+            adjusting</a> the maximum <em>channel0_lut</em> value to 10, the maximum <em>channel1_lut</em> value to 25 and the maximum <em>channel2_lut</em> value to 5. 
           </dd>
-        </dl>
-        <p><strong>Basic usage:</strong></p>
+	  <dt>How do I adjust numeric values, such as <em>channel[number]_lut</em> values?
+		  <dd> Most values that you see displayed can be adjusted by moving the mouse to the desired number, clicking on it, entering a new value, then hitting &lt;Enter&gt;
+		  </dd>
+		
+        <dt>What are the basic mouse and keyboard controls?</dt>
+	<dd> Please see the table below:
         <table class="table-striped table-bordered">
         <tr>
             <th>Feature</th>
@@ -134,6 +138,8 @@
             <td>Place cursor over image, press &lt;b&gt; then move mouse cursor</td>
         </tr>
     </table>
+    </dd>
+    </dl>
     <p></p>
     <hr />
     <p></p>
