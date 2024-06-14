@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+        <title>Brain Image Library: Visualization</title>
+     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R1YK9CG4GL');
+</script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
+     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="/css/bootstrap.css" />
+     <link rel="stylesheet" href="/css/styles.css" />
+     <link rel="stylesheet" href="/my.css" />
+     <script src="/js/jquery.min.js"></script>
+
+</head>
+
+<body class="bg">
+        <div class="container">
+            <p>&nbsp;</p>
+        </div>
+    <div class="container">
+
+    <!--Navigation bar-->
+    <div id="topmenu">
+    </div>
+    <script>
+        $(function(){
+          $("#topmenu").load("menu.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
+
+    <div class="jumbotron">
+
+      <div id="login"></div>
+     <h3>Neuroglancer</h3>
+        <p>
+            Neuroglancer allows quick visualization of volumetric multi-resolution multi-channel
+            data in a web browser. It also allows sharing a link to a specific view of the data,
+            to be shared with your collaborators exactly as you are viewing it.
+        </p>
+        <p>
+            <button type="button" class="btn btn-sm btn-dark" onclick="reloadIframe()">Reload Neuroglancer</button>
+        </p>
+        <div id="neuroglancerFrame">
+	  	    <iframe src="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bag/jet/asset/brainpi/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>
+	      </div>
+        <h3>Frequently Asked Questions</h3>
+        <dl>
+          <dt>I can not see the image</dt>
+          <dd>Most images deposited into BIL are fairly raw, in the sense that they have not been manually adjusted for optimal display. 
+            For some data, the effect of this is that the data shows up in neuroglancer as a black rectangle. 
+            If this is the case, the data can be viewed by adjusting neuroglancer parameters. The most important 
+            parameters to adjust are the <em>channel[number]_lut</em> values in neuroglancer. Here is an example using dataset 
+            "ace-bed-map" <a href="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bed/map/asset/brainpi/ace-bed-map.omehans">before
+            lut adjustment</a> and <a href="https://ng.brainimagelibrary.org/v/base/#!%7B%22dimensions%22:%7B%22x%22:%5B8.75e-7%2C%22m%22%5D%2C%22y%22:%5B8.75e-7%2C%22m%22%5D%2C%22z%22:%5B0.0001%2C%22m%22%5D%7D%2C%22position%22:%5B8000.5%2C6000.5%2C70.5%5D%2C%22crossSectionScale%22:50%2C%22projectionScale%22:30000%2C%22layers%22:%5B%7B%22type%22:%22image%22%2C%22source%22:%22precomputed://https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bed/map/asset/brainpi/ace-bed-map.omehans%22%2C%22tab%22:%22rendering%22%2C%22shader%22:%22#uicontrol%20bool%20channel0_visable%20checkbox%28default=true%29%3B%5Cn#uicontrol%20bool%20channel1_visable%20checkbox%28default=true%29%3B%5Cn#uicontrol%20bool%20channel2_visable%20checkbox%28default=true%29%3B%5Cn%5Cn#uicontrol%20invlerp%20channel0_lut%20%28range=%5B0%2C183%5D%2Cwindow=%5B0%2C255%5D%2Cchannel=%5B0%5D%29%3B%5Cn#uicontrol%20invlerp%20channel1_lut%20%28range=%5B0%2C169%5D%2Cwindow=%5B0%2C255%5D%2Cchannel=%5B1%5D%29%3B%5Cn#uicontrol%20invlerp%20channel2_lut%20%28range=%5B0%2C106%5D%2Cwindow=%5B0%2C255%5D%2Cchannel=%5B2%5D%29%3B%5Cn%5Cn#uicontrol%20vec3%20channel0_color%20color%28default=%5C%22#FF0000%5C%22%29%3B%5Cn#uicontrol%20vec3%20channel1_color%20color%28default=%5C%22#00FF00%5C%22%29%3B%5Cn#uicontrol%20vec3%20channel2_color%20color%28default=%5C%22#0000FF%5C%22%29%3B%5Cn%5Cnvec3%20channel0%20=%20vec3%280%29%3B%5Cnvec3%20channel1%20=%20vec3%280%29%3B%5Cnvec3%20channel2%20=%20vec3%280%29%3B%5Cn%5Cn%5Cnvoid%20main%28%29%20%7B%5Cn%5Cnif%20%28channel0_visable%20==%20true%29%5Cnchannel0%20=%20channel0_color%20%2A%20%28%28toNormalized%28getDataValue%280%29%29%20+%20channel0_lut%28%29%29%29%3B%5Cn%5Cnif%20%28channel1_visable%20==%20true%29%5Cnchannel1%20=%20channel1_color%20%2A%20%28%28toNormalized%28getDataValue%281%29%29%20+%20channel1_lut%28%29%29%29%3B%5Cn%5Cnif%20%28channel2_visable%20==%20true%29%5Cnchannel2%20=%20channel2_color%20%2A%20%28%28toNormalized%28getDataValue%282%29%29%20+%20channel2_lut%28%29%29%29%3B%5Cn%5Cnvec3%20rgb%20=%20%28channel0%20+%20channel1%20+%20channel2%29%3B%5Cn%5Cnvec3%20render%20=%20min%28rgb%2Cvec3%281%29%29%3B%5Cn%5CnemitRGB%28render%29%3B%5Cn%7D%22%2C%22shaderControls%22:%7B%22channel0_lut%22:%7B%22range%22:%5B0%2C10%5D%7D%2C%22channel1_lut%22:%7B%22range%22:%5B0%2C25%5D%7D%2C%22channel2_lut%22:%7B%22range%22:%5B0%2C5%5D%7D%7D%2C%22channelDimensions%22:%7B%22c%5E%22:%5B1%2C%22%22%5D%7D%2C%22name%22:%22ace-bed-map.omehans%22%7D%5D%2C%22selectedLayer%22:%7B%22visible%22:true%2C%22layer%22:%22ace-bed-map.omehans%22%7D%2C%22layout%22:%22xy%22%7D">after
+            adjusting</a> the maximum channel1_lut value to 10, the maximum channel2_lut value to 25 and the maximum channel3_lut value to 5. 
+          </dd>
+        </dl>
+        <p><strong>Basic usage:</strong></p>
+        <table class="table-striped table-bordered">
+        <tr>
+            <th>Feature</th>
+            <th>How to Use</th>
+        </tr>
+        <tr>
+            <td>Zoom (using mouse)</td>
+            <td>&lt;ctrl&gt; &lt;mouse-wheel&gt;</td>
+        </tr>
+        <tr>
+            <td>Zoom In (using keyboard)</td>
+            <td>&lt;ctrl&gt; &lt;equals&gt;</td>
+        </tr>
+        <tr>
+            <td>Zoom Out (using keyboard)</td>
+            <td>&lt;ctrl&gt; &lt;minus&gt;</td>
+        </tr>
+        <tr>
+            <td>Scroll through z-planes</td>
+            <td>&lt;mouse-wheel&gt;</td>
+        </tr>
+        <tr>
+            <td>Move image</td>
+            <td>Grab using &lt;left-mouse-button&gt; and drag image</td>
+        </tr>
+        <tr>
+            <td>Center image where current mouse pointer is</td>
+            <td>Move mouse cursor over image then &lt;right-mouse-button&gt;</td>
+        </tr>
+        <tr>
+            <td>Toggle from 4 panel layout to one screen view</td>
+            <td>Move mouse cursor over image then &lt;spacebar&gt;</td>
+        </tr>
+        <tr>
+            <td>Rapid move through x, y, or z planes</td>
+            <td>
+                Click on the number associated with x, y, or z (found in upper left corner). Then enter either:
+                <ul>
+                    <li>&lt;delete&gt; the number and enter a new &lt;integer-value&gt; and press &lt;enter&gt;</li>
+                    <li>move the mouse to the playback bar, move up/down to the appropriate level then &lt;left-mouse-button&gt;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Rotate right</td>
+            <td>&lt;r&gt;</td>
+        </tr>
+        <tr>
+            <td>Rotate left</td>
+            <td>&lt;e&gt;</td>
+        </tr>
+        <tr>
+            <td>Go through z layers (increasing)</td>
+            <td>&lt;period&gt;</td>
+        </tr>
+        <tr>
+            <td>Go through z layers (decreasing)</td>
+            <td>&lt;comma&gt;</td>
+        </tr>
+        <tr>
+            <td>Snap image that has been rotated to the closest 90-degree rotation axis</td>
+            <td>&lt;z&gt;</td>
+        </tr>
+        <tr>
+            <td>Toggle scalebar on/off that is shown on the image</td>
+            <td>Place cursor over image, press &lt;b&gt; then move mouse cursor</td>
+        </tr>
+    </table>
+    <p></p>
+    <hr />
+    <p></p>
+    
+<p>&nbsp;</p>
+        <hr/>
+        <p>
+            <em>
+                The development of the napari-BIL-data-viewer was supported by the napari plugin enhancement grant
+                from the Chan Zuckerberg Initiative NPE2-00074
+            </em>
+        </p>
+
+    </div>
+    <!--Bottom Footer -->
+    <div id="bottomfooter">
+    </div>
+    <script>
+        $(function(){
+          $("#bottomfooter").load("footer.html");
+        });
+    </script>
+    <!--end of bottomfooter-->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        function reloadIframe() {
+            var iframe = document.getElementById('neuroglancerFrame');
+            console.log("in function");
+            iframe.innerHTML = '<iframe src="https://brainapi.brainimagelibrary.org/ng/bil/pscstaff/rlagha/RL/stack_to_multiscale_ngff/fmost_conv/df/75/df75626840c76c15/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>';
+        }
+
+    </script>
+</div>
+</body>
+</html>
