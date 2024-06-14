@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-        <title>Brain Image Library: Visualization</title>
+        <title>Brain Image Library: Help with Neuroglancer</title>
      <meta http-equiv="x-ua-compatible" content="ie=edge" />
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,7 +45,11 @@
         <p>
             Neuroglancer allows quick visualization of volumetric multi-resolution multi-channel
             data in a web browser. It also allows sharing a link to a specific view of the data,
-            to be shared with your collaborators exactly as you are viewing it.
+            to be shared with your collaborators exactly as you are viewing it. Many datasets in 
+	    BIL are able to be visualized in Neuroglancer. Below is an example viewing dataset 
+	    <a href="https://api.brainimagelibrary.org/web/view?bildid=ace-bag-jet">"ace-bag-jet. 
+	    If a BIL dataset is able to be being visualized, the landing page for the
+	    dataset will have one or more neuroglancer links.  
         </p>
         <p>
             <button type="button" class="btn btn-sm btn-dark" onclick="reloadIframe()">Reload Neuroglancer</button>
@@ -170,7 +174,8 @@
         function reloadIframe() {
             var iframe = document.getElementById('neuroglancerFrame');
             console.log("in function");
-            iframe.innerHTML = '<iframe src="https://brainapi.brainimagelibrary.org/ng/bil/pscstaff/rlagha/RL/stack_to_multiscale_ngff/fmost_conv/df/75/df75626840c76c15/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>';
+            iframe.innerHTML = '<iframe src="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bag/jet/asset/brainpi/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>"';
+
         }
 
     </script>
