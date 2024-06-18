@@ -54,6 +54,93 @@ p {
 <div class="jumbotron mainjumbotron">
 	 <div><p>&nbsp</p></div>
 
+
+<div class="container">
+<p>&nbsp;</p>
+<div class="jumbotron">
+
+<H2>Search Brain Image Library Public Datasets </H2>
+
+<b>Please select fields to search:</b>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+<!-- <form action="list" id="myform"> -->
+<form action="searching" id="myform">
+
+<div class="form-row">
+ <div class="form-group col-md-3">
+      <select name="fields" id="inputState" class="form-control">
+        <option selected value="FullText">All Metadata (Full Text)</option>
+        <option value="Name">Names</option>
+        <option Value="Grant">Grant Number</option>
+        <option Value="Title">Dataset Title</option>
+        <option Value="Abstract">Dataset Abstract</option>
+        <option Value="Contributors">All Contributor Fields</option>
+        <option Value="Funders">All Funder Fields</option>
+        <option Value="Publications">All Publication Fields</option>
+        <option Value="Instrument">All Instrument Fields</option>
+        <option Value="Specimen">All Specimen Fields</option>
+        <option Value="Dataset">All Dataset Fields</option>
+        <option Value="Image">All Image Fields</option>
+        <option Value="Id">BIL Id Fields (exact match)</option>
+      </select>
+ </div>
+ <div class="form-group col-md-8">
+      <input type="text" class="form-control" id="text" name="searchtxt"  placeh
+older="search txt" aria-label="Search For Text" aria-describedby="basic-addon2">
+
+ </div>
+ <div class="form-group col-md-1">
+   <button type="submit" class="btn btn-primary" id="submitbutton">Search</butto
+n>
+ </div>
+</div>
+</form>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+For help selecting fields, please see the <a href="https://www.brainimagelibrary
+.org/newmetadatamodel.html">metadata model description</a>
+<br />
+<br />
+<a href="https://submit.brainimagelibrary.org/search/summarymetadata">Download a
+ll summary metadata in CSV format</a>
+
+<script>
+function showThis(item) {
+  document.getElementById("searchitem").innerHTML = item.innerHTML;
+  }
+function showThis2(item) {
+  document.getElementById("searchitem2").innerHTML = item.innerHTML;
+  }
+
+
+</script>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+	
 <div id="searchFrame">
 	<iframe src="https://api.brainimagelibrary.org/web/search.html" height="100%" width="100%" frameborder="1"></iframe>
 </div>	
