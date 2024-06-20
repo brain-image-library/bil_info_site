@@ -57,13 +57,29 @@ p {
 
 <div class="container">
 
+<!-- ...................................... -->
+<!-- Use this card format for announcements -->
+<!-- ...................................... -->
+ <div class="card bg-success text-light">
+	<div class="card-header text-center">
+		For help selecting BIL metadata fields to search, please see the <a href="https://www.brainimagelibrary
+.org/newmetadatamodel.html">metadata model description</a>
+	</div>
+	<div class="card-body text-left text-light">	
+		
+            <p class="card-text text-left text-light">
+			Introducing our quarterly newsletter, <a href="https://conta.cc/3KDpgst" class="alert-link">The BIL Bulletin</a>. Sign up to <a href="https://tinyurl.com/bilnewsletter" class="alert-link">subscribe.</a>   
+		</p>
+	</div>
+ </div>
+	
 <div class="jumbotron jumbotron-search bg-light">
 
 <b>Please select fields to search:</b>
 <div class="container">
-  <div class="row">
+ <!-- <div class="row">
     <div class="col">
-
+  -->
 	    
 <!-- <form action="list" id="myform"> -->
 <form action="https://api.brainimagelibrary.org/web/searching" id="myform">
@@ -92,14 +108,14 @@ older="search txt" aria-label="Search For Text" aria-describedby="basic-addon2">
 
  </div>
  <div class="form-group col-md-1">
-   <button type="submit" class="btn btn-primary" id="submitbutton">Search</butto
-n>
+   <button type="submit" class="btn btn-primary" id="submitbutton">Search</button>
  </div>
 </div>
 </form>
-
+<!--
     </div>
   </div>
+-->
 </div>
 For help selecting fields, please see the <a href="https://www.brainimagelibrary
 .org/newmetadatamodel.html">metadata model description</a>
@@ -115,7 +131,6 @@ function showThis2(item) {
 
 
 </script>
-
 
 </div>
 </div>
