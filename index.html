@@ -62,44 +62,44 @@ p {
 <!-- ...................................... -->
  <div class="card bg-light text-dark">
 	<div class="card-header text-center">
-		For help selecting BIL metadata fields to search, please see the <a href="https://www.brainimagelibrary
-.org/newmetadatamodel.html" class="link-secondary">metadata model description</a>
+		For help selecting BIL metadata fields to search, please see the 
+		<a href="https://www.brainimagelibrary.org/newmetadatamodel.html" 
+			class="link-secondary">metadata model description</a>
 	</div>
 	<div class="card-body text-left text-light">	
-<!-- <form action="list" id="myform"> -->
- <p class="card-text text-left text-light">
-	<form action="https://api.brainimagelibrary.org/web/searching" id="myform">
+           <!-- <form action="list" id="myform"> -->
+           <p class="card-text text-left text-light">
+	       <form action="https://api.brainimagelibrary.org/web/searching" id="myform">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                           <select name="fields" id="inputState" class="form-control">
+                              <option selected value="FullText">All Metadata (Full Text)</option>
+                              <option value="Name">Names</option>
+                              <option Value="Grant">Grant Number</option>
+                              <option Value="Title">Dataset Title</option>
+                              <option Value="Abstract">Dataset Abstract</option>
+                              <option Value="Contributors">All Contributor Fields</option>
+                              <option Value="Funders">All Funder Fields</option>
+                              <option Value="Publications">All Publication Fields</option>
+                              <option Value="Instrument">All Instrument Fields</option>
+                              <option Value="Specimen">All Specimen Fields</option>
+                              <option Value="Dataset">All Dataset Fields</option>
+                              <option Value="Image">All Image Fields</option>
+                              <option Value="Id">BIL Id Fields (exact match)</option>
+                           </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                             <input type="text" class="form-control" id="text" name="searchtxt"  
+				     placeholder="search txt" aria-label="Search For Text" 
+				     aria-describedby="basic-addon2">
 
-<div class="form-row">
- <div class="form-group col-md-3">
-      <select name="fields" id="inputState" class="form-control">
-        <option selected value="FullText">All Metadata (Full Text)</option>
-        <option value="Name">Names</option>
-        <option Value="Grant">Grant Number</option>
-        <option Value="Title">Dataset Title</option>
-        <option Value="Abstract">Dataset Abstract</option>
-        <option Value="Contributors">All Contributor Fields</option>
-        <option Value="Funders">All Funder Fields</option>
-        <option Value="Publications">All Publication Fields</option>
-        <option Value="Instrument">All Instrument Fields</option>
-        <option Value="Specimen">All Specimen Fields</option>
-        <option Value="Dataset">All Dataset Fields</option>
-        <option Value="Image">All Image Fields</option>
-        <option Value="Id">BIL Id Fields (exact match)</option>
-      </select>
- </div>
- <div class="form-group col-md-8">
-      <input type="text" class="form-control" id="text" name="searchtxt"  placeh
-older="search txt" aria-label="Search For Text" aria-describedby="basic-addon2">
-
- </div>
- <div class="form-group col-md-1">
-   <button type="submit" class="btn btn-primary" id="submitbutton">Search</button>
- </div>
-</div>
-</form>		
-</p>
-
+                        </div>
+                        <div class="form-group col-md-1">
+                             <button type="submit" class="btn btn-primary" id="submitbutton">Search</button>
+                        </div>
+                    </div>
+               </form>		
+            </p>
 	</div>
  </div>
 	
@@ -114,11 +114,11 @@ function showThis2(item) {
 
 
 </script>
-
+<!--
 </div>
 </div>
 </div>
-
+-->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
