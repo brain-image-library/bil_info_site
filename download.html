@@ -138,32 +138,46 @@ This section discusses how to locate datasets in BIL and download them using the
 -->
 <li id="GLOBUS"><b>Using Globus:</b>
 
-  <P>Login to the Globus transfer web service at www.globus.org. Select an Endpoint field and select 'Brain Image Library Download' (a shortcut is available as bil#download). Upon successful connection to the Brain Image Library Download server, you will land in the /bil/data directory, which lists the first layer of the 00..ff directory hierarchy. Navigate (or type the path in the Path field) to the directory containing the dataset(s) that you wish to download.</p>
-<img width="100%" height="100%" src="assets/globus00.png">
-   
-<p>In the other Endpoint field, select (and if needed, authenticate to) your destination server. This may be a remote GridFTP server or your Globus Connect Personal endpoint. In the Transfer Settings section at the bottom, select the settings that apply to your download needs, e.g., "preserve source file modification times", "verify file integrity after transfer", etc.
-</p>
-<img width="100%" height="100%" src="assets/globus01.png">
+  <<p><span>To upload or download data via Globus, we will need your CILogon ePPN. To set up Globus for the first time:</span></p>
+                <ol>
+                    <li><span>Find your CILogon ePPN by logging in with your preferred identity at </span><a href="https://cilogon.org/" target="_blank" rel="noopener"><span>https://cilogon.org/</span></a><span>.</span></li>
+                    <li><span>Send an e-mail to </span><a href="mailto:bil-support@psc.edu" target="_blank" rel="noopener"><span>bil-support@psc.edu</span></a><span> with your name, institution, and the value of the ePPN field under "User Attributes" from the CILogon website.</span></li>
+                    <li><span>Once your ePPN has been mapped to your BIL/PSC username, you will be able to log in via the Globus website</span></li>
+                </ol>
+                <p><span>Once your ePPN has been mapped to BIL user, you can upload via Globus:</span></p>
+                <ol>
+                    <li>
+                        <p><span>Login at </span><a href="https://globus.org/" target="_blank" rel="noopener"><span>https://globus.org/</span></a><span> - select the LOG IN button at the top-right to begin.</span></p>
+                    </li>
+                    <li>
+                        <p><span>From the drop-down list, find the organization for the identity associated with the ePPN we have mapped for you. This could either be ACCESS (XSEDE), or your institution (e.g. Carnegie Mellon University). After you select the organization for the identity that you want to authenticate with, select the Continue button to proceed.</span></p>
+                    </li>
+                    <li>
+                        <p><span>You will be redirected to your organization's login page, where you enter the account name, password, and possibly also complete an additional two-factor authentication (e.g. DUO) to log in.</span></p>
+                    </li>
+                    <li>
+                        <p><span>Upon successful authentication to your organization, your browser will show the Globus File Manager page where you can connect to the Brain Image Library service.</span><br>
+                            <span>Click in the field labeled "Collection" (the Globus term for a remote data site), and start typing "Brain Image Library". This should bring up the new Globus collection labeled "Brain Image Library /bil filesystem" on the Brain Image Library Globus Connect Server 5 Endpoint. Select it to proceed.</span></p>
+                    </li>
+                    <li>
+                        <p><span>The first time that you connect to this Globus collection, you may be asked to provide consent to use your identity to authenticate to it. Select "Continue" to proceed.</span></p>
+                    </li>
+                    <li>
+                        <p><span>There may be more than one identity mapped to your BIL/PSC username. Select the identity that you used to login to Globus with, and then select "Continue" to proceed.</span></p>
+                    </li>
+                    <li>
+                        <p><span>The Globus service will then ask you to allow the service to use your identity to facilitate activities including file transfers, file management, and remote access to data. Select "Allow" to proceed.</span></p>
+                    </li>
+                    <li>
+                        <p><span>Once you have allowed the Globus service to employ your identity to authenticate you to the BIL Globus service, you will be connected and arrive at the Path /bil. You can navigate with clicks or by typing the path to your desired location in the Path field.</span><br>
+                            <span>Globus path to /bil/data</span></p>
+                    </li>
+                    <li>
+                        <p><span>When you are done with your Globus session, we recommend logging out completely. This is a two-step process: Select the LOGOUT icon toward the bottom of the left sidebar. Clicking on the LOGOUT icon logs you out of the Globus file manager web app. To logout from the Globus service, select the Globus ID "Log Out" link.</span></p>
+                    </li>
+                </ol>
+                <p><span>If you require assistance in accessing the BIL Globus service, please reach out to </span><a href="mailto:bil-support@psc.edu" target="_blank" rel="noopener"><span>bil-support@psc.edu</span></a><span>.</span></p>
 
- 
-<p>Select the dataset(s) and/or files that you wish to download by highlighting their directory and/or file names.</p>
-<img width="100%" height="100%" src="assets/globus02.png">
- 
- 
-<p>Click the arrow button in the direction of the transfer from the Brain Image Library Download side toward your target Endpoint. This will schedule your transfer to begin. At this point you may log out of the Globus user interface and let the transfer proceed.
-</p> 
-<img width="100%" height="100%" src="assets/globus03.png">
- 
-<p>To check on the progress of your transfer, select the Activity tab in the globus.org interface, and then select the job corresponding to your transfer.
-</p> 
-<img width="100%" height="100%" src="assets/globus04.png">
-
- 
-<p>Upon successful completion of your transfer, the status page for your transfer will show 'Condition SUCCEEDED' - you will also receive an e-mail to notify you if your Globus account settings are configured to do so.
-</p> 
-<img width="100%" height="100%" src="assets/globus05.png">
-
-</li>
 
 <li id="Help"><b>Assistance and Help</b>
 <p>If you need assistance with anything, please email: bil-support@psc.edu.</p> 
