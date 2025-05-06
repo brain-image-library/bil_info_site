@@ -346,10 +346,15 @@ curl -k -X GET  'https://api.brainimagelibrary.org/query/contributors?creator=Ye
 curl -k -X GET  'https://api.brainimagelibrary.org/query/instrument?microscopetype=upright'
 curl -k -X GET  'https://api.brainimagelibrary.org/query/instrument?objectivename=olympus'
 curl -k -X GET  'https://api.brainimagelibrary.org/query/specimen?localid=f024'
+curl -k -X GET  'https://api.brainimagelibrary.org/query/specimen/linkage?xid=DO-FXXJ3038'
+curl -k -X GET  'https://api.brainimagelibrary.org/query/specimen/linkage?type=cubie_tissue'
+curl -k -X GET  'https://api.brainimagelibrary.org/query/specimen/linkage?relationship=slab'
+curl -k -X GET  'https://api.brainimagelibrary.org/query/specimen/linkage?relationship=donor'
+curl -k -X GET  'https://api.brainimagelibrary.org/query/specimen/linkage?class=xref'	
 curl -k -X GET  'https://api.brainimagelibrary.org/query/dataset?title=mouse'
 curl -k -X GET  'https://api.brainimagelibrary.org/query/image?gbytes=17.0'
 curl -k -X GET  'https://api.brainimagelibrary.org/query/publication?relatedidentifier=doi'
-
+	
 curl -k -X GET  'https://api.brainimagelibrary.org/retrieve?bildid=rut'
 curl -k -X GET  'https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut'
 </pre>
