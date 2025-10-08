@@ -72,11 +72,28 @@
             which allows visualizing different multiscale image file formats through the same API.
         </p>
         <p> Currently supported image formats:
+			<p>Neuroglancer</p>
             <ul>
-                <li>.ome.zarr</li>
-                <li>.ims (Imaris)</li>
+                <li>Zarr (.zarr)</li>
+				<li>OME-Zarr (.ome.zarr)</li>
+				<li>OME-Hans (ome.hans)</li>
+				<li>OME-Zans (ome.zans)</li>
+                <li>Imaris (.ims)</li>
+				<li>NifTI (.nii / .nii.gz)</li>
+				<li>Terafly (.terafly - single channel)</li>
             </ul>
-        </p>
+			<p>OpenSeaDragon</p>
+			<ul>
+				<li>TIFF (.tiff)</li>
+				<li>OME-Tiff (.ome.tiff)</li>
+				<li>JPEG 2000 (.jp2 - 2D RBG)</li>
+			</ul>
+		<p>Output Formats:</p>
+		<ul>
+			<li>OME-Zarr</li>
+			<li>Neuroglancer Precomputed</li>
+		</ul>
+	</p>
         <p><strong>Basic usage:</strong></p>
         <table class="table-striped table-bordered">
         <tr>
