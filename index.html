@@ -73,55 +73,9 @@ p {
           frameborder="0"
           scrolling="no">
   </iframe>
-	       <form action="https://api.brainimagelibrary.org/web/searching" id="myform">
-<div class="d-flex gap-2 flex-wrap align-items-end">
-        <div>
-            <label class="form-label small text-muted mb-1">Field</label>
-            <select name="fields" class="form-select form-select-sm" style="min-width:180px;">
-                <option selected value="FullText">All Metadata (Full Text)</option>
-                <option value="Name">Names</option>
-                <option value="Grant">Grant Number</option>
-                <option value="Title">Dataset Title</option>
-                <option value="Abstract">Dataset Abstract</option>
-                <option value="Contributors">All Contributor Fields</option>
-                <option value="Funders">All Funder Fields</option>
-                <option value="Publications">All Publication Fields</option>
-                <option value="Instrument">All Instrument Fields</option>
-                <option value="Specimen">All Specimen Fields</option>
-                <option value="Dataset">All Dataset Fields</option>
-                <option value="Image">All Image Fields</option>
-                <option value="Tags">Tags</option>
-                <option value="Id">BIL ID (exact match)</option>
-                <option value="GroupDoi">Group DOI ID (exact match)</option>
-            </select>
-        </div>
-        <div class="flex-grow-1">
-            <label class="form-label small text-muted mb-1">Search</label>
-            <input type="text" name="searchtxt" class="form-control form-control-sm" placeholder="Enter search terms…" autocomplete="off"
->
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary btn-sm px-3">Search</button>
-        </div>
-   </div>
-    <div class="d-flex gap-3 align-items-center mt-2 flex-wrap">
-        <select name="consortium" class="form-select form-select-sm" style="max-width:240px;">
-            <option value="">All consortiums</option>
-            {% for value, label in consortiums %}
-            <option value="{{ value }}">{{ label }}</option>
-            {% endfor %}
-        </select>
-        <div class="form-check mb-0">
-            <input class="form-check-input" type="checkbox" name="viz" value="1" id="vizCheck">
-            <label class="form-check-label small text-muted" for="vizCheck">Visualization only</label>
-        </div>
-    </div>
-
-			   
-			   
-			   
-			   
-			   <!--                    <div class="form-row">
+	 <!--
+		<form action="https://api.brainimagelibrary.org/web/searching" id="myform">	   
+		            <div class="form-row">
                         <div class="form-group col-md-3">
                            <select name="fields" id="inputState" class="form-control">
                               <option selected value="FullText">All Metadata (Full Text)</option>
@@ -149,8 +103,9 @@ p {
                              <button type="submit" class="btn btn-primary" id="submitbutton">Search</button>
                         </div>
                     </div>
--->               </form>		
-            </p>
+               </form>		
+-->
+		   </p>
 	</div>
  </div>
 	
