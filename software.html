@@ -1,329 +1,273 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-     <title>Brain Image Library: Data Submission</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Software Available on BIL
+description: Application software available to users through the module system on BIL.
+---
 
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-    <div class="container">
-        <p>&nbsp;</p>
-    </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron pagejumbotron">
-
-
-<H1>Software Available on BIL Systems</H1>
-<H2>Overview</H2>
+<div class="container my-5">
+  <div class="content-card">
+<h1>Software Available on BIL Systems</h1>
+<h2>Overview</h2>
 <p>This document outlines application software available to users through the module system on BIL. <p><i>If you have problems accessing the software listed below, do not hesitate to contact 
 the <a href="contact.html">BIL Helpdesk</a> for assistance.</i></p>
 <ol>
-   <li>General Information</li>
-   <ol>
-	   <li><a href="#module">How to use software installed as a Module</a></li>
-	   <li><a href="#x2go">How to use interactive visualization software with x2Go</a></li>
-   </ol>
-  <li>How to use specific software packages</li>
-   <ol>
-    <li><a href="#anaconda">anaconda3/4.9.2: </a>Anaconda is a popular Python suite.</li>
-    <li><a href="#bioformats">bioformats: </a>Bioformats is a suite of tools for converting and manipulating image file formats.</li>  
-    <li><a href="#imagej">imagej-fiji/1.53h: </a>Fiji is an image processing package that is based on and includes imagej</li>
-    <li><a href="#julia">julia: </a>A high-level, high-performance dynamic programming language for numerical computing.</li>
-    <li><a href="#java">java: </a>A high-level programming language used by many applications.</li>	   
-    <li><a href="#knime">knime: </a>.</li>
-    <li><a href="#matlab">matlab: </a> MATLAB is a high-level language and interactive environment that 
+<li>General Information</li>
+<ol>
+<li><a href="#module">How to use software installed as a Module</a></li>
+<li><a href="#x2go">How to use interactive visualization software with x2Go</a></li>
+</ol>
+<li>How to use specific software packages</li>
+<ol>
+<li><a href="#anaconda">anaconda3/4.9.2: </a>Anaconda is a popular Python suite.</li>
+<li><a href="#bioformats">bioformats: </a>Bioformats is a suite of tools for converting and manipulating image file formats.</li>
+<li><a href="#imagej">imagej-fiji/1.53h: </a>Fiji is an image processing package that is based on and includes imagej</li>
+<li><a href="#julia">julia: </a>A high-level, high-performance dynamic programming language for numerical computing.</li>
+<li><a href="#java">java: </a>A high-level programming language used by many applications.</li>
+<li><a href="#knime">knime: </a>.</li>
+<li><a href="#matlab">matlab: </a> MATLAB is a high-level language and interactive environment that 
 	  enables you to perform computationally intensive tasks faster than with traditional programming languages.
 	  </li>
-    <li><a href="#R">R and Rstudio:</a> Language and environment and an IDE for statistical computing and graphs.</li>  
-    <li><a href="#scala">scala: </a>A high-level programming language</li>  
-    <li><a href="#vaa3d">vaa3d: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-    <li><a href="#">: </a>.</li>  
-  </ol>
+<li><a href="#R">R and Rstudio:</a> Language and environment and an IDE for statistical computing and graphs.</li>
+<li><a href="#scala">scala: </a>A high-level programming language</li>
+<li><a href="#vaa3d">vaa3d: </a>.</li>
+<li><a href="#">: </a>.</li>
+<li><a href="#">: </a>.</li>
+<li><a href="#">: </a>.</li>
+<li><a href="#">: </a>.</li>
+<li><a href="#">: </a>.</li>
+<li><a href="#">: </a>.</li>
+<li><a href="#">: </a>.</li>
 </ol>
-
-<H2 id="module">How to use software installed as a Module:</H2>
-     <p>The environment management package Module is essential for running software on most PSC systems.
+</ol>
+<h2 id="module">How to use software installed as a Module:</h2>
+<p>The environment management package Module is essential for running software on most PSC systems.
      </p>
-     <p>
+<p>
 	To list all of the installed software and their versions, type in:
-     </p> 
-     <div class="card bg-light">
-     <div class="card-body text-left">
-     <p class="card-text">
-     <code>
+     </p>
+<div class="card bg-light">
+<div class="card-body text-start">
+<p class="card-text">
+<code>
       $ module avail
      </code>
-     </p>
-     </div>
-     </div>
+</p>
+</div>
+</div>
 <p>To load the environment for a software package, which defines paths and variables needed to use the software, type in:
-      </p> 
-     <div class="card bg-light">
-     <div class="card-body text-left">
-     <p class="card-text">
-     <code>
+      </p>
+<div class="card bg-light">
+<div class="card-body text-start">
+<p class="card-text">
+<code>
       $ module load software-name
       </code>
-      </p>
-      </div>
-      </div>
+</p>
+</div>
+</div>
 <p>For example, to load the fiji software package:
-     </p> 
-     <div class="card bg-light">
-     <div class="card-body text-left">
-     <p class="card-text">
-     <code>
+     </p>
+<div class="card bg-light">
+<div class="card-body text-start">
+<p class="card-text">
+<code>
       module load fiji
      </code>
-     </p>
-     </div>
-     </div>
+</p>
+</div>
+</div>
 <p>To view available help for the module type in:
-     </p> 
-     <div class="card bg-light">
-     <div class="card-body text-left">
-     <p class="card-text">
-     <code>
+     </p>
+<div class="card bg-light">
+<div class="card-body text-start">
+<p class="card-text">
+<code>
       module help software-name.
       </code>
-      </p>
-      </div>
-      </div>
+</p>
+</div>
+</div>
 <p>For example:</p>
-     <div class="card bg-light">
-     <div class="card-body text-left">
-     <p class="card-text">
-      <code>
+<div class="card bg-light">
+<div class="card-body text-start">
+<p class="card-text">
+<code>
       module help fiji
-      </code>      
-      </p>
-      </div>
-      </div>
-</ol>
-	    <br /><br />
-<H2 id="x2go">How to use interactive visualization software:</H2>
-     <p>Some software (fiji/Vaa3d/rstudio and others) have graphical user interfaces. 
+      </code>
+</p>
+</div>
+</div>
+<br/><br/>
+<h2 id="x2go">How to use interactive visualization software:</h2>
+<p>Some software (fiji/Vaa3d/rstudio and others) have graphical user interfaces. 
 	To use software that contains a gui, the X2Go software client should be installed locally, then used to connect to the BIL system.
 	Here is how you would do that: 
      </p>
-     <ul>
-	 <li>Download the X2GO clientfor your machine from: <a href="https://wiki.x2go.org/doku.php">https://wiki.x2go.org/doku.php</a></li>
-	 <li>Start the X2Go client software on your machine. </li>
-	     <li>From the <b>SESSION</b> menu select <b>NEWSESSION</b>.</li>
-	     <li>In the <b>“Session preferences”</b> Popup:</li>
-	     <ul>
-			     <li>Set the Session Name to: <b>viz.brainimagelibrary.org</b></li>
-			     <li>Under Server, set the Host to: <b>viz.brainimagelibrary.org</b></li>
-			     <li>Under session type, set the selection to: <b>MATE</b></li>
-			     <li>Click the <b>[OK]</b> Button</li>
-	     </ul> 
-	     <li>Move the mouse cursor to the light gray box over the words: <b>“viz.brainimagelibrary.org</b></li>
-	     <li>click the <b>LEFT</b> mouse button</li>
-	     <li>Enter your (login) username and your password then click the <b>[OK]</b> Button</li>
-	     <li>After a few seconds, an X2GO desktop will appear on your screen</li>
-	     <li>When you are done, be sure to select shutdown to completely terminate the X2Go session.</li> 
-	 </ul>
-  <br /><br />   
-	    
-<H2>How to use specific software packages:</H2>
-  <ol>
-     <li id="anaconda"><b>Anaconda</b>: Anaconda is installed as a module 
+<ul>
+<li>Download the X2GO clientfor your machine from: <a href="https://wiki.x2go.org/doku.php">https://wiki.x2go.org/doku.php</a></li>
+<li>Start the X2Go client software on your machine. </li>
+<li>From the <b>SESSION</b> menu select <b>NEWSESSION</b>.</li>
+<li>In the <b>“Session preferences”</b> Popup:</li>
+<ul>
+<li>Set the Session Name to: <b>viz.brainimagelibrary.org</b></li>
+<li>Under Server, set the Host to: <b>viz.brainimagelibrary.org</b></li>
+<li>Under session type, set the selection to: <b>MATE</b></li>
+<li>Click the <b>[OK]</b> Button</li>
+</ul>
+<li>Move the mouse cursor to the light gray box over the words: <b>“viz.brainimagelibrary.org</b></li>
+<li>click the <b>LEFT</b> mouse button</li>
+<li>Enter your (login) username and your password then click the <b>[OK]</b> Button</li>
+<li>After a few seconds, an X2GO desktop will appear on your screen</li>
+<li>When you are done, be sure to select shutdown to completely terminate the X2Go session.</li>
+</ul>
+<br/><br/>
+<h2>How to use specific software packages:</h2>
+<ol>
+<li id="anaconda"><b>Anaconda</b>: Anaconda is installed as a module 
 	To run Anaconda:
         <div class="card bg-light">
-        <div class="card-body text-left">
-        <p class="card-text">
-        <code>
-	$ module load anaconda<br>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
+	$ module load anaconda<br/>
 	$ python3
 	</code>
-	</p>
-	</div>
-	</div>
+</p>
+</div>
+</div>
 	After loading the module, users can also run:
         <ul>
-		<li>ipython</li>
-		<li>Jupyter Notebooks</li>
-		<li>Jupyter Labs</li>
-	</ul>		
+<li>ipython</li>
+<li>Jupyter Notebooks</li>
+<li>Jupyter Labs</li>
+</ul>		
         Additional packages that are included in anaconda include: allensdk,
         biopython, bokeh, Dask, napari, nilearni, neuron, pandas, pytorch,
         scikit-image, scikit-learn, starfish, Theano. 
         To see a full list of all available packages, type in the terminal window:
         <div class="card bg-light">
-        <div class="card-body text-left">
-        <p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ pip list
 	</code>
-	</p>
-	</div>
-	</div>
-	<br /><br />
-	</li>
-	<li id="imagej"><b>imagej-fiji</b>: Fiji is installed as a module
+</p>
+</div>
+</div>
+<br/><br/>
+</li>
+<li id="imagej"><b>imagej-fiji</b>: Fiji is installed as a module
 	To run imagej/fiji:
         <div class="card bg-light">
-	<div class="card-body text-left">
-        <p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load fiji
 	$ fiji
 	</code>
-	</p>
-	</div>
-	</div>
-			<br /><br />
-	</li>
-	<li id="julia"><b>julia:</b> Julia is installed as a module
+</p>
+</div>
+</div>
+<br/><br/>
+</li>
+<li id="julia"><b>julia:</b> Julia is installed as a module
 	To run Julia:
         <div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load julia
 	$ julia
 	</code>
-	</p>
-	</div>
-	</div>
-			<br /><br />
-	</li>
-	<li id="knime"><b>knime:</b> Knime is installed as a module
+</p>
+</div>
+</div>
+<br/><br/>
+</li>
+<li id="knime"><b>knime:</b> Knime is installed as a module
 	To run Knime:
         <div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load knime
 	$ knime
 	</code>
-	</p>
-	</div>
-	</div>
-			<br /><br />
+</p>
+</div>
+</div>
+<br/><br/>
 </li>
-	<li id="matlab"><b>matlab: </b> Matlab is installed as a module
+<li id="matlab"><b>matlab: </b> Matlab is installed as a module
 	To run Matlab, users first need to fill out the following form: 
         <a href="https://www.psc.edu/resources/software/matlab/permission-form/">https://www.psc.edu/resources/software/matlab/permission-form/</a>
         After permission is granted, 
         <div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load matlab
-	$ matlab -options   < input-file  > output-file
+	$ matlab -options   &lt; input-file  &gt; output-file
 	</code>
-	</p>
-	</div>
-	</div>
+</p>
+</div>
+</div>
         After loading the module, to see what toolkits are available: 
 	<div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ ver
 	</code>
-	</p>
-	</div>
-	</div>
-	Additional documentation: <a href="http://www.mathworks.com/products/matlab/">http://www.mathworks.com/products/matlab/ </a> 
-	<br /><br />
-	  </li>
+</p>
+</div>
+</div>
+	Additional documentation: <a href="http://www.mathworks.com/products/matlab/">http://www.mathworks.com/products/matlab/ </a>
+<br/><br/>
+</li>
 <li id="R"><b>R and Rstudio:</b>is installed as a module  
 	Interactive use of R and RStudio are available through Anaconda:
         <div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load anaconda
 	$ conda activate rstudio
 	</code>
-	</p>
-	</div>
-	</div>
-	<br /><br />
-	  </li>
-        <li id="scala"><b>scala: </b>Scala is installed as a module  
+</p>
+</div>
+</div>
+<br/><br/>
+</li>
+<li id="scala"><b>scala: </b>Scala is installed as a module  
 	To run Julia:
         <div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load scala
 	$ scala
 	</code>
-	</p>
-	</div>
-	</div>
-	<br /><br /></li>
-        <li id="vaa3d"><b>vaa3d: </b>Vaa3d is installed as a module</li>  
+</p>
+</div>
+</div>
+<br/><br/></li>
+<li id="vaa3d"><b>vaa3d: </b>Vaa3d is installed as a module</li>  
 	To run Vaa3d:
         <div class="card bg-light">
-        <div class="card-body text-left">
-	<p class="card-text">
-        <code>
+<div class="card-body text-start">
+<p class="card-text">
+<code>
 	$ module load vaa3d
 	$ vaa3d
 	</code>
-	</p>
-	</div>
-	</div>
-  
-
+</p>
+</div>
+</div>
 </ol>
- </ul> 
 </p>
 <p><b>Use of Pre-publication Data</b></p><p>
 The Library expects all users of the submitted data, unless explicitly granted by the data submitter or the data submitter's project, to grant the authors of the data the right to publish the first paper concerning the dataset within three years of deposit. If there is no publication associated with the dataset, please contact the listed authors for permission to publish. There is no restriction on post-publication data.  
 </p>
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+  </div>
 </div>
-</body>
-</html>

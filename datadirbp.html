@@ -1,87 +1,65 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>Brain Image Library: Data Submission Best Practices</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: Submission Best Practices
+description: Best practices for structuring submitted data.
+---
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/my.css" />
-        <script src="/js/jquery.min.js"></script>
-    </head>
-
-    <body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-    <div class="jumbotron">
-	    <h2>Data Submission Best Practices</H2>
+<div class="container my-5">
+  <div class="content-card content-card--wide">
+<h2>Data Submission Best Practices</h2>
 <p>This document outlines a few recommended best practices to structure your data uploads  
    to the Brain Image Library. If you have questions on how to structure 
    your data that is not answered here, please contact the help desk 
    (bil-support@psc.edu).</p>
-	    <H3> General Practices</H3>
-	    <H4>Perform general file cleanup after data transfer</H4>
+<h3> General Practices</h3>
+<h4>Perform general file cleanup after data transfer</h4>
 	    Be aware that there may be operating system created hidden files transferred 
 	    along with your data that should be removed from the BIL landing-zone directory 
 	    prior to making your data public. These files may include: 
 	    <blockquote>
-		<ul>
-		 	<li><b>.DS_Store</b> -- An Apple macOS file   
+<ul>
+<li><b>.DS_Store</b> -- An Apple macOS file   
 			(for more information see: <a href="https://en.wikipedia.org/wiki/.DS_Store">https://en.wikipedia.org/wiki/.DS_Store</a>)</li>
-		    	<li><b>Thumbs.db</b> -- A Microsoft Windows file  
+<li><b>Thumbs.db</b> -- A Microsoft Windows file  
 			(for more information see <a href="https://en.wikipedia.org/wiki/Windows_thumbnail_cache">https://en.wikipedia.org/wiki/Windows_thumbnail_cache</a>)</li>
-	    </ul></blockquote>
-	    <H4>Avoid problematic special characters:</h4>
+</ul></blockquote>
+<h4>Avoid problematic special characters:</h4>
 	    Use characters that are generally safe in your filenames.  Avoid special characters in filenames that can be problematic on a unix/linux system.
 	    <blockquote>
-		    <p><b>Characters that are generally safe to include in filenames:</b>
-		    <ul>
-			    <li>Underscore <span class="badge bg-success text-light"><u>&nbsp;</u></span></li>
-		    	<li>Dash <span class="badge bg-success text-light">-</span> </li> 
-		    	<li>Period <span class="badge bg-success text-light">.</span> </li>
-		    	<li>Lower-case letters <span class="badge bg-success text-light">a-z</span></li>
-		    	<li>Upper-case letters <span class="badge bg-success text-light">A-Z</span></li>
-		    	<li>Numbers <span class="badge bg-success text-light">0-9</span></li>
-		    </ul>
-		    <b>Special characters that can be problematic:</b>
-		    <ul>
-			    <li>Space <span class="badge badge-warning text-muted">&nbsp;</span></li> 
-			    <li>Ampersand <span class="badge badge-warning text-muted">&amp;</span> </li>
-			    <li>Slash <span class="badge badge-warning text-muted">/</span> </li>
-			    <li>Vertical bar <span class="badge badge-warning text-muted">|</span> </li>
-			    <li>Colon <span class="badge badge-warning text-muted">:</span> </li>
-			    <li>Semicolon <span class="badge badge-warning text-muted">;</span> </li>
-			    <li>Greater-than <span class="badge badge-warning text-muted">&gt;</span> </li>
-			    <li>Less-than <span class="badge badge-warning text-muted">&lt;</span> </li>
-			    <li>Question <span class="badge badge-warning text-muted">?</span> </li>
-			    <li>Asterisk <span class="badge badge-warning text-muted">*</span></li>
-		    </ul>
-		    </p>
-	    </blockquote>
-	    <H4>Only place subdirectories in the root of the landing-zone</h4>
-	    <p>The submission portal will create a landing-zone directory for you to upload your data to. 
+<p><b>Characters that are generally safe to include in filenames:</b>
+<ul>
+<li>Underscore <span class="badge bg-success text-light"><u> </u></span></li>
+<li>Dash <span class="badge bg-success text-light">-</span> </li>
+<li>Period <span class="badge bg-success text-light">.</span> </li>
+<li>Lower-case letters <span class="badge bg-success text-light">a-z</span></li>
+<li>Upper-case letters <span class="badge bg-success text-light">A-Z</span></li>
+<li>Numbers <span class="badge bg-success text-light">0-9</span></li>
+</ul>
+<b>Special characters that can be problematic:</b>
+<ul>
+<li>Space <span class="badge bg-warning text-muted"> </span></li>
+<li>Ampersand <span class="badge bg-warning text-muted">&amp;</span> </li>
+<li>Slash <span class="badge bg-warning text-muted">/</span> </li>
+<li>Vertical bar <span class="badge bg-warning text-muted">|</span> </li>
+<li>Colon <span class="badge bg-warning text-muted">:</span> </li>
+<li>Semicolon <span class="badge bg-warning text-muted">;</span> </li>
+<li>Greater-than <span class="badge bg-warning text-muted">&gt;</span> </li>
+<li>Less-than <span class="badge bg-warning text-muted">&lt;</span> </li>
+<li>Question <span class="badge bg-warning text-muted">?</span> </li>
+<li>Asterisk <span class="badge bg-warning text-muted">*</span></li>
+</ul>
+</p>
+</blockquote>
+<h4>Only place subdirectories in the root of the landing-zone</h4>
+<p>The submission portal will create a landing-zone directory for you to upload your data to. 
 	    Please do not place files in this root directory, but rather create one or more subdirectories
 	    here for each dataset that you are uploading. Then upload each dataset under the
 	    subdirectories that you have created. Note that the complete path to the directory that you 
 	    have created should be entered in the metadata spreadsheet along with the associated metadata
 	    for each dataset. </p>
-<H3>Modality-Specific Recommendations</H3>
-	    <p>Below are modality-specific recommendtions. If your exact data type is not listed, 
-	you can model your submission with the closest type or contact bil-support@psc.edu for more information. </p> 
+<h3>Modality-Specific Recommendations</h3>
+<p>Below are modality-specific recommendtions. If your exact data type is not listed, 
+	you can model your submission with the closest type or contact bil-support@psc.edu for more information. </p>
 <h4>Whole brain datasets containing only lower-level data</h4>
 <p>To tie metadata to an image dataset (a stack of z-planes), each image dataset must be 
    uploaded in a separate subdirectory. For example, if you had an experiment containing
@@ -121,17 +99,17 @@ called <i>extras</i> inside each subdirectory:</p>
 </pre>
 <p> Next, create subdirectories that indicate the level of processing done on the data.  
 Recommended subdirectory names to use would include: <i>raw</i>, <i>unstitched</i>, <i>stitched</i>, <i>aligned</i>, <i>tracings</i>, <i>masks</i>.  If multiple-resolutions 
-	are provided, use names indicative of the resolution (e.g. <i>10x</i>, <i>30x</i> or some other descriptive lable such as <i>40micron</i>). Also, create a readme.txt file in a <b>required</b> 
+	are provided, use names indicative of the resolution (e.g. <i>10x</i>, <i>30x</i> or some other descriptive lable such as <i>40micron</i>). Also, create a readme.txt file in a <b>required</b>
 <i>extras</i> subdirectory that describes the content of each subdirectory. For example:
 <pre>
 /bil/lz/testuser/abcdef0123456789/mouse1/stitched
 /bil/lz/testuser/abcdef0123456789/mouse1/aligned
 /bil/lz/testuser/abcdef0123456789/mouse1/tracings
 /bil/lz/testuser/abcdef0123456789/mouse1/extras/readme.txt
-</pre>	
+</pre>
 <p>Feel free to add additional (non BIL required) metadata that you want to include with each dataset
 	in the extras subdirectories. </p>
-<p>&nbsp;</p>	    
+<p> </p>
 <h4>Whole brain datasets containing only higher-level data</h4>
 <p>It is not unusual to make lower-level image data available before the higher-level 
 analysis is complete. When you are ready to submit this data, you would need to create
@@ -142,11 +120,11 @@ a subdirectory to indicate the level of procesing (see recommended names above u
 For example, If SWC tracing files were provided for the sample named "mouse1" at a later
 date, you might create a directory like:  
 	    </p>
-	    <pre>
+<pre>
 /bil/lz/testuser/fef9236f6400b832/mouse1/tracings
 </pre>
 </p>
-<p>&nbsp;</p>	    
+<p> </p>
 <h4>Spatial transcriptomic datasets</h4>
 <p>We recommend that spatial transcriptomic data contains both the raw and processed image 
    data as well as the processed csvs. Please submit your image data using the following directory structure: </p>
@@ -164,29 +142,11 @@ date, you might create a directory like:
 called <i>processed</i>:</p>
 <pre>
 /bil/lz/testuser/abcdef0123456789/processed
-</pre>	    	    
+</pre>
 <p>If you have additional metadata that you want to include, place it in a subdirectory 
 called <i>extras</i> along with any other notes that you want to include about the data:</p>
 <pre>
 /bil/lz/testuser/abcdef0123456789/extras
-</pre>	    
-	    
-
-    </div>
+</pre>
+  </div>
 </div>
-    <!--begin of bottomfooter -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </body>
-</html>

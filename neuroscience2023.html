@@ -1,68 +1,27 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>Brain Image Library: Neuroscience 2023</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: Neuroscience 2023
+description: BIL at Neuroscience 2023.
+---
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/css/styles.css">
-        <link rel="stylesheet" href="/my.css">
-        <script src="/js/jquery.min.js"></script>
-
-    </head>
-
-    <body class="bg">
-        <div class="container">
-            &nbsp;
-        </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-    <div class="jumbotron pagejumbotron">
-    
-    <div id="doc" class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="true" style=""><h1 id="BIL--Neuroscience-2023" data-id="BIL--Neuroscience-2023" style=""><span>BIL at Neuroscience 2023</span></h1><p><span>The Brain Image Library will be at Neuroscience 2023 in Washington D.C. Come and visit us at </span><strong><span>booth 3527</span></strong><span>.</span></p><p><span>Sunday, November 12– Wednesday, November 15</span><br>
-<span>Walter E. Washington Convention Center in Washington, D.C.</span></p><p><span>The team will be showing the latest developments at BIL including:</span></p><h3 id="BIL-Image-Explorer" data-id="BIL-Image-Explorer" style=""><span>BIL Image Explorer</span></h3><p><span>Visualize multi-terabyte BIL datasets with a single click at </span><a href="https://imageexplorer.brainimagelibrary.org/" target="_blank" rel="noopener"><span>https://imageexplorer.brainimagelibrary.org/</span></a></p><ul>
+<div class="container my-5">
+  <div class="content-card">
+<div class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="true" id="doc" style=""><h1 data-id="BIL--Neuroscience-2023" id="BIL--Neuroscience-2023" style=""><span>BIL at Neuroscience 2023</span></h1><p><span>The Brain Image Library will be at Neuroscience 2023 in Washington D.C. Come and visit us at </span><strong><span>booth 3527</span></strong><span>.</span></p><p><span>Sunday, November 12– Wednesday, November 15</span><br/>
+<span>Walter E. Washington Convention Center in Washington, D.C.</span></p><p><span>The team will be showing the latest developments at BIL including:</span></p><h3 data-id="BIL-Image-Explorer" id="BIL-Image-Explorer" style=""><span>BIL Image Explorer</span></h3><p><span>Visualize multi-terabyte BIL datasets with a single click at </span><a href="https://imageexplorer.brainimagelibrary.org/" rel="noopener" target="_blank"><span>https://imageexplorer.brainimagelibrary.org/</span></a></p><ul>
 <li><span>Supported data types can be visualized with a single click using Neuroglancer.</span></li>
 <li><span>Seamless browsing through hundreds of individual full resolution datasets at BIL.</span></li>
 <li><span>Users can visualize arbitrarily large datasets even on a smartphone, at a speed of mobile internet, without registration or downloading data.</span></li>
-</ul><h3 id="BIL-Metadata-API-beta" data-id="BIL-Metadata-API-beta" style=""><span>BIL Metadata API (</span><em><span>beta</span></em><span>)</span></h3><p><span>Easily search thousands of BIL datasets using the web portal at </span><a href="https://api.brainimagelibrary.org/web/" target="_blank" rel="noopener"><span>https://api.brainimagelibrary.org/web/</span></a></p><ul>
+</ul><h3 data-id="BIL-Metadata-API-beta" id="BIL-Metadata-API-beta" style=""><span>BIL Metadata API (</span><em><span>beta</span></em><span>)</span></h3><p><span>Easily search thousands of BIL datasets using the web portal at </span><a href="https://api.brainimagelibrary.org/web/" rel="noopener" target="_blank"><span>https://api.brainimagelibrary.org/web/</span></a></p><ul>
 <li><span>BIL provides both a metadata API and web portal that uses the API to search and return metadata and links to datasets in BIL.</span></li>
 <li><span>The metadata API is extremely flexible and capable of searching full-text or individual metadata fields.</span></li>
 <li><span>The API has two primary user-facing endpoints:</span>
 <ul>
-<li><span>query - the query endpoint will query the system and return a json document with matching entry. Queries use GET formatted URLs, which can be pasted in a web browser, utilized at the command-line through tools such as curl, or called programmatically. Query URLs take the form of:</span><br>
+<li><span>query - the query endpoint will query the system and return a json document with matching entry. Queries use GET formatted URLs, which can be pasted in a web browser, utilized at the command-line through tools such as curl, or called programmatically. Query URLs take the form of:</span><br/>
 <code>/query/metadatadivision?metadataelement=querystring</code></li>
-<li><span>retrieve - the retrieve endpoint will return the metadata as a json document for the given ids. Retrieve queries can be either GET formatted urls (for retrieving metadata for a single entry) or a POST request with a json payload. The json payload may be the results of an earlier query. The basic forms of the retrieve GET url are:</span><br>
+<li><span>retrieve - the retrieve endpoint will return the metadata as a json document for the given ids. Retrieve queries can be either GET formatted urls (for retrieving metadata for a single entry) or a POST request with a json payload. The json payload may be the results of an earlier query. The basic forms of the retrieve GET url are:</span><br/>
 <code>/retrieve?bildid=the_desired_id_to_retreive_metadata_for</code>. For example: https://api.brainimagelibrary.org/retrieve?bildid=ace-cot-pad</li>
 </ul>
 </li>
 </ul></div>
-      
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </body>
-</html>
+  </div>
+</div>

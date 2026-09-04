@@ -1,45 +1,11 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-        <title>Brain Image Library: Compute Through Bridges</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Compute
+description: Compute environment.
+---
 
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron">
-
+<div class="container my-5">
+  <div class="content-card">
 <h1>Compute Through Bridges</h1>
 <p>Bridges is a high performance computing system designed to support familiar, convenient software and environments for both traditional and non-traditional HPC users. Its richly-connected set of interacting systems offers exceptional flexibility for data analytics, simulation, workflows and gateways, leveraging interactivity, parallel computing, Spark and Hadoop.
 </p>
@@ -49,11 +15,10 @@ and is located on the /bil file system.</b> </p>
 Datasets in BIL are uniquely referred to by a combination of a 16 digit 
 unique identifier and the dataset name separated by a period:
 
-&lt;16-digit-unique-identifier>.&lt;Dataset-Name>
+&lt;16-digit-unique-identifier&gt;.<dataset-name>
 
 The file path to BIL entries will be:
-/bil/data/&lt;c1c2&gt;/&lt;c3c4&gt;/&lt;16-digit-unique-identifier&gt;/&lt;Dataset-Name&gt;
-
+/bil/data/<c1c2>/<c3c4>/&lt;16-digit-unique-identifier&gt;/<dataset-name>
 <p>
 where &lt;c1c2&gt; are replaced by the first and second characters of the unique identifier and &lt;c3c4&gt; are replaced by the third and fourth characters of the unique identifier.
 
@@ -64,27 +29,25 @@ For example, the dataset: abcded0123456789.example_dataset_01 would be found dow
 <p>Additional information about Bridges can be found <a href="https://www.psc.edu/resources/computing/bridges">here.</a></p>
 <p><b>Get access to Bridges: </b></p>
 <p>You can get access to Bridges in two ways: <a href="#apply"><strong>apply for an allocation</strong></a> if you are faculty, a researcher or educator with a US institution, or <strong><a href="#sadd_user">be added to an existing account</a></strong> if you work with a PI who has an existing Bridges allocation.</p>
-
-<hr />
+<hr/>
 <div id="apply"></div>
 <h3>Apply for an allocation</h3>
 <p>We offer two programs to provide access to Bridges. Complete allocation and affiliation information can be found on the <a href="https://www.psc.edu/resources/computing/bridges/resources/allocations">allocations page</a>, but in a nutshell:</p>
-
 <ul>
 <li><strong>Researchers and educators at a US academic or non-profit research institutions </strong>can apply for Bridges access through the NSF's XSEDE program. <a href="https://www.psc.edu/resources/computing/bridges/applying-for-a-bridges-account-faq?view=faq&amp;catid=7">The Bridges FAQ </a>provides more information on how to apply to Bridges through XSEDE. Three types of access are available:
 <ul>
-<li><em>Start-up allocations</em> allow you to explore high-performance computing and Bridges. The application process is streamlined and you can request up to 2500 GPU-hours on Bridges GPU nodes, up to 50,000 core-hours on Bridges' "regular" (128GB memory) nodes, up to 1000 TB-hours on Bridges "large" (3 and 12TB memory) nodes, or any combination of those resources. See <a href="https://portal.xsede.org/allocations/startup" target="_blank" rel="noopener noreferrer">https://portal.xsede.org/allocations/startup</a> for details on applying.</li>
-<li><em>Research allocations</em> provide expanded resource limits<em> w</em>hen you are ready to scale up your work. See <a href="https://portal.xsede.org/allocations/research" target="_blank" rel="noopener noreferrer">https://portal.xsede.org/allocations/research</a> for details on applying.</li>
-<li><em>Coursework allocations</em> supplement educational activities from workshops to semester courses that benefit from the use of high-performance computing.  See <a href="https://portal.xsede.org/allocations/education" target="_blank" rel="noopener noreferrer">https://portal.xsede.org/allocations/education</a> for details on applying.</li>
+<li><em>Start-up allocations</em> allow you to explore high-performance computing and Bridges. The application process is streamlined and you can request up to 2500 GPU-hours on Bridges GPU nodes, up to 50,000 core-hours on Bridges' "regular" (128GB memory) nodes, up to 1000 TB-hours on Bridges "large" (3 and 12TB memory) nodes, or any combination of those resources. See <a href="https://portal.xsede.org/allocations/startup" rel="noopener noreferrer" target="_blank">https://portal.xsede.org/allocations/startup</a> for details on applying.</li>
+<li><em>Research allocations</em> provide expanded resource limits<em> w</em>hen you are ready to scale up your work. See <a href="https://portal.xsede.org/allocations/research" rel="noopener noreferrer" target="_blank">https://portal.xsede.org/allocations/research</a> for details on applying.</li>
+<li><em>Coursework allocations</em> supplement educational activities from workshops to semester courses that benefit from the use of high-performance computing.  See <a href="https://portal.xsede.org/allocations/education" rel="noopener noreferrer" target="_blank">https://portal.xsede.org/allocations/education</a> for details on applying.</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><strong>Proprietary research</strong> can be accommodated through the <a href="https://www.psc.edu/resources/computing/bridges/services/corporate-programs">Corporate Affiliates program</a>.</li>
 </ul>
-<p>&nbsp;</p>
+<p> </p>
 <h3><span id="sadd_user">Get added to an existing allocation</span></h3>
-<p>You can be added to an existing allocation by the PI. You must have an XSEDE Portal account (<a href="https://portal.xsede.org" target="_blank" rel="noopener noreferrer">create one here if you don't already have one</a>); once you do, the <a href="https://portal.xsede.org/knowledge-base/-/kb/document/aswb" target="_blank" rel="noopener noreferrer">PI can submit a request through the Portal to add you to the allocation</a>. The request must specify all resources which you should be given access to. </p>
+<p>You can be added to an existing allocation by the PI. You must have an XSEDE Portal account (<a href="https://portal.xsede.org" rel="noopener noreferrer" target="_blank">create one here if you don't already have one</a>); once you do, the <a href="https://portal.xsede.org/knowledge-base/-/kb/document/aswb" rel="noopener noreferrer" target="_blank">PI can submit a request through the Portal to add you to the allocation</a>. The request must specify all resources which you should be given access to. </p>
 <p>Every Bridges user needs access to Pylon storage, but it is not granted automatically; it must be specifically requested in the Add User process. </p>
 <p>In addition, the PI must specify any other Bridges' resources granted to the allocation that you should have access to. These can include RM nodes, GPU nodes and/or LSM nodes.</p>
 <h3>Choose your tools</h3>
@@ -97,24 +60,10 @@ For example, the dataset: abcded0123456789.example_dataset_01 would be found dow
 <li>Webserver nodes to host gateways and provide access to community datasets</li>
 <li>Data transfer nodes with 10 GigE connections to enable data movement between Bridges and XSEDE, campuses, instruments and other advanced cyberinfrastructure</li>
 </ul>
-<p>&nbsp;</p>
+<p> </p>
 <h3 id="faq">Get more information</h3>
 <p>If you would like to know more about Bridges and how you can use this unique resource in your research, see the "<a href="https://www.psc.edu/resources/computing/bridges/applying-for-a-bridges-account-faq?view=faq&amp;catid=7">Applying for a Bridges account" FAQ</a>.</p>
 <p>If the FAQ doesn't answer your questions, call us at 412-268-4960 or email <a href="mailto:bridges@psc.edu">bridges@psc.edu</a>.</p>
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+</p></dataset-name></c3c4></c1c2></dataset-name>
+  </div>
 </div>
-</body>
-</html>

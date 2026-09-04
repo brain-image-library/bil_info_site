@@ -1,99 +1,63 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-        <title>Brain Image Library: Computing and Visualization</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Computing and Visualization
+description: Compute resources for BIL data.
+---
 
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron">
-
-      <h1>Computing and Visualization</H1>
-      <p>The Brain Image Library provides several ways to access data without having to download it: </p>
-      <ul>
-        <li><b>BIL Login Node:</b> All users of the BIL systems have ssh access to the BIL login node<./li>
+<div class="container my-5">
+  <div class="content-card">
+<h1>Computing and Visualization</h1>
+<p>The Brain Image Library provides several ways to access data without having to download it: </p>
+<ul>
+<li><b>BIL Login Node:</b> All users of the BIL systems have ssh access to the BIL login node&lt;./li&gt;
 	<li><b>BIL Computational Cluster:</b> The BIL Computational cluster consists of eight nodes 
 	   with 3 terabytes of RAM. The computational cluster runs SLURM and is avaiable for 
-           both batch and interactive access from the BIL login node.</li>       
-        <li><b>BIL VM System:</b>The BIL VM system is a flexible resource that is made up of several large
+           both batch and interactive access from the BIL login node.</li>
+<li><b>BIL VM System:</b>The BIL VM system is a flexible resource that is made up of several large
           memory machines equiped with modern GPUS. The VM system is remote desktop capable, can host 
           user-licenced commercial, and can host web gateways to provide project-specific data views, support
-          web-based visualization, and compute-in-place applications.</li> 
-        <li><b>Bridges-2:</b> Bridges-2 is a high performance computing system designed 
+          web-based visualization, and compute-in-place applications.</li>
+<li><b>Bridges-2:</b> Bridges-2 is a high performance computing system designed 
           to support familiar, convenient software and environments for both traditional and non-traditional 
           HPC users. Its richly-connected set of interacting systems offers exceptional flexibility for data
           analytics, simulation, workflows and gateways, leveraging interactivity, parallel computing, Spark
           and Hadoop.</li>
-        <li><b>NeoCortex:</b> Neocortex is a Cerebras CS-1 system.</li>
-      </ul>
-      <hr /> 
-      <div id="login"></div>
-      <h3>BIL Login Node</h3>    
-        <p>The BIL login node provides command line (ssh terminal) access to BIL data. Everyone who requests
+<li><b>NeoCortex:</b> Neocortex is a Cerebras CS-1 system.</li>
+</li></ul>
+<hr/>
+<div id="login"></div>
+<h3>BIL Login Node</h3>
+<p>The BIL login node provides command line (ssh terminal) access to BIL data. Everyone who requests
           a BIL account has access to the login node using their BIL Username and Password. The login node is 
           not intended for heavy computation or visualization, but rather to provide convenient shell access to
 	  BIL data and enable interactive and batch use of the <i>BIL Computational Cluster</i>. The BIL 
 	  computational cluster provides a suitable resource for both computation and visualization.</p>
-        <p>To request a BIL account and gain access to the login node, follow 
+<p>To request a BIL account and gain access to the login node, follow 
           <a href="http://www.brainimagelibrary.org/account.html">these instructions</a> to create an 
 	        account. Then, send email to <i>bil-support@psc.edu</i> along with your ACCESS Portal Account 
           and the subject "Access to BIL Login Node for data exploration". You will receive an email message 
           once access has been enabled with instructions to set your password. Please allow 24 hours for access
-          to be granted.</p> 
-        <p> Once access has been granted you may connect using ssh to login.brainimagelibrary.org and log in 
+          to be granted.</p>
+<p> Once access has been granted you may connect using ssh to login.brainimagelibrary.org and log in 
           with your username/password combination.</p>
- 
-      <h3>BIL VM System</h3>
-			  <p>The BIL VM system is a flexible resource that is made up of several large
+<h3>BIL VM System</h3>
+<p>The BIL VM system is a flexible resource that is made up of several large
 	        memory machines equiped with modern GPUS. The VM system is remote desktop capable, can host 
           user-licenced commercial, and can host web gateways to provide project-specific data views, support
 	        web-based visualization, and compute-in-place applications.</p>
-	      <p>The VM system can be set up to support two different remote-desktop models: X2Go and for high-resolution
-		      graphics TGX.</a>
-        <p>There is a rich suite of open-source and commercial software availiable on the VMs through the 
+<p>The VM system can be set up to support two different remote-desktop models: X2Go and for high-resolution
+		      graphics TGX.
+<p>There is a rich suite of open-source and commercial software availiable on the VMs through the 
 				  modules package. The suite available includes:  C/C++, Java, Python, R, Matlab, Fiji, Vaa3d, and others.
 				<p>VMs can also be configured to host web gateways to provide project specific views of data in BIL and 
 					to support visualization, APIs, and compute-in-place applications.</p>
-			  <p>Since customization is involved, existing BIL users should send email to <i>bil-support@psc.edu</i> 
+<p>Since customization is involved, existing BIL users should send email to <i>bil-support@psc.edu</i> 
 				  describing their proposed VM usage. BIL staff will then contact the enailer and set up a time to 
           discuss various VM options in more detail. </p>
-      
-      <H3>Bridges-2 HPC Access</h3> 
-          <p>The Brain Image Library data (the /bil filesystem) is directly accessable
-            on the Bridges-2 Platform (bridges2.psc.edu)</b></p>
-          <p>The Bridges-2 system  is a high performance computing system designed to support
+<h3>Bridges-2 HPC Access</h3>
+<p>The Brain Image Library data (the /bil filesystem) is directly accessable
+            on the Bridges-2 Platform (bridges2.psc.edu)</p>
+<p>The Bridges-2 system  is a high performance computing system designed to support
             familiar, convenient software and environments for both traditional and non-traditional 
             HPC users. Bridges-2 is the ideal system for resource-intensive applications as well 
             as applications targeting HPC + AI + Data. Additional information about Bridges-2 
@@ -101,42 +65,26 @@
             <a href="https://www.psc.edu/resources/bridges-2/">here.</a> In addition there is a  
             <a href="https://www.psc.edu/resources/bridges-2/user-guide-2/">Bridges-2 User Guide</a> 
             available which provides user-specific information.</p>
-          <p>Bridges-2 is allocated through ACCESS. More information on ACCESS allocations and information on how to get started is available <a href="https://allocations.access-ci.org/">here</a>.
+<p>Bridges-2 is allocated through ACCESS. More information on ACCESS allocations and information on how to get started is available <a href="https://allocations.access-ci.org/">here</a>.
           </p>
-          <p>Multiple users can use a single allocation. To be added to an existing allocation by 
+<p>Multiple users can use a single allocation. To be added to an existing allocation by 
             the allocation owner, you must have an ACCESS Portal account
-            (<a href="https://identity.access-ci.org/new-user" target="_blank" rel="noopener noreferrer">create 
+            (<a href="https://identity.access-ci.org/new-user" rel="noopener noreferrer" target="_blank">create 
             one here if you don't already have one</a>); once you do, the 
-            <a href="https://allocations.access-ci.org/" target="_blank" rel="noopener noreferrer">Allocation 
+            <a href="https://allocations.access-ci.org/" rel="noopener noreferrer" target="_blank">Allocation 
             owner can submit a request through the Portal to add you to the allocation</a>.<p>
-          <p>Proprietary research on Bridges-2 can be accommodated through the 
+<p>Proprietary research on Bridges-2 can be accommodated through the 
             <a href="https://www.psc.edu/resources/computing/bridges/services/corporate-programs">Corporate 
             Affiliates program</a></p>
-     <H3>Neocortex</h3>      
-       <p>Neocortex is a highly innovative resource that will accelerate AI-powered scientific discovery
+<h3>Neocortex</h3>
+<p>Neocortex is a highly innovative resource that will accelerate AI-powered scientific discovery
          by vastly shortening the time required for deep learning training, foster greater integration of
          artificial deep learning with scientific workflows, and provide revolutionary new hardware for the
          development of more efficient algorithms for artificial intelligence and graph analytics.</p>
-       <p>Additional information about Neocortex is available 
+<p>Additional information about Neocortex is available 
           <a href="https://www.cmu.edu/psc/aibd/neocortex/">here</a>.
               
-<p>&nbsp;</p>
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+<p> </p>
+</p></p></p></p></p>
+  </div>
 </div>
-</body>
-</html>
-

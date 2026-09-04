@@ -1,46 +1,13 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-     <title>Brain Image Library: Download</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Downloading Data
+description: How to download data from BIL.
+---
 
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron pagejumbotron">
-    <h1>Downloading Data</h1>
-<H2>Overview</H2>
+<div class="container my-5">
+  <div class="content-card">
+<h1>Downloading Data</h1>
+<h2>Overview</h2>
 There are many supported ways to download datasets from BIL. 
 This section discusses how to locate datasets in BIL and download them using these methods.   
 <ol>
@@ -58,35 +25,31 @@ This section discusses how to locate datasets in BIL and download them using the
 <!-- <li><a href="#OtherClients">Using other clients:</a>Advice on how to download datasets using other ftp clients.</li>
 </ol> -->
 <li><a href="#GLOBUS">Globus:</a> How to download datasets using Globus.</li>
-
 <li><a href="#Help">Assistance and Help</a></li>
 <li><a href="#Licence">Distribution Licence</a></li>
 <li><a href="#Embargo">Embargoed entries</a></li>
 <li><a href="#Citation">Citation of entries and use of non-embargoed pre-publication data</a></li>
 </ol>
-
-<H2>Download Steps</H2>
+<h2>Download Steps</h2>
 <ol>
 <li id="Locating"><b>Locating Data</b>
 <p>Find the location of the dataset of interest using the <a href="https://api.brainimagelibrary.org/web/">Brain
-	Inventory</a> web search tool or the <a href="https://www.brainimagelibrary.org/metadataapi.html">metadata API</a> 
+	Inventory</a> web search tool or the <a href="https://www.brainimagelibrary.org/metadataapi.html">metadata API</a>
 </p>
 <p>If using the metadata API, look for the field "bildirectory" under the "Dataset" subsection. </p>
-	
-  <p>The path shown will be in the form:<br />
-	 <i>/bil/data/&lt;c1c2&gt;/&lt;c3c4&gt;/&lt;16-digit-submission-identifier&gt;/&lt;subdirectoryName&gt;</i></p>
+<p>The path shown will be in the form:<br/>
+<i>/bil/data/&lt;c1c2&gt;/&lt;c3c4&gt;/&lt;16-digit-submission-identifier&gt;/&lt;subdirectoryName&gt;</i></p>
 <p>where &lt;c1c2&gt; are replaced by the first and second characters of the submission identifier and &lt;c3c4&gt; 
 	are replaced by the third and fourth characters of the submission identifier.  For example:</p>
-  <p>/bil/data/ab/cd/abcdef0123456789/example_dataset_01/</p>
+<p>/bil/data/ab/cd/abcdef0123456789/example_dataset_01/</p>
 </li>
-<li id="HTTPS"><b>Using a web browser: HTTPS</b> 
+<li id="HTTPS"><b>Using a web browser: HTTPS</b>
 <p>
   To access the files, enter the following URL in your web browser:</p>
-  <p><i>https://download.brainimagelibrary.org/</i></p>
-  <p>The URL to access the example dataset mentioned above would be:</p>
-  <p><i><a href="https://download.brainimagelibrary.org/ab/cd/abcdef0123456789/example_dataset_01/">
+<p><i>https://download.brainimagelibrary.org/</i></p>
+<p>The URL to access the example dataset mentioned above would be:</p>
+<p><i><a href="https://download.brainimagelibrary.org/ab/cd/abcdef0123456789/example_dataset_01/">
 	  https://download.brainimagelibrary.org/ab/cd/abcdef0123456789/example_dataset_01/</a></i></p>
-</p> 
 </li>
 <!--	
 <li id="FTP"><b>Anonymous FTP</b> 
@@ -115,10 +78,9 @@ This section discusses how to locate datasets in BIL and download them using the
 </li>
 -->
 <li id="WGET"><b>Using wget:</b>
-<P>  To download the files, use wget with the -r option and the URL to the desired dataset without the 
+<p>  To download the files, use wget with the -r option and the URL to the desired dataset without the 
     /bil/data path.</p>
- 
-  <p>For example, to retreive the example dataset mentioned above with wget, enter:</p>
+<p>For example, to retreive the example dataset mentioned above with wget, enter:</p>
 <p><code>wget -r https://download.brainimagelibrary.org/ab/cd/abcdef0123456789/example_dataset_01/
 	</code></p>
 </li>
@@ -138,49 +100,47 @@ This section discusses how to locate datasets in BIL and download them using the
 -->
 <li id="GLOBUS"><b>Using Globus:</b>
 
-  <<p><span>To upload or download data via Globus, we will need your CILogon ePPN. To set up Globus for the first time:</span></p>
-                <ol>
-                    <li><span>Find your CILogon ePPN by logging in with your preferred identity at </span><a href="https://cilogon.org/" target="_blank" rel="noopener"><span>https://cilogon.org/</span></a><span>.</span></li>
-                    <li><span>Send an e-mail to </span><a href="mailto:bil-support@psc.edu" target="_blank" rel="noopener"><span>bil-support@psc.edu</span></a><span> with your name, institution, and the value of the ePPN field under "User Attributes" from the CILogon website.</span></li>
-                    <li><span>Once your ePPN has been mapped to your BIL/PSC username, you will be able to log in via the Globus website</span></li>
-                </ol>
-                <p><span>Once your ePPN has been mapped to BIL user, you can upload via Globus:</span></p>
-                <ol>
-                    <li>
-                        <p><span>Login at </span><a href="https://globus.org/" target="_blank" rel="noopener"><span>https://globus.org/</span></a><span> - select the LOG IN button at the top-right to begin.</span></p>
-                    </li>
-                    <li>
-                        <p><span>From the drop-down list, find the organization for the identity associated with the ePPN we have mapped for you. This could either be ACCESS (XSEDE), or your institution (e.g. Carnegie Mellon University). After you select the organization for the identity that you want to authenticate with, select the Continue button to proceed.</span></p>
-                    </li>
-                    <li>
-                        <p><span>You will be redirected to your organization's login page, where you enter the account name, password, and possibly also complete an additional two-factor authentication (e.g. DUO) to log in.</span></p>
-                    </li>
-                    <li>
-                        <p><span>Upon successful authentication to your organization, your browser will show the Globus File Manager page where you can connect to the Brain Image Library service.</span><br>
-                            <span>Click in the field labeled "Collection" (the Globus term for a remote data site), and start typing "Brain Image Library". This should bring up the new Globus collection labeled "Brain Image Library /bil filesystem" on the Brain Image Library Globus Connect Server 5 Endpoint. Select it to proceed.</span></p>
-                    </li>
-                    <li>
-                        <p><span>The first time that you connect to this Globus collection, you may be asked to provide consent to use your identity to authenticate to it. Select "Continue" to proceed.</span></p>
-                    </li>
-                    <li>
-                        <p><span>There may be more than one identity mapped to your BIL/PSC username. Select the identity that you used to login to Globus with, and then select "Continue" to proceed.</span></p>
-                    </li>
-                    <li>
-                        <p><span>The Globus service will then ask you to allow the service to use your identity to facilitate activities including file transfers, file management, and remote access to data. Select "Allow" to proceed.</span></p>
-                    </li>
-                    <li>
-                        <p><span>Once you have allowed the Globus service to employ your identity to authenticate you to the BIL Globus service, you will be connected and arrive at the Path /bil. You can navigate with clicks or by typing the path to your desired location in the Path field.</span><br>
-                            <span>Globus path to /bil/data</span></p>
-                    </li>
-                    <li>
-                        <p><span>When you are done with your Globus session, we recommend logging out completely. This is a two-step process: Select the LOGOUT icon toward the bottom of the left sidebar. Clicking on the LOGOUT icon logs you out of the Globus file manager web app. To logout from the Globus service, select the Globus ID "Log Out" link.</span></p>
-                    </li>
-                </ol>
-                <p><span>If you require assistance in accessing the BIL Globus service, please reach out to </span><a href="mailto:bil-support@psc.edu" target="_blank" rel="noopener"><span>bil-support@psc.edu</span></a><span>.</span></p>
-
-
+  &lt;<p><span>To upload or download data via Globus, we will need your CILogon ePPN. To set up Globus for the first time:</span></p>
+<ol>
+<li><span>Find your CILogon ePPN by logging in with your preferred identity at </span><a href="https://cilogon.org/" rel="noopener" target="_blank"><span>https://cilogon.org/</span></a><span>.</span></li>
+<li><span>Send an e-mail to </span><a href="mailto:bil-support@psc.edu" rel="noopener" target="_blank"><span>bil-support@psc.edu</span></a><span> with your name, institution, and the value of the ePPN field under "User Attributes" from the CILogon website.</span></li>
+<li><span>Once your ePPN has been mapped to your BIL/PSC username, you will be able to log in via the Globus website</span></li>
+</ol>
+<p><span>Once your ePPN has been mapped to BIL user, you can upload via Globus:</span></p>
+<ol>
+<li>
+<p><span>Login at </span><a href="https://globus.org/" rel="noopener" target="_blank"><span>https://globus.org/</span></a><span> - select the LOG IN button at the top-right to begin.</span></p>
+</li>
+<li>
+<p><span>From the drop-down list, find the organization for the identity associated with the ePPN we have mapped for you. This could either be ACCESS (XSEDE), or your institution (e.g. Carnegie Mellon University). After you select the organization for the identity that you want to authenticate with, select the Continue button to proceed.</span></p>
+</li>
+<li>
+<p><span>You will be redirected to your organization's login page, where you enter the account name, password, and possibly also complete an additional two-factor authentication (e.g. DUO) to log in.</span></p>
+</li>
+<li>
+<p><span>Upon successful authentication to your organization, your browser will show the Globus File Manager page where you can connect to the Brain Image Library service.</span><br/>
+<span>Click in the field labeled "Collection" (the Globus term for a remote data site), and start typing "Brain Image Library". This should bring up the new Globus collection labeled "Brain Image Library /bil filesystem" on the Brain Image Library Globus Connect Server 5 Endpoint. Select it to proceed.</span></p>
+</li>
+<li>
+<p><span>The first time that you connect to this Globus collection, you may be asked to provide consent to use your identity to authenticate to it. Select "Continue" to proceed.</span></p>
+</li>
+<li>
+<p><span>There may be more than one identity mapped to your BIL/PSC username. Select the identity that you used to login to Globus with, and then select "Continue" to proceed.</span></p>
+</li>
+<li>
+<p><span>The Globus service will then ask you to allow the service to use your identity to facilitate activities including file transfers, file management, and remote access to data. Select "Allow" to proceed.</span></p>
+</li>
+<li>
+<p><span>Once you have allowed the Globus service to employ your identity to authenticate you to the BIL Globus service, you will be connected and arrive at the Path /bil. You can navigate with clicks or by typing the path to your desired location in the Path field.</span><br/>
+<span>Globus path to /bil/data</span></p>
+</li>
+<li>
+<p><span>When you are done with your Globus session, we recommend logging out completely. This is a two-step process: Select the LOGOUT icon toward the bottom of the left sidebar. Clicking on the LOGOUT icon logs you out of the Globus file manager web app. To logout from the Globus service, select the Globus ID "Log Out" link.</span></p>
+</li>
+</ol>
+<p><span>If you require assistance in accessing the BIL Globus service, please reach out to </span><a href="mailto:bil-support@psc.edu" rel="noopener" target="_blank"><span>bil-support@psc.edu</span></a><span>.</span></p>
 <li id="Help"><b>Assistance and Help</b>
-<p>If you need assistance with anything, please email: bil-support@psc.edu.</p> 
+<p>If you need assistance with anything, please email: bil-support@psc.edu.</p>
 <p>
 If you are having networking issues related to data transfer (including 
 slow transfer speeds), email us at at bil-support@psc.edu and one of our 
@@ -203,8 +163,7 @@ period not exceeding the limits outlined in the
 All other deposited entries may request an embargo period of up to 
 one year. Data subjected to embargo can not be downloaded.
 </p>
-<li id="Citation"><b>Citation of entries and use of non-embargoed pre-publication data</b></p>
-
+<li id="Citation"><b>Citation of entries and use of non-embargoed pre-publication data</b>
 <p>
 	Please see <a href="http://www.brainimagelibrary.org/citation.html">this page</a> for suggested acknowledgement text for entries from the Brain Image 
 Library.</p>
@@ -244,23 +203,6 @@ that you also include that citation here.
 Library for which there is no peer-reviewed publication identified, to 
 contact the data producers to discuss possible coordinated publications 
 and collaborations. </p>
-</ol>
-
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+</li></li></li></ol>
+  </div>
 </div>
-</body>
-</html>

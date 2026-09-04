@@ -1,103 +1,56 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-     <title>Brain Image Library: X2GO</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: X2Go
+description: Using X2Go to connect to BIL.
+---
 
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-    <div class="container">
-        <p>&nbsp;</p>
-    </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron pagejumbotron">
-
-
-<H1>Software Available on BIL Systems: X2Go</H1>
-<H2>Overview</H2>
-    <p> X2Go is an open source remote desktop application that is installed on all BIL VM's. 
+<div class="container my-5">
+<div class="content-card">
+<h1>Software Available on BIL Systems: X2Go</h1>
+<h2>Overview</h2>
+<p> X2Go is an open source remote desktop application that is installed on all BIL VM's. 
     X2Go enables one to connect to and run traditional desktop visualization applications 
       (such as Fiji - ImageJ) on a remote computing system. </p>
-   <p>This document outlines how to use the X2GO remote desktop application to access a virtual machine at BIL.</p>
-   <p>To use software that contains a gui, the X2Go software client should be installed locally, then used to connect to the BIL system.</p>
-
+<p>This document outlines how to use the X2GO remote desktop application to access a virtual machine at BIL.</p>
+<p>To use software that contains a gui, the X2Go software client should be installed locally, then used to connect to the BIL system.</p>
 <p><i>If you have problems using the X2go software, do not hesitate to contact
-the <a href="contact.html">BIL Helpdesk</a> for assistance.</i></p>
+the <a href="{{ '/contact.html' | relative_url }}">BIL Helpdesk</a> for assistance.</i></p>
 <ol>
-  <li><a href="#install">Install X2Go client</a></li>
-  <li><a href="#connecttovm">Connecting to a BIL VM (workshop.brainimagelibrary.org) using X2Go</a></li>
+<li><a href="#install">Install X2Go client</a></li>
+<li><a href="#connecttovm">Connecting to a BIL VM (workshop.brainimagelibrary.org) using X2Go</a></li>
 </ol>
-
-<H2 id="install">Install X2Go client</h2>
-      <p> Download and install the appropriate x2go client (Windows, Linux, or
+<h2 id="install">Install X2Go client</h2>
+<p> Download and install the appropriate x2go client (Windows, Linux, or
 Mac) from: <a href="https://wiki.x2go.org/doku.php">https://wiki.x2go.org/doku.php</a></p>
-
-     <p>Mac Users:  You must also install xQuartz in order to run x2go: 
-       <a href="https://www.xquartz.org">https://www.xquartz.org</a></span></p>
-
-	
-<H2 id="connecttovm">Connecting to a BIL VM (workshop.brainimagelibrary.org) using X2Go</H2>
-  <p> Below is an example using X2GO to connect to the BIL VM <i>workshop.brainimagelibrary.org</i> 
+<p>Mac Users:  You must also install xQuartz in order to run x2go: 
+       <a href="https://www.xquartz.org">https://www.xquartz.org</a></p>
+<h2 id="connecttovm">Connecting to a BIL VM (workshop.brainimagelibrary.org) using X2Go</h2>
+<p> Below is an example using X2GO to connect to the BIL VM <i>workshop.brainimagelibrary.org</i> 
     If you are connecting to a different BIL VM, substitute the name of that VM for 
     <i>workshop.brainimagelibrary.org</i> in the instructions below.</p>
-	<p>
-   <ul>
-	 <li>Start the X2Go client software on your machine. </li>
-	     <li>From the <b>Session</b> menu select <b>New Session</b>.</li>
-	     <li>In the <b>Session preferences</b> Popup:</li>
-	     <ul>
-			     <li>Set the Session Name to: <b>workshop.brainimagelibrary.org</b></li>
-			     <li>Under Server, set the Host to: <b>workshop.brainimagelibrary.org</b></li>
-			     <li>Under session type, set the selection to: <b>MATE</b></li>
-			     <li>Click the <b>[OK]</b> Button</li>
-	     </ul> 
-	     <img src="./assets/X2Go.png" alt="Screenshot of X2Go Popup Window" />
-	     <li>On the Right side of the screen, you should see a grey box with the session information you entered: </li>
-	     <li>Move the mouse cursor to the light gray box over the words: <b>workshop.brainimagelibrary.org</b></li>
-	     <li>Click the <b>LEFT</b> mouse button</li>
-	     <li>Enter your (login) username and your password then click the <b>[OK]</b> Button</li>
-	     <img src="./assets/X2Go2.png" alt="Screenshot of X2Go Username/Password Window" />
-	     <li>After a few seconds, an X2GO desktop will appear on your screen</li>
-	     <li>Open up a terminal, then run any program that produces graphical output.</li>
-	     <img src="./assets/X2Go3.png" alt="Screenshot of X2Go Desktop" />
-	   <li>When you are done, be sure to select the <b>System</b> menu then select <b>Shut Down</b> 
-	      to completely terminate the X2Go session.</li> 
-	 </ul>
-	</p>
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+<p>
+<ul>
+<li>Start the X2Go client software on your machine. </li>
+<li>From the <b>Session</b> menu select <b>New Session</b>.</li>
+<li>In the <b>Session preferences</b> Popup:</li>
+<ul>
+<li>Set the Session Name to: <b>workshop.brainimagelibrary.org</b></li>
+<li>Under Server, set the Host to: <b>workshop.brainimagelibrary.org</b></li>
+<li>Under session type, set the selection to: <b>MATE</b></li>
+<li>Click the <b>[OK]</b> Button</li>
+</ul>
+<img alt="Screenshot of X2Go Popup Window" class="img-fluid rounded-3 shadow-sm my-3 d-block mx-auto" loading="lazy" src="./assets/X2Go.png" style="max-width:800px;"/>
+<li>On the Right side of the screen, you should see a grey box with the session information you entered: </li>
+<li>Move the mouse cursor to the light gray box over the words: <b>workshop.brainimagelibrary.org</b></li>
+<li>Click the <b>LEFT</b> mouse button</li>
+<li>Enter your (login) username and your password then click the <b>[OK]</b> Button</li>
+<img alt="Screenshot of X2Go Username/Password Window" class="img-fluid rounded-3 shadow-sm my-3 d-block mx-auto" loading="lazy" src="./assets/X2Go2.png" style="max-width:800px;"/>
+<li>After a few seconds, an X2GO desktop will appear on your screen</li>
+<li>Open up a terminal, then run any program that produces graphical output.</li>
+<img alt="Screenshot of X2Go Desktop" class="img-fluid rounded-3 shadow-sm my-3 d-block mx-auto" loading="lazy" src="./assets/X2Go3.png" style="max-width:800px;"/>
+<li>When you are done, be sure to select the <b>System</b> menu then select <b>Shut Down</b> 
+	      to completely terminate the X2Go session.</li>
+</ul>
+</p>
 </div>
-</body>
-</html>
+</div>

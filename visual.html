@@ -1,200 +1,185 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-        <title>Brain Image Library: Visualization</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Web Visualization
+description: Browser-based visualization of BIL data.
+---
 
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron">
-
-      <h1>Visualization</H1>
-      <p>The Brain Image Library provides following ways to visualize the data remotely, without signing in: </p>
-      <ul>
-        <li><b>Neuroglancer:</b> Visualize BIL data in a web browser. Explore curated datasets at our
+<div class="container my-5">
+  <div class="content-card content-card--wide">
+<h1>Visualization</h1>
+<p>The Brain Image Library provides following ways to visualize the data remotely, without signing in: </p>
+<ul>
+<li><b>Neuroglancer:</b> Visualize BIL data in a web browser. Explore curated datasets at our
             <a href="https://imageexplorer.brainimagelibrary.org/">brain explorer</a>
-        </li>
-        <li><b>Napari-bil-data-viewer:</b> A plugin for the popular <a href="https://napari.org/">napari</a>
+</li>
+<li><b>Napari-bil-data-viewer:</b> A plugin for the popular <a href="https://napari.org/">napari</a>
           image viewer that allows single-click visualization of thousands of datasets at BIL.
         </li>
-      </ul>
-      <hr /> 
-      <div id="login"></div>
-     <h3>Neuroglancer</h3>
-        <p>
-            Neuroglancer allows quick visualization of volumetric multi-resolution multi-channel
-            data in a web browser. It also allows sharing a link to a specific view of the data,
-            to be shared with your collaborators exactly as you are viewing it.
-        </p>
-        <p>
-            <button type="button" class="btn btn-sm btn-dark" onclick="reloadIframe()">Reload Neuroglancer</button>
-        </p>
-        <div id="neuroglancerFrame">
-	    <!--
-            <iframe src="https://brainapi.brainimagelibrary.org/ng/bil/pscstaff/rlagha/RL/stack_to_multiscale_ngff/fmost_conv/df/75/df75626840c76c15/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>
-            -->
-	    <iframe src="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bag/jet/asset/brainpi/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>
-	</div>
-        <p>
-            The data for Neuroglancer are served via <a href="https://github.com/CBI-PITT/BrAinPI">brAinPI</a>,
-            which allows visualizing different multiscale image file formats through the same API.
-        </p>
-        <p> Currently supported image formats:
-            <ul>
-				<li>OME-Zarr (.ome.zarr - Version 2 & 3)</li>
-				<li>OME-Hans (ome.hans)</li>
-				<li>OME-Zans (ome.zans)</li>
-                <li>Imaris (.ims)</li>
-				<li>NifTI (.nii / .nii.gz / .nii.zarr)</li>
-				<li>Terafly (single channel)</li>
-				<li>TIFF (.tiff)</li>
-				<li>OME-Tiff (.ome.tiff)</li>
-				<li>JPEG 2000 (.jp2 - 2D RGB)</li>
-				<li>ND2 (.nd2)</li>
-			</ul>
-		<p>Output Formats:</p>
-		<ul>
-			<li>OME-Zarr (Version 2)</li>
-			<li>Neuroglancer Precomputed</li>
-		</ul>
-	</p>
-        <p><strong>Basic usage:</strong></p>
-        <table class="table-striped table-bordered">
-        <tr>
-            <th>Feature</th>
-            <th>How to Use</th>
-        </tr>
-        <tr>
-            <td>Zoom (using mouse)</td>
-            <td>&lt;ctrl&gt; &lt;mouse-wheel&gt;</td>
-        </tr>
-        <tr>
-            <td>Zoom In (using keyboard)</td>
-            <td>&lt;ctrl&gt; &lt;equals&gt;</td>
-        </tr>
-        <tr>
-            <td>Zoom Out (using keyboard)</td>
-            <td>&lt;ctrl&gt; &lt;minus&gt;</td>
-        </tr>
-        <tr>
-            <td>Scroll through z-planes</td>
-            <td>&lt;mouse-wheel&gt;</td>
-        </tr>
-        <tr>
-            <td>Move image</td>
-            <td>Grab using &lt;left-mouse-button&gt; and drag image</td>
-        </tr>
-        <tr>
-            <td>Center image where current mouse pointer is</td>
-            <td>Move mouse cursor over image then &lt;right-mouse-button&gt;</td>
-        </tr>
-        <tr>
-            <td>Toggle from 4 panel layout to one screen view</td>
-            <td>Move mouse cursor over image then &lt;spacebar&gt;</td>
-        </tr>
-        <tr>
-            <td>Rapid move through x, y, or z planes</td>
-            <td>
+</ul>
+<hr class="my-5"/>
+<div id="login"></div>
+
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-4 mb-3">
+  <h3 id="neuroglancer" class="mb-0">Neuroglancer</h3>
+  <button class="btn btn-sm btn-outline-primary" onclick="reloadIframe()" type="button">
+    <i class="bi bi-arrow-clockwise me-1"></i>Reload viewer
+  </button>
+</div>
+
+<p>
+  Neuroglancer allows quick visualization of volumetric multi-resolution multi-channel
+  data in a web browser. It also allows sharing a link to a specific view of the data,
+  to be shared with your collaborators exactly as you are viewing it.
+</p>
+
+<div id="neuroglancerFrame" class="viewer-frame">
+  <!--
+    <iframe src="https://brainapi.brainimagelibrary.org/ng/bil/pscstaff/rlagha/RL/stack_to_multiscale_ngff/fmost_conv/df/75/df75626840c76c15/mouseID_374706-18461.omehans" height="600" frameborder="0"></iframe>
+  -->
+  <iframe src="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bag/jet/asset/brainpi/mouseID_374706-18461.omehans"
+          title="Neuroglancer volumetric viewer"
+          loading="lazy"></iframe>
+</div>
+
+<p class="text-secondary small mt-2">
+  <i class="bi bi-info-circle me-1"></i>
+  Click and drag inside the viewer to pan; <kbd>Ctrl</kbd>+scroll to zoom;
+  <kbd>Space</kbd> toggles between the 4-panel and single-panel layouts.
+</p>
+
+<p class="mt-4">
+  The data for Neuroglancer are served via <a href="https://github.com/CBI-PITT/BrAinPI">brAinPI</a>,
+  which allows visualizing different multiscale image file formats through the same API.
+</p>
+
+<p><strong>Currently supported image formats:</strong></p>
+<ul>
+  <li>OME-Zarr (.ome.zarr - Version 2 &amp; 3)</li>
+  <li>OME-Hans (ome.hans)</li>
+  <li>OME-Zans (ome.zans)</li>
+  <li>Imaris (.ims)</li>
+  <li>NifTI (.nii / .nii.gz / .nii.zarr)</li>
+  <li>Terafly (single channel)</li>
+  <li>TIFF (.tiff)</li>
+  <li>OME-Tiff (.ome.tiff)</li>
+  <li>JPEG 2000 (.jp2 - 2D RGB)</li>
+  <li>ND2 (.nd2)</li>
+</ul>
+
+<p><strong>Output formats:</strong></p>
+<ul>
+  <li>OME-Zarr (Version 2)</li>
+  <li>Neuroglancer Precomputed</li>
+</ul>
+
+<p><strong>Basic usage:</strong></p>
+<div class="table-responsive my-3">
+<table class="table table-striped table-bordered align-middle">
+<tr>
+<th>Feature</th>
+<th>How to Use</th>
+</tr>
+<tr>
+<td>Zoom (using mouse)</td>
+<td>&lt;ctrl&gt; &lt;mouse-wheel&gt;</td>
+</tr>
+<tr>
+<td>Zoom In (using keyboard)</td>
+<td>&lt;ctrl&gt; &lt;equals&gt;</td>
+</tr>
+<tr>
+<td>Zoom Out (using keyboard)</td>
+<td>&lt;ctrl&gt; &lt;minus&gt;</td>
+</tr>
+<tr>
+<td>Scroll through z-planes</td>
+<td>&lt;mouse-wheel&gt;</td>
+</tr>
+<tr>
+<td>Move image</td>
+<td>Grab using &lt;left-mouse-button&gt; and drag image</td>
+</tr>
+<tr>
+<td>Center image where current mouse pointer is</td>
+<td>Move mouse cursor over image then &lt;right-mouse-button&gt;</td>
+</tr>
+<tr>
+<td>Toggle from 4 panel layout to one screen view</td>
+<td>Move mouse cursor over image then &lt;spacebar&gt;</td>
+</tr>
+<tr>
+<td>Rapid move through x, y, or z planes</td>
+<td>
                 Click on the number associated with x, y, or z (found in upper left corner). Then enter either:
                 <ul>
-                    <li>&lt;delete&gt; the number and enter a new &lt;integer-value&gt; and press &lt;enter&gt;</li>
-                    <li>move the mouse to the playback bar, move up/down to the appropriate level then &lt;left-mouse-button&gt;</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>Rotate right</td>
-            <td>&lt;r&gt;</td>
-        </tr>
-        <tr>
-            <td>Rotate left</td>
-            <td>&lt;e&gt;</td>
-        </tr>
-        <tr>
-            <td>Go through z layers (increasing)</td>
-            <td>&lt;period&gt;</td>
-        </tr>
-        <tr>
-            <td>Go through z layers (decreasing)</td>
-            <td>&lt;comma&gt;</td>
-        </tr>
-        <tr>
-            <td>Snap image that has been rotated to the closest 90-degree rotation axis</td>
-            <td>&lt;z&gt;</td>
-        </tr>
-        <tr>
-            <td>Toggle scalebar on/off that is shown on the image</td>
-            <td>Place cursor over image, press &lt;b&gt; then move mouse cursor</td>
-        </tr>
-    </table>
-    <p></p>
-    <hr />
-    <p></p>
-     <h3>Napari-bil-data-viewer</h3>
-       <p>Napari-bil-data-viewer is a plugin for <a href="https://napari.org/">napari</a> designed specifically
+<li>&lt;delete&gt; the number and enter a new &lt;integer-value&gt; and press &lt;enter&gt;</li>
+<li>move the mouse to the playback bar, move up/down to the appropriate level then &lt;left-mouse-button&gt;</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Rotate right</td>
+<td>&lt;r&gt;</td>
+</tr>
+<tr>
+<td>Rotate left</td>
+<td>&lt;e&gt;</td>
+</tr>
+<tr>
+<td>Go through z layers (increasing)</td>
+<td>&lt;period&gt;</td>
+</tr>
+<tr>
+<td>Go through z layers (decreasing)</td>
+<td>&lt;comma&gt;</td>
+</tr>
+<tr>
+<td>Snap image that has been rotated to the closest 90-degree rotation axis</td>
+<td>&lt;z&gt;</td>
+</tr>
+<tr>
+<td>Toggle scalebar on/off that is shown on the image</td>
+<td>Place cursor over image, press &lt;b&gt; then move mouse cursor</td>
+</tr>
+</table>
+</div>
+
+<hr class="my-5"/>
+<h3 id="napari">Napari-bil-data-viewer</h3>
+<p>Napari-bil-data-viewer is a plugin for <a href="https://napari.org/">napari</a> designed specifically
            for visualizing BIL data. It has a set of widgets for visualizing different types of data:
            (a) 272 curated fMOST datasets with associated .swc neuron morphologies,
            (b) thousands of STPT and other image stacks by providing a URL,
            (c) multiscale .ome.zarr data by providing a URL,
            (d) neuron tracings in standard .swc format
        </p>
-       <p>Installation and usage instructions are available at our
+<p>Installation and usage instructions are available at our
            <a href="https://github.com/brain-image-library/napari-bil-data-viewer">github</a>
            and at
            <a href="https://www.napari-hub.org/plugins/napari-bil-data-viewer">napari hub</a>.
        </p>
-       <p>
+<p>
            A 2-minute video tutorial on how to use the plugin is available on
            <a href="https://youtu.be/04mSxB1hgrk">youtube</a>.
        </p>
-        <iframe width="506" height="420" src="https://www.youtube.com/embed/04mSxB1hgrk?si=J30JtJ3O7_3QV5uC"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-        </iframe>
-        <p>
-            The plugin can be installed from napari GUI through Plugins > Install/Uninstall Plugins menu,
+<div class="ratio ratio-16x9 my-3" style="max-width:640px;">
+  <iframe src="https://www.youtube.com/embed/04mSxB1hgrk?si=J30JtJ3O7_3QV5uC"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"></iframe>
+</div>
+<p>
+            The plugin can be installed from napari GUI through Plugins &gt; Install/Uninstall Plugins menu,
             by typing 'bil' in the plugin search box and clicking the "install" button when the plugin
             shows up in search results.
         </p>
-        <p>
+<p>
             To open the plugin in <a href="https://napari.org/">napari</a>,
-            go to Plugins > napari-bil-data-viewer and select the widget you want to open.
+            go to Plugins &gt; napari-bil-data-viewer and select the widget you want to open.
             The dock widget will appear on the right side of the napari window.
         </p>
-        <p>
+<p>
             To load one of the curated fMOST datasets, open the Load Curated Datasets widget, select one of the datasets
             in the dropdown menu (the names correspond to dataset names on the BIL file system) and press the
             Load Dataset button. An image layer with selected dataset will appear.
@@ -203,62 +188,43 @@
             Currently, visualization of neuron morphologies in 2D is impossible due to limitations of napari shapes layer.
             In the 3D mode the morphologies will be overlaid on top of the whole brain image in the same scale.
         </p>
-        <p>
+<p>
             To load an image stack, open the Load Image Stack From URL widget, paste a URL to an image stack (list of
             inks to individual files) and click the Load Dataset button. To get started, you can paste an example
             URL to the URL input field by clicking the corresponding link and load the example image stack.
             Currently supported formats are .tif, .tiff and .jp2 - most common formats for STPT stacks.
         </p>
-        <p>
+<p>
             To load a multiscale dataset (.zarr or .ome.zarr), open the Load Multiscale Data From URL widget,
             insert a URL ending in .zarr to the URL input field and click the Load Dataset button.
             To get started, you can paste an example URL to the URL input field by clicking the corresponding link
             and load the example dataset.
         </p>
-        <p>
+<p>
             To load a neuron morphology not included with the curated datasets (both from BIL or other sources), open
             the Load Neuron Morphology From URL widget, paste a URL ending in .swc into the URL input field
             and click the Show SWC button.
             To get started, paste and example URL by clicking a corresponding link and load an example .swc file.
         </p>
-        <p>
+<p>
             To adjust scale of any layer open in the viewer, open the Layer Scale Controls widget, select the layer
             you would like to rescale, paste the desired scale (usually, resolution in microns) in z, y and x,
             and eventually press the Adjust button.
         </p>
-
-<p>&nbsp;</p>
-        <hr/>
-        <p>
-            <em>
+<p> </p>
+<hr/>
+<p>
+<em>
                 The development of the napari-BIL-data-viewer was supported by the napari plugin enhancement grant
                 from the Chan Zuckerberg Initiative NPE2-00074
             </em>
-        </p>
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script>
-        function reloadIframe() {
-            var iframe = document.getElementById('neuroglancerFrame');
-            console.log("in function");
-            iframe.innerHTML = '<iframe src="https://brainapi.brainimagelibrary.org/ng/bil/assets/ace/bag/jet/asset/brainpi/mouseID_374706-18461.omehans" width="70%" height="400px" frameborder="0"></iframe>';
-        }
-
-    </script>
+</p>
+  </div>
 </div>
-</body>
-</html>
 
+<script>
+  function reloadIframe() {
+    var frame = document.querySelector('#neuroglancerFrame iframe');
+    if (frame) frame.src = frame.src;
+  }
+</script>

@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-09-04T15:28:28Z",
+  "source": "https://api.brainimagelibrary.org/stats?type=all",
+  "headline": {
+    "datasets": 14234,
+    "consortia": 5,
+    "species": 11,
+    "modalities": 5
+  },
+  "species": [
+    {
+      "name": "Mouse",
+      "count": 12178
+    },
+    {
+      "name": "Human",
+      "count": 1383
+    },
+    {
+      "name": "Macaque",
+      "count": 626
+    },
+    {
+      "name": "Marmoset",
+      "count": 344
+    },
+    {
+      "name": "Rat",
+      "count": 231
+    },
+    {
+      "name": "Fruit fly",
+      "count": 169
+    },
+    {
+      "name": "Ant",
+      "count": 107
+    },
+    {
+      "name": "Zebrafish",
+      "count": 32
+    },
+    {
+      "name": "Sea squirt",
+      "count": 25
+    },
+    {
+      "name": "Squirrel monkey",
+      "count": 19
+    },
+    {
+      "name": "Spider",
+      "count": 16
+    }
+  ],
+  "modalities": [
+    {
+      "name": "Morphology",
+      "count": 5291
+    },
+    {
+      "name": "Imaging",
+      "count": 5229
+    },
+    {
+      "name": "Anatomy/Morphology",
+      "count": 2032
+    },
+    {
+      "name": "Other",
+      "count": 1082
+    },
+    {
+      "name": "Spatial transcriptomics",
+      "count": 595
+    }
+  ],
+  "consortia": [
+    {
+      "label": "Brain Initiative Cell Census Network (BICCN)",
+      "value": "BICCN",
+      "count": 10960
+    },
+    {
+      "label": "Brain Initiative Cell Atlas Network (BICAN)",
+      "value": "BICAN",
+      "count": 850
+    },
+    {
+      "label": "Aligning Science Across Parkinson’s (ASAP)",
+      "value": "ASAP",
+      "count": 92
+    },
+    {
+      "label": "Brain Initiative Cell Atlas Network",
+      "value": "Brain Initiative Cell Atlas Network",
+      "count": 9
+    },
+    {
+      "label": "Scalable and Systematic Neurobiology of Psychiatric and Neurodevelopmental Disorder Risk Genes (SSPsyGene)",
+      "value": "SSPsyGene",
+      "count": 1
+    }
+  ]
+}

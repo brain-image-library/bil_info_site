@@ -1,3611 +1,2303 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>Brain Image Library: New Metadata Model</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Metadata Model
+description: The BIL metadata model.
+---
 
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/my.css" />
-        <script src="/js/jquery.min.js"></script>
-	    
-	    <!--
- /* Font Definitions */
- @font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:"Segoe UI";
-	panose-1:2 11 5 2 4 2 4 2 2 3;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
-	{mso-style-link:"Comment Text Char";
-	margin:0in;
-	font-size:10.0pt;
-	font-family:"Calibri",sans-serif;}
-a:link, span.MsoHyperlink
-	{color:#0563C1;
-	text-decoration:underline;}
-span.CommentTextChar
-	{mso-style-name:"Comment Text Char";
-	mso-style-link:"Comment Text";}
-.MsoChpDefault
-	{font-family:"Calibri",sans-serif;}
-@page WordSection1
-	{size:11.0in 8.5in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
-	{page:WordSection1;}
--->
-	    
-	    
-    </head>
-
-    <body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-    <div class="jumbotron pagejumbotron">
-
-	    
-<h1>New Metadata Model</h1>	
-	    <br/><br/>
-<H2>Overview</H2>
-      
+<div class="container my-5">
+<div class="content-card content-card--wide">
+<h1>New Metadata Model</h1>
+<br/><br/>
+<h2>Overview</h2>
 <p>The BRAIN Image Library (BIL) is transitioning to a new metadata model. 
   Many of the fields that will be required in the near future are shown below. 
   For more information about the model, please see the following preprint: 
 </p>
-<p> 
+<p>
 <i>Essential Metadata for 3D BRAIN Microscopy</i><br/> 
-Alexander J. Ropelewski, Megan A. Rizzo, Jason R. Swedlow, Jan Huisken, Pavel Osten, Neda Khanjani, Kurt Weiss, Vesselina Bakalov, Michelle Engle, Lauren Gridley, Michelle Krzyzanowski, Tom Madden, Deborah Maiese, Justin Waterfield, David Williams, Carol Hamilton, Wayne Huggins<br />
-arXiv:2105.09158v1, 2021  <a href="https://arxiv.org/abs/2105.09158">https://arxiv.org/abs/2105.09158</a> 
+Alexander J. Ropelewski, Megan A. Rizzo, Jason R. Swedlow, Jan Huisken, Pavel Osten, Neda Khanjani, Kurt Weiss, Vesselina Bakalov, Michelle Engle, Lauren Gridley, Michelle Krzyzanowski, Tom Madden, Deborah Maiese, Justin Waterfield, David Williams, Carol Hamilton, Wayne Huggins<br/>
+arXiv:2105.09158v1, 2021  <a href="https://arxiv.org/abs/2105.09158">https://arxiv.org/abs/2105.09158</a>
 </p>
-	    
 <p>The tables shown below can be downloaded in PDF format from the <a href="https://doryworkspace.org/metadata">DORY website</a>.
 </p>
 <br/><br/>
+<div class="WordSection1">
+<b>Supplementary Table 1. <span id="Dataset">Dataset Metadata</span></b>
+<div class="table-responsive my-3"><table class="table table-bordered table-hover align-middle small"><thead><tr>
+<th scope="col">
+<b>Field Name</b>
+</th>
+<th scope="col">
+<b>Definition</b>
+</th>
+<th scope="col">
+<b>Allowable Values</b>
+</th>
+<th scope="col">
+<b>Required</b>
+</th>
+<th scope="col">
+<b>Occurrence</b>
+</th>
+<th scope="col">
+<b>DataCite</b>
+<b>(ID: Property)</b>
+</th>
+<th scope="col">
+<b>Open Microscopy Environment </b>
+<b>(Element: Attribute)</b>
+</th>
+<th scope="col"> </th>
+</tr></thead>
 
-<div class=WordSection1>
-
-	<p class=MsoNormal><b>Supplementary Table 1. <span id="Dataset">Dataset Metadata</span></b></p>
-
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1042
- style='width:781.6pt;margin-left:1pt;border-collapse:collapse;border:
- none'>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>Field Name</b></p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Definition</span></b></p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Allowable Values</span></b></p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Required</span></b></p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Occurrence</span></b></p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>DataCite</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(ID: Property)</span></b></p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Open Microscopy Environment </span></b></p>
-  <p class=MsoNormal style='margin-left:12.8pt;text-indent:-12.8pt'><b><span
-  style='color:black'>(Element: Attribute)</span></b></p>
-  </td>
-  <td style='border:none;border-bottom:solid windowtext 1.0pt' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=1042 colspan=8 valign=top style='width:781.6pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Short Descriptions</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Title</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Short phrase by which the specific dataset is known (e.g.,
-  title of a book).</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">3:
-  Title</a></p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
-  Description</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>socialMedia</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Suggested short social media text describing the dataset
+<tr class="bil-table-section">
+<td colspan="8">
+<b>Short Descriptions</b>
+</td>
+</tr>
+<tr>
+<td>
+Title
+</td>
+<td>
+Short phrase by which the specific dataset is known (e.g.,
+  title of a book).
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">3:
+  Title</a>
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
+  Description</a>
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+socialMedia
+</td>
+<td>
+Suggested short social media text describing the dataset
   to be posted after the dataset is available (can include tags). May be the same
-  as the title.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
-  Description</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Subject</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Description of the dataset using keywords, classification
-  codes, or key phrases.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">6:
-  Subject</a></p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>subjectScheme</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Name of the subject scheme or classification (e.g., Allen
-  Mouse Brain Atlas Version2).</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Rights</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Any rights information for the</p>
-  <p class=MsoNormal>dataset. May be the name of the license and can include
-  embargo or other use restrictions on data (see <a
-  href="https://spdx.org/licenses">https://spdx.org/licenses</a>).  </p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">16:
-  Rights</a></p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Rights_RightsHeld">RightsHeld</a>:
-  none</p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>rightsURI</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>If using a common license and licensing information is online,
-  provide a link to the license.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">16.a:
-  rightsURI</a></p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Rights_RightsHeld">RightsHeld</a>:
-  none</p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>rightsIdentifier</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>If using a common license, provide the Software Package
-  Data Exchange (SPDX) code for the license (see <a
-  href="https://spdx.org/licenses">https://spdx.org/licenses</a>).  </p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">16.b:
-  rightsIdentifier</a></p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Rights_RightsHeld">RightsHeld</a>:
-  none</p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Image</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Suggested static image or animated GIF to associate with
-  the social media and/or web landing page for the dataset.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>generalModality</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Description of the general modality of the dataset. </p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Cell morphology</p>
-  <p class=MsoNormal>Connectivity</p>
-  <p class=MsoNormal>Population imaging</p>
-  <p class=MsoNormal>Spatial transcriptomics </p>
-  <p class=MsoNormal>Other</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
-  Type</a></p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>generalModalityOther</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>If generalModality is Other, list the modality used.  </p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
-  Type</a></p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Technique</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Description of the technique used.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Anterograde tracing</p>
-  <p class=MsoNormal>DARTFISH </p>
-  <p class=MsoNormal>fMOST </p>
-  <p class=MsoNormal>MERFISH </p>
-  <p class=MsoNormal>Patch-seq </p>
-  <p class=MsoNormal>Retrograde</p>
-  <p class=MsoNormal>Retrograde tracing </p>
-  <p class=MsoNormal>smFISH</p>
-  <p class=MsoNormal>Transynaptic tracing</p>
-  <p class=MsoNormal>TRIO tracing </p>
-  <p class=MsoNormal>Other</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
-  Type</a></p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>techniqueOther</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>If Technique is Other, list the technique used.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
-  Type</a></p>
-  </td>
-  <td style='border:none;border-bottom:solid windowtext 1.0pt' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=1042 colspan=8 valign=top style='width:781.6pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Detailed Descriptions</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Abstract</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Additional descriptive information about the dataset,
+  as the title.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
+  Description</a>
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+Subject
+</td>
+<td>
+Description of the dataset using keywords, classification
+  codes, or key phrases.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">6:
+  Subject</a>
+</td>
+<td>
+none
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+subjectScheme
+</td>
+<td>
+Name of the subject scheme or classification (e.g., Allen
+  Mouse Brain Atlas Version2).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+Rights
+</td>
+<td>
+Any rights information for the
+dataset. May be the name of the license and can include
+  embargo or other use restrictions on data (see <a href="https://spdx.org/licenses">https://spdx.org/licenses</a>).  
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">16:
+  Rights</a>
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Rights_RightsHeld">RightsHeld</a>:
+  none
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+rightsURI
+</td>
+<td>
+If using a common license and licensing information is online,
+  provide a link to the license.
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">16.a:
+  rightsURI</a>
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Rights_RightsHeld">RightsHeld</a>:
+  none
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+rightsIdentifier
+</td>
+<td>
+If using a common license, provide the Software Package
+  Data Exchange (SPDX) code for the license (see <a href="https://spdx.org/licenses">https://spdx.org/licenses</a>).  
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">16.b:
+  rightsIdentifier</a>
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Rights_RightsHeld">RightsHeld</a>:
+  none
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+Image
+</td>
+<td>
+Suggested static image or animated GIF to associate with
+  the social media and/or web landing page for the dataset.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+generalModality
+</td>
+<td>
+Description of the general modality of the dataset. 
+</td>
+<td>
+Cell morphology
+Connectivity
+Population imaging
+Spatial transcriptomics 
+Other
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
+  Type</a>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+generalModalityOther
+</td>
+<td>
+If generalModality is Other, list the modality used.  
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
+  Type</a>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+Technique
+</td>
+<td>
+Description of the technique used.
+</td>
+<td>
+Anterograde tracing
+DARTFISH 
+fMOST 
+MERFISH 
+Patch-seq 
+Retrograde
+Retrograde tracing 
+smFISH
+Transynaptic tracing
+TRIO tracing 
+Other
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+ 
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
+  Type</a>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+techniqueOther
+</td>
+<td>
+If Technique is Other, list the technique used.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+ 
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Experiment">Experiment:
+  Type</a>
+</td>
+<td> </td>
+</tr>
+<tr class="bil-table-section">
+<td colspan="8">
+<b>Detailed Descriptions</b>
+</td>
+</tr>
+<tr>
+<td>
+Abstract
+</td>
+<td>
+Additional descriptive information about the dataset,
   including a brief description and the context in which it was created (e.g.,
   aim of the experiment, what the dataset is expected to show). This abstract
   will be used on the Digital Object Identifier (DOI) landing page and will be
-  the primary description of the dataset; it will ideally be 100+ words.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17:
-  Description</a></p>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17.a:
-  descriptionType</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
-  Description</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Methods</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Additional descriptive information about how the
+  the primary description of the dataset; it will ideally be 100+ words.
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+ 
+</td>
+<td>
+1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17:
+  Description</a>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17.a:
+  descriptionType</a>
+(can be mapped)
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
+  Description</a>
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+Methods
+</td>
+<td>
+Additional descriptive information about how the
   biological materials were processed by the laboratories involved. May be used
-  to describe the methodology (or protocols) used.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17:
-  Description</a></p>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17.a:
-  descriptionType</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
-  Description</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr>
-  <td width=156 valign=top style='width:117.3pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>technicalInfo</p>
-  </td>
-  <td width=318 valign=top style='width:238.2pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Additional descriptive information about how the data were
+  to describe the methodology (or protocols) used.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17:
+  Description</a>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17.a:
+  descriptionType</a>
+(can be mapped)
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
+  Description</a>
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>
+technicalInfo
+</td>
+<td>
+Additional descriptive information about how the data were
    processed computationally by the laboratories involved. May be used to
   describe the computational processing done with software versions and
-  parameters.</p>
-  </td>
-  <td width=151 valign=top style='width:113.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=77 valign=top style='width:58.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=110 valign=top style='width:82.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17:
-  Description</a></p>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17.a:
-  descriptionType</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td width=142 valign=top style='width:106.6pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
-  Description</a></p>
-  <p class=MsoNormal>(can be mapped)</p>
-  </td>
-  <td style='border:none;padding:0in 0in 0in 0in' width=4><p class='MsoNormal'>&nbsp;</td>
- </tr>
-</table>
-
-	
-	
-	
-<p class=MsoNormal><b>&nbsp;</b></p>
-
-<p class=MsoNormal><b>Occurrence</b></p>
-
-<p class=MsoNormal>0-n = optional and repeatable </p>
-
-<p class=MsoNormal>0-1 = optional, but not repeatable </p>
-
-<p class=MsoNormal>1-n = required and repeatable </p>
-
-<p class=MsoNormal>1 = required, but not repeatable</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
+  parameters.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17:
+  Description</a>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">17.a:
+  descriptionType</a>
+(can be mapped)
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Dataset_Description">Dataset:
+  Description</a>
+(can be mapped)
+</td>
+<td> </td>
+</tr>
+</table></div>
+<b> </b>
+<b>Occurrence</b>
+0-n = optional and repeatable 
+0-1 = optional, but not repeatable 
+1-n = required and repeatable 
+1 = required, but not repeatable
+<p class="MsoCommentText"> </p>
+<p class="MsoCommentText"> </p>
+ 
+ 
 </div>
-	    
-<!-- ####################################################################################################################### -->
-<div class=WordSection1>
 
-	<p class=MsoNormal><b>Supplementary Table 2. <span id="Instrument">Instrument Metadata</span></b></p>
+<div class="WordSection1">
+<b>Supplementary Table 2. <span id="Instrument">Instrument Metadata</span></b>
+<div class="table-responsive my-3"><table class="table table-bordered table-hover align-middle small"><thead><tr>
+<th scope="col">
+<b>Field Name</b>
+</th>
+<th scope="col">
+<b>Definition</b>
+</th>
+<th scope="col">
+<b>Allowable Values</b>
+</th>
+<th scope="col">
+<b>Required</b>
+</th>
+<th scope="col">
+<b>Occurrence</b>
+</th>
+<th scope="col">
+<b>DataCite</b>
+<b>(ID: Property)</b>
+</th>
+<th scope="col">
+<b>Open Microscopy Environment</b>
+<b>(Element: Attribute)</b>
+</th>
+</tr></thead>
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1026
- style='width:769.5pt;margin-left:1pt;border-collapse:collapse;border:
- none'>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>Field Name</b></p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Definition</span></b></p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Allowable Values</span></b></p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Required</span></b></p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Occurrence</span></b></p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>DataCite</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(ID: Property)</span></b></p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Open Microscopy Environment</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(Element: Attribute)</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>microscopeType</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Type of microscope used to capture the image (e.g., inverted,
-  upright, light sheet, confocal, two photon).</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope">Microscope:
-  Type</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>microscopeManufacturerAndModel</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Manufacturer and model of the microscope used.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope">Microscope:
-  Manufacturer</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope">Microscope:
-  Model</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>objectiveManufacturerAndModel</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Manufacturer and model of the lens used.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
-  Manufacturer</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
-  Model</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>objectiveImmersion</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Immersion medium for the lens. Suggested values: Air, Glycerol,
-  Multi, Oil, Water, Water dipping.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
-  Immersion</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>objectiveNA</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Lens numerical aperture.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
-  LensNA</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>objectiveMagnification</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Lens magnification.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
-  NominalMagnification</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>detectorType</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Type of detector used. Suggested values: CCD,
+<tr>
+<td>
+microscopeType
+</td>
+<td>
+Type of microscope used to capture the image (e.g., inverted,
+  upright, light sheet, confocal, two photon).
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+ 
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope">Microscope:
+  Type</a>
+</td>
+</tr>
+<tr>
+<td>
+microscopeManufacturerAndModel
+</td>
+<td>
+Manufacturer and model of the microscope used.
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope">Microscope:
+  Manufacturer</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Microscope">Microscope:
+  Model</a>
+</td>
+</tr>
+<tr>
+<td>
+objectiveManufacturerAndModel
+</td>
+<td>
+Manufacturer and model of the lens used.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
+  Manufacturer</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
+  Model</a>
+</td>
+</tr>
+<tr>
+<td>
+objectiveImmersion
+</td>
+<td>
+Immersion medium for the lens. Suggested values: Air, Glycerol,
+  Multi, Oil, Water, Water dipping.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
+  Immersion</a>
+</td>
+</tr>
+<tr>
+<td>
+objectiveNA
+</td>
+<td>
+Lens numerical aperture.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
+  LensNA</a>
+</td>
+</tr>
+<tr>
+<td>
+objectiveMagnification
+</td>
+<td>
+Lens magnification.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Objective">Objective:
+  NominalMagnification</a>
+</td>
+</tr>
+<tr>
+<td>
+detectorType
+</td>
+<td>
+Type of detector used. Suggested values: CCD,
   IntensifiedCCD, AnalogVideo, PMT, Photodiode, CMOS, EBCCD, FTIR,
-  Spectroscopy, LifetimeImaging, CorrelationSpectroscopy, EMCCD, APD.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector">Detector:
-  Type</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>detectorManufacturerAndModel</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Manufacturer and model of the detector.                                     </p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector">Detector:
-  Model</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector">Detector:
-  Manufacturer</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>illuminationType</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Type of illumination. Suggested values: Gas, MetalVapor,
-  SolidState, Dye, Semiconductor, FreeElectron.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser">Laser:
-  Type</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>illuminationWavelength</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Bandwidth of illumination light.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser">Laser:
-  Wavelength</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser">Laser:
-  WavelengthUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>detectionWavelength</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Bandwidth of collected light.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>  none</p>
-  </td>
- </tr>
- <tr>
-  <td width=229 valign=top style='width:172.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>sampleTemperature</p>
-  </td>
-  <td width=243 valign=top style='width:182.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Sample temperature at capture.</p>
-  </td>
-  <td width=150 valign=top style='width:112.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=73 valign=top style='width:54.9pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=84 valign=top style='width:62.75pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=138 valign=top style='width:103.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment">ImagingEnvironment:
-  Temperature</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment">ImagingEnvironment:
-  TemperatureUnit</a></p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><b>&nbsp;</b></p>
-
-<p class=MsoNormal><b>Occurrence</b></p>
-
-<p class=MsoNormal>0-n = optional and repeatable </p>
-
-<p class=MsoNormal>0-1 = optional, but not repeatable </p>
-
-<p class=MsoNormal>1-n = required and repeatable </p>
-
-<p class=MsoNormal>1 = required, but not repeatable</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
+  Spectroscopy, LifetimeImaging, CorrelationSpectroscopy, EMCCD, APD.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector">Detector:
+  Type</a>
+</td>
+</tr>
+<tr>
+<td>
+detectorManufacturerAndModel
+</td>
+<td>
+Manufacturer and model of the detector.                                     
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector">Detector:
+  Model</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Detector">Detector:
+  Manufacturer</a>
+</td>
+</tr>
+<tr>
+<td>
+illuminationType
+</td>
+<td>
+Type of illumination. Suggested values: Gas, MetalVapor,
+  SolidState, Dye, Semiconductor, FreeElectron.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser">Laser:
+  Type</a>
+</td>
+</tr>
+<tr>
+<td>
+illuminationWavelength
+</td>
+<td>
+Bandwidth of illumination light.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser">Laser:
+  Wavelength</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Laser">Laser:
+  WavelengthUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+detectionWavelength
+</td>
+<td>
+Bandwidth of collected light.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+  none
+</td>
+</tr>
+<tr>
+<td>
+sampleTemperature
+</td>
+<td>
+Sample temperature at capture.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment">ImagingEnvironment:
+  Temperature</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#ImagingEnvironment">ImagingEnvironment:
+  TemperatureUnit</a>
+ 
+</td>
+</tr>
+</table></div>
+<b> </b>
+<b>Occurrence</b>
+0-n = optional and repeatable 
+0-1 = optional, but not repeatable 
+1-n = required and repeatable 
+1 = required, but not repeatable
+<p class="MsoCommentText"> </p>
+<p class="MsoCommentText"> </p>
+ 
 </div>
-<!-- ############################################################################################################################ -->
-	 
-<div class=WordSection1>
 
-	<p class=MsoNormal><b>Supplementary Table 3. <span id="Image">Image Metadata</span></b></p>
+<div class="WordSection1">
+<b>Supplementary Table 3. <span id="Image">Image Metadata</span></b>
+<div class="table-responsive my-3"><table class="table table-bordered table-hover align-middle small"><thead><tr>
+<th scope="col">
+<b>Field Name</b>
+</th>
+<th scope="col">
+<b>Definition</b>
+</th>
+<th scope="col">
+<b>Allowable Values</b>
+</th>
+<th scope="col">
+<b>Required</b>
+</th>
+<th scope="col">
+<b>Occurrence</b>
+</th>
+<th colspan="2" scope="col">
+<b>DataCite</b>
+<b>(ID: Property)</b>
+</th>
+<th scope="col">
+<b>Open Microscopy Environment</b>
+<b>(Element: Attribute)</b>
+</th>
+</tr></thead>
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1020
- style='width:765.0pt;margin-left:1pt;border-collapse:collapse;border:
- none'>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>Field Name</b></p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Definition</span></b></p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Allowable Values</span></b></p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Required</span></b></p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Occurrence</span></b></p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>DataCite</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(ID: Property)</span></b></p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Open Microscopy Environment</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(Element: Attribute)</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=775 colspan=6 valign=top style='width:580.9pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Orientation</span></b></p>
-  </td>
-  <td width=77 valign=top style='width:58.1pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>xAxis</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Predominant tissue direction as one moves from the left side
-  of the image to the right side of the image.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Left to right </p>
-  <p class=MsoNormal>Right to left</p>
-  <p class=MsoNormal>Anterior to posterior<br>
-  Posterior to anterior Inferior to superior<br>
-  Superior to inferior Oblique</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
-  X</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
-  XUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueXDim1</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if xAxis is oblique, enter the orientation.</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Left </p>
-  <p class=MsoNormal>Right</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if xAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueXDim2</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if xAxis is oblique, enter the orientation.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Anterior</p>
-  <p class=MsoNormal>Posterior</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if xAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueXDim3</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if xAxis is oblique, enter the orientation.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Inferior </p>
-  <p class=MsoNormal>Superior</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if xAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>yAxis</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Predominant tissue direction as one moves from the top of
-  the image to the bottom of the image.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Left to right </p>
-  <p class=MsoNormal>Right to left</p>
-  <p class=MsoNormal>Anterior to posterior<br>
-  Posterior to anterior Inferior to superior<br>
-  Superior to inferior Oblique</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
-  Y</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
-  YUnit</a></p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueYDim1</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if yAxis is oblique, enter the orientation.</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Left </p>
-  <p class=MsoNormal>Right</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if yAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueYDim2</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if yAxis is oblique, enter the orientation.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Anterior</p>
-  <p class=MsoNormal>Posterior</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if yAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueYDim3</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if yAxis is oblique, enter the orientation.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Inferior </p>
-  <p class=MsoNormal>Superior</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if yAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>zAxis</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Predominant tissue direction as one follows a given pixel
-  position through the stack of images from the first image to the last image.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Left to right </p>
-  <p class=MsoNormal>Right to left</p>
-  <p class=MsoNormal>Anterior to posterior<br>
-  Posterior to anterior Inferior to superior<br>
-  Superior to inferior Oblique</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
-  Z</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
-  ZUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueZDim1</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if zAxis is oblique, enter the orientation.</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Left </p>
-  <p class=MsoNormal>Right</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if zAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueZDim2</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if zAxis is oblique, enter the orientation.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Anterior</p>
-  <p class=MsoNormal>Posterior</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if zAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>obliqueZDim3</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Only if zAxis is oblique, enter the orientation.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Inferior </p>
-  <p class=MsoNormal>Superior</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Required if zAxis is oblique</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=775 colspan=6 valign=top style='width:580.9pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Landmark</span></b></p>
-  </td>
-  <td width=77 valign=top style='width:58.1pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>landmarkName</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Name of the landmark (e.g., bregma).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>landmarkX</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>X coordinate of the landmark.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>landmarkY</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Y coordinate of the landmark.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>landmarkZ</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Z coordinate of the landmark.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=775 colspan=6 valign=top style='width:580.9pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Channel</span></b></p>
-  </td>
-  <td width=77 valign=top style='width:58.1pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number assigned to each channel.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
-  ChannelID</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>displayColor</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Display color of each channel in triplet (red, green, blue)
-  format.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1-n</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
-  Color</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Representation</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>What the channel represents (e.g., rhodopsin, virus).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
-  Name</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=1020 colspan=8 valign=top style='width:765.0pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Size</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Flurophore</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Fluorophore used in the channel (e.g., egfp, alexa-561,
-  ATO-647).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
-  Fluor</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>stepSizeX</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Physical step size in the X-dimension (e.g., pixel size
-  represents the number of microns).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  PhysicalSizeX</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  PhysicalSizeXUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>stepSizeY</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Physical step size in the Y-dimension (e.g., pixel size
-  represents the number of microns).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  PhysicalSizeY</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  PhysicalSizeYUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>stepSizeZ</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Distance between the center of one image and the center of
-  adjacent images in the Z-dimension (space in microns between slices).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  PhysicalSizeZ</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  PhysicalSizeZUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>stepSizeT</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Physical step size in the T dimension (time).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  TimeIncrement</a></p>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  TimeIncrementUnit</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Channel</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number of channels.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Slice</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number of slices per channel (approximate).</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>z</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number of timepoints.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>xSize</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number of pixels in the X-dimension.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  SizeX</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>ySize</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number of pixels in the Y-dimension.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  SizeY</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>zSize</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Number of pixels in the Z-dimension.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  SizeZ</a></p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Gbyte</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Total size in gigabytes.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>File</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Total number of image files.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td width=225 valign=top style='width:169.05pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>dimensionOrder</p>
-  </td>
-  <td width=225 valign=top style='width:168.45pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>XYZT, or whatever order is used.</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=78 colspan=2 valign=top style='width:58.5pt;border-top:none;
-  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
-  DimensionOrder</a></p>
-  </td>
- </tr>
- <tr height=0>
-  <td width=225 style='border:none'></td>
-  <td width=225 style='border:none'></td>
-  <td width=168 style='border:none'></td>
-  <td width=70 style='border:none'></td>
-  <td width=86 style='border:none'></td>
-  <td width=1 style='border:none'></td>
-  <td width=77 style='border:none'></td>
-  <td width=168 style='border:none'></td>
- </tr>
-</table>
-
-<p class=MsoNormal><b>&nbsp;</b></p>
-
-<p class=MsoNormal><b>Occurrence</b></p>
-
-<p class=MsoNormal>0-n = optional and repeatable </p>
-
-<p class=MsoNormal>0-1 = optional, but not repeatable </p>
-
-<p class=MsoNormal>1-n = required and repeatable </p>
-
-<p class=MsoNormal>1 = required, but not repeatable</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
+<tr class="bil-table-section">
+<td colspan="6">
+<b>Orientation</b>
+</td>
+<td>
+<b> </b>
+</td>
+<td>
+<b> </b>
+</td>
+</tr>
+<tr>
+<td>
+xAxis
+</td>
+<td>
+Predominant tissue direction as one moves from the left side
+  of the image to the right side of the image.
+</td>
+<td>
+Left to right 
+Right to left
+Anterior to posterior<br/>
+  Posterior to anterior Inferior to superior<br/>
+  Superior to inferior Oblique
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
+  X</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
+  XUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+obliqueXDim1
+</td>
+<td>
+Only if xAxis is oblique, enter the orientation.
+ 
+</td>
+<td>
+Left 
+Right
+ 
+</td>
+<td>
+Required if xAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+obliqueXDim2
+</td>
+<td>
+Only if xAxis is oblique, enter the orientation.
+</td>
+<td>
+Anterior
+Posterior
+</td>
+<td>
+Required if xAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+obliqueXDim3
+</td>
+<td>
+Only if xAxis is oblique, enter the orientation.
+</td>
+<td>
+Inferior 
+Superior
+ 
+</td>
+<td>
+Required if xAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+yAxis
+</td>
+<td>
+Predominant tissue direction as one moves from the top of
+  the image to the bottom of the image.
+</td>
+<td>
+Left to right 
+Right to left
+Anterior to posterior<br/>
+  Posterior to anterior Inferior to superior<br/>
+  Superior to inferior Oblique
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
+  Y</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
+  YUnit</a>
+ 
+</td>
+</tr>
+<tr>
+<td>
+obliqueYDim1
+</td>
+<td>
+Only if yAxis is oblique, enter the orientation.
+ 
+</td>
+<td>
+Left 
+Right
+ 
+</td>
+<td>
+Required if yAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+obliqueYDim2
+</td>
+<td>
+Only if yAxis is oblique, enter the orientation.
+</td>
+<td>
+Anterior
+Posterior
+</td>
+<td>
+Required if yAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+obliqueYDim3
+</td>
+<td>
+Only if yAxis is oblique, enter the orientation.
+</td>
+<td>
+Inferior 
+Superior
+ 
+</td>
+<td>
+Required if yAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+zAxis
+</td>
+<td>
+Predominant tissue direction as one follows a given pixel
+  position through the stack of images from the first image to the last image.
+</td>
+<td>
+Left to right 
+Right to left
+Anterior to posterior<br/>
+  Posterior to anterior Inferior to superior<br/>
+  Superior to inferior Oblique
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
+  Z</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#StageLabel">StageLabel:
+  ZUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+obliqueZDim1
+</td>
+<td>
+Only if zAxis is oblique, enter the orientation.
+ 
+</td>
+<td>
+Left 
+Right
+ 
+</td>
+<td>
+Required if zAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+obliqueZDim2
+</td>
+<td>
+Only if zAxis is oblique, enter the orientation.
+</td>
+<td>
+Anterior
+Posterior
+</td>
+<td>
+Required if zAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+obliqueZDim3
+</td>
+<td>
+Only if zAxis is oblique, enter the orientation.
+</td>
+<td>
+Inferior 
+Superior
+ 
+</td>
+<td>
+Required if zAxis is oblique
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr class="bil-table-section">
+<td colspan="6">
+<b>Landmark</b>
+</td>
+<td>
+<b> </b>
+</td>
+<td>
+<b> </b>
+</td>
+</tr>
+<tr>
+<td>
+landmarkName
+</td>
+<td>
+Name of the landmark (e.g., bregma).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+landmarkX
+</td>
+<td>
+X coordinate of the landmark.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+landmarkY
+</td>
+<td>
+Y coordinate of the landmark.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+landmarkZ
+</td>
+<td>
+Z coordinate of the landmark.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr class="bil-table-section">
+<td colspan="6">
+<b>Channel</b>
+</td>
+<td>
+<b> </b>
+</td>
+<td>
+<b> </b>
+</td>
+</tr>
+<tr>
+<td>
+Number
+</td>
+<td>
+Number assigned to each channel.
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
+  ChannelID</a>
+</td>
+</tr>
+<tr>
+<td>
+displayColor
+</td>
+<td>
+Display color of each channel in triplet (red, green, blue)
+  format.
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1-n
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
+  Color</a>
+</td>
+</tr>
+<tr>
+<td>
+Representation
+</td>
+<td>
+What the channel represents (e.g., rhodopsin, virus).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
+  Name</a>
+</td>
+</tr>
+<tr class="bil-table-section">
+<td colspan="8">
+<b>Size</b>
+</td>
+</tr>
+<tr>
+<td>
+Flurophore
+</td>
+<td>
+Fluorophore used in the channel (e.g., egfp, alexa-561,
+  ATO-647).
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Channel">Channel:
+  Fluor</a>
+</td>
+</tr>
+<tr>
+<td>
+stepSizeX
+</td>
+<td>
+Physical step size in the X-dimension (e.g., pixel size
+  represents the number of microns).
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  PhysicalSizeX</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  PhysicalSizeXUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+stepSizeY
+</td>
+<td>
+Physical step size in the Y-dimension (e.g., pixel size
+  represents the number of microns).
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  PhysicalSizeY</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  PhysicalSizeYUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+stepSizeZ
+</td>
+<td>
+Distance between the center of one image and the center of
+  adjacent images in the Z-dimension (space in microns between slices).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  PhysicalSizeZ</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  PhysicalSizeZUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+stepSizeT
+</td>
+<td>
+Physical step size in the T dimension (time).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  TimeIncrement</a>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  TimeIncrementUnit</a>
+</td>
+</tr>
+<tr>
+<td>
+Channel
+</td>
+<td>
+Number of channels.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+Slice
+</td>
+<td>
+Number of slices per channel (approximate).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+z
+</td>
+<td>
+Number of timepoints.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+xSize
+</td>
+<td>
+Number of pixels in the X-dimension.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  SizeX</a>
+</td>
+</tr>
+<tr>
+<td>
+ySize
+</td>
+<td>
+Number of pixels in the Y-dimension.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  SizeY</a>
+</td>
+</tr>
+<tr>
+<td>
+zSize
+</td>
+<td>
+Number of pixels in the Z-dimension.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  SizeZ</a>
+</td>
+</tr>
+<tr>
+<td>
+Gbyte
+</td>
+<td>
+Total size in gigabytes.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+File
+</td>
+<td>
+Total number of image files.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+dimensionOrder
+</td>
+<td>
+XYZT, or whatever order is used.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td colspan="2">
+none
+</td>
+<td>
+<a href="https://www.openmicroscopy.org/Schemas/Documentation/Generated/OME-2016-06/ome_xsd.html#Pixels">Pixels:
+  DimensionOrder</a>
+</td>
+</tr>
+<tr height="0">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table></div>
+<b> </b>
+<b>Occurrence</b>
+0-n = optional and repeatable 
+0-1 = optional, but not repeatable 
+1-n = required and repeatable 
+1 = required, but not repeatable
+<p class="MsoCommentText"> </p>
+ 
 </div>
-<!-- ########################################################################################################################### -->
-	    
 
-<div class=WordSection1>
+<div class="WordSection1">
+<b>Supplementary Table 4. <span id="Specimen">Specimen Metadata</span></b>
+<div class="table-responsive my-3"><table class="table table-bordered table-hover align-middle small"><thead><tr>
+<th scope="col">
+<b>Field Name</b>
+</th>
+<th scope="col">
+<b>Definition</b>
+</th>
+<th scope="col">
+<b>Allowable Values</b>
+</th>
+<th scope="col">
+<b>Required</b>
+</th>
+<th scope="col">
+<b>Occurrence</b>
+</th>
+<th scope="col">
+<b>DataCite</b>
+<b>(ID: Property)</b>
+</th>
+<th scope="col">
+<b>Open Microscopy Environment </b>
+<b>(Element: Attribute)</b>
+</th>
+</tr></thead>
 
-	<p class=MsoNormal><b>Supplementary Table 4. <span id="Specimen">Specimen Metadata</span></b></p>
-
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1014
- style='width:760.5pt;margin-left:1pt;border-collapse:collapse;border:
- none'>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>Field Name</b></p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Definition</span></b></p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Allowable Values</span></b></p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Required</span></b></p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Occurrence</span></b></p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>DataCite</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(ID: Property)</span></b></p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Open Microscopy Environment </span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(Element: Attribute)</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=756 colspan=5 valign=top style='width:567.0pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Donor</span></b></p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>localID</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Local (lab) reference ID attached to the donor organism
-  (if any).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Species</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Common organism classification name for the donor organism
-  (e.g., mouse, human).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>NCBITaxonomy</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>National Center for Biotechnology Information (NCBI) taxonomy
-  code for species of the donor organism.</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Age</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Age of the donor (or unknown).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>ageUnit</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Unit for the age of the donor. </p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Days</p>
-  <p class=MsoNormal>Months</p>
-  <p class=MsoNormal>Years</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Sex</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Sex of the donor.</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Female</p>
-  <p class=MsoNormal>Male</p>
-  <p class=MsoNormal>Unknown</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Yes</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Genotype</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>If relevant, genotype or transgenetic line information
-  (e.g., Strain name, Cre driver line, Reporter name).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=756 colspan=5 valign=top style='width:567.0pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Organ</span></b></p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>organLocalID</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Local (lab) reference ID attached to the organ (if any).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>organName</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Component part of the nervous system where the tissue is
-  found (e.g., brain, spinal cord).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=756 colspan=5 valign=top style='width:567.0pt;border:solid windowtext 1.0pt;
-  border-top:none;background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Sample</span></b></p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  background:#D0CECE;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>&nbsp;</b></p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>sampleLocalID</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Local (lab) reference ID attached to the sample (if any).</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Atlas</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>If an atlas was used to describe the location, list the
+<tr class="bil-table-section">
+<td colspan="5">
+<b>Donor</b>
+</td>
+<td>
+<b> </b>
+</td>
+<td>
+<b> </b>
+</td>
+</tr>
+<tr>
+<td>
+localID
+</td>
+<td>
+Local (lab) reference ID attached to the donor organism
+  (if any).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+Species
+</td>
+<td>
+Common organism classification name for the donor organism
+  (e.g., mouse, human).
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+NCBITaxonomy
+</td>
+<td>
+National Center for Biotechnology Information (NCBI) taxonomy
+  code for species of the donor organism.
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+Age
+</td>
+<td>
+Age of the donor (or unknown).
+</td>
+<td>
+Free text
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+ageUnit
+</td>
+<td>
+Unit for the age of the donor. 
+</td>
+<td>
+Days
+Months
+Years
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+Sex
+</td>
+<td>
+Sex of the donor.
+</td>
+<td>
+Female
+Male
+Unknown
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+Genotype
+</td>
+<td>
+If relevant, genotype or transgenetic line information
+  (e.g., Strain name, Cre driver line, Reporter name).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr class="bil-table-section">
+<td colspan="5">
+<b>Organ</b>
+</td>
+<td>
+<b> </b>
+</td>
+<td>
+<b> </b>
+</td>
+</tr>
+<tr>
+<td>
+organLocalID
+</td>
+<td>
+Local (lab) reference ID attached to the organ (if any).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+organName
+</td>
+<td>
+Component part of the nervous system where the tissue is
+  found (e.g., brain, spinal cord).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr class="bil-table-section">
+<td colspan="5">
+<b>Sample</b>
+</td>
+<td>
+<b> </b>
+</td>
+<td>
+<b> </b>
+</td>
+</tr>
+<tr>
+<td>
+sampleLocalID
+</td>
+<td>
+Local (lab) reference ID attached to the sample (if any).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+Atlas
+</td>
+<td>
+If an atlas was used to describe the location, list the
   name of the atlas. Suggested values: Allen Mouse V1, Allen Mouse V2, Allen Mouse
-  V3, Allen Human 34yrs Whole Brain, Whole Brain.</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
- <tr>
-  <td width=224 valign=top style='width:168.35pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Location</p>
-  </td>
-  <td width=250 valign=top style='width:187.15pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal> (Sub)location or region where the tissue is found.</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=70 valign=top style='width:52.4pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=86 valign=top style='width:64.6pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-1</p>
-  </td>
-  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
-  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>none</p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><b>&nbsp;</b></p>
-
-<p class=MsoNormal><b>Occurrence</b></p>
-
-<p class=MsoNormal>0-n = optional and repeatable </p>
-
-<p class=MsoNormal>0-1 = optional, but not repeatable </p>
-
-<p class=MsoNormal>1-n = required and repeatable </p>
-
-<p class=MsoNormal>1 = required, but not repeatable</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoCommentText>&nbsp;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
+  V3, Allen Human 34yrs Whole Brain, Whole Brain.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+<tr>
+<td>
+Location
+</td>
+<td>
+ (Sub)location or region where the tissue is found.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-1
+</td>
+<td>
+none
+</td>
+<td>
+none
+</td>
+</tr>
+</table></div>
+<b> </b>
+<b>Occurrence</b>
+0-n = optional and repeatable 
+0-1 = optional, but not repeatable 
+1-n = required and repeatable 
+1 = required, but not repeatable
+<p class="MsoCommentText"> </p>
+<p class="MsoCommentText"> </p>
+ 
+ 
 </div>
-	    
-<!-- ################################################################################################################################ -->
-	    
-<div class=WordSection1>
 
-<p class=MsoNormal><b>Supplementary Table 5. Publication Metadata</b></p>
+<div class="WordSection1">
+<b>Supplementary Table 5. Publication Metadata</b>
+<div class="table-responsive my-3"><table class="table table-bordered table-hover align-middle small"><thead><tr>
+<th scope="col">
+<b>Field Name</b>
+</th>
+<th scope="col">
+<b>Definition</b>
+</th>
+<th scope="col">
+<b>Allowable Values</b>
+</th>
+<th scope="col">
+<b>Required</b>
+</th>
+<th scope="col">
+<b>Occurrence</b>
+</th>
+<th scope="col">
+<b>DataCite</b>
+<b>(ID: Property)</b>
+</th>
+<th scope="col">
+<b>Open Microscopy Environment</b>
+<b>(Element: Attribute)</b>
+</th>
+</tr></thead>
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1014
- style='width:760.5pt;margin-left:1pt;border-collapse:collapse;border:
- none'>
- <tr>
-  <td width=194 valign=top style='width:145.5pt;border:solid windowtext 1.0pt;
-  background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b>Field Name</b></p>
-  </td>
-  <td width=214 valign=top style='width:160.7pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Definition</span></b></p>
-  </td>
-  <td width=144 valign=top style='width:107.85pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Allowable Values</span></b></p>
-  </td>
-  <td width=95 valign=top style='width:71.0pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Required</span></b></p>
-  </td>
-  <td width=104 valign=top style='width:77.9pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Occurrence</span></b></p>
-  </td>
-  <td width=143 valign=top style='width:107.55pt;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>DataCite</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(ID: Property)</span></b></p>
-  </td>
-  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
-  border-left:none;background:#AEAAAA;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><b><span style='color:black'>Open Microscopy Environment</span></b></p>
-  <p class=MsoNormal><b><span style='color:black'>(Element: Attribute)</span></b></p>
-  </td>
- </tr>
- <tr>
-  <td width=194 valign=top style='width:145.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>relatedIdentifier</p>
-  </td>
-  <td width=214 valign=top style='width:160.7pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Alphanumeric code that uniquely identifies the publication
-  or other related information.</p>
-  </td>
-  <td width=144 valign=top style='width:107.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=95 valign=top style='width:71.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=104 valign=top style='width:77.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-n</p>
-  </td>
-  <td width=143 valign=top style='width:107.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">12:
-  relatedIdentifier</a></p>
-  </td>
-  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
- </tr>
- <tr>
-  <td width=194 valign=top style='width:145.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>relatedIdentifierType</p>
-  </td>
-  <td width=214 valign=top style='width:160.7pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Identifying scheme used in relatedIdentifier. Recommended:
-  DOI, PMID.</p>
-  </td>
-  <td width=144 valign=top style='width:107.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>arXiv*</p>
-  <p class=MsoNormal>DOI*</p>
-  <p class=MsoNormal>ISBN*</p>
-  <p class=MsoNormal>PMID*</p>
-  <p class=MsoNormal>&nbsp;</p>
-  </td>
-  <td width=95 valign=top style='width:71.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=104 valign=top style='width:77.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-n</p>
-  </td>
-  <td width=143 valign=top style='width:107.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">12.a:
-  relatedIdentifierType</a> </p>
-  </td>
-  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
- </tr>
- <tr>
-  <td width=194 valign=top style='width:145.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>PMCID</p>
-  </td>
-  <td width=214 valign=top style='width:160.7pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>PubMed Central identifier (PMCID; if applicable).</p>
-  </td>
-  <td width=144 valign=top style='width:107.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=95 valign=top style='width:71.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=104 valign=top style='width:77.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-n</p>
-  </td>
-  <td width=143 valign=top style='width:107.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
-  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
- </tr>
- <tr>
-  <td width=194 valign=top style='width:145.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>relationType</p>
-  </td>
-  <td width=214 valign=top style='width:160.7pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>DataCite descriptive identifier specifying the relationship.
-  </p>
-  </td>
-  <td width=144 valign=top style='width:107.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>IsCitedBy</p>
-  <p class=MsoNormal>IsDocumentedBy</p>
-  </td>
-  <td width=95 valign=top style='width:71.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=104 valign=top style='width:77.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-n</p>
-  </td>
-  <td width=143 valign=top style='width:107.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><a
-  href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">12.b:
-  relationType</a></p>
-  </td>
-  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
- </tr>
- <tr>
-  <td width=194 valign=top style='width:145.5pt;border:solid windowtext 1.0pt;
-  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Citation</p>
-  </td>
-  <td width=214 valign=top style='width:160.7pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Complete citation for the publication or other related
-  information.</p>
-  </td>
-  <td width=144 valign=top style='width:107.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>Free text</p>
-  </td>
-  <td width=95 valign=top style='width:71.0pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>No</p>
-  </td>
-  <td width=104 valign=top style='width:77.9pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>0-n</p>
-  </td>
-  <td width=143 valign=top style='width:107.55pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
-  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal>None</p>
-  </td>
- </tr>
-</table>
-
-<p class=MsoNormal><b>&nbsp;</b></p>
-
-<p class=MsoNormal><b>Occurrence</b></p>
-
-<p class=MsoNormal>0-n = optional and repeatable </p>
-
-<p class=MsoNormal>0-1 = optional, but not repeatable </p>
-
-<p class=MsoNormal>1-n = required and repeatable </p>
-
-<p class=MsoNormal>1 = required, but not repeatable</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
-<p class=MsoNormal>* For more information on the identifier schemes, see the arXiv
+<tr>
+<td>
+relatedIdentifier
+</td>
+<td>
+Alphanumeric code that uniquely identifies the publication
+  or other related information.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-n
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">12:
+  relatedIdentifier</a>
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+relatedIdentifierType
+</td>
+<td>
+Identifying scheme used in relatedIdentifier. Recommended:
+  DOI, PMID.
+</td>
+<td>
+arXiv*
+DOI*
+ISBN*
+PMID*
+ 
+</td>
+<td>
+No
+</td>
+<td>
+0-n
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">12.a:
+  relatedIdentifierType</a> 
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+PMCID
+</td>
+<td>
+PubMed Central identifier (PMCID; if applicable).
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-n
+</td>
+<td>
+None
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+relationType
+</td>
+<td>
+DataCite descriptive identifier specifying the relationship.
+  
+</td>
+<td>
+IsCitedBy
+IsDocumentedBy
+</td>
+<td>
+No
+</td>
+<td>
+0-n
+</td>
+<td>
+<a href="https://schema.datacite.org/meta/kernel-4.3/doc/DataCite-MetadataKernel_v4.3.pdf">12.b:
+  relationType</a>
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+Citation
+</td>
+<td>
+Complete citation for the publication or other related
+  information.
+</td>
+<td>
+Free text
+</td>
+<td>
+No
+</td>
+<td>
+0-n
+</td>
+<td>
+None
+</td>
+<td>
+None
+</td>
+</tr>
+</table></div>
+<b> </b>
+<b>Occurrence</b>
+0-n = optional and repeatable 
+0-1 = optional, but not repeatable 
+1-n = required and repeatable 
+1 = required, but not repeatable
+ 
+* For more information on the identifier schemes, see the arXiv
 distribution service (<a href="https://arxiv.org/">https://arxiv.org</a>), the
-international digital object identifier (DOI) foundation (<a
-href="https://www.doi.org/">https://www.doi.org</a>), the US International Standard
+international digital object identifier (DOI) foundation (<a href="https://www.doi.org/">https://www.doi.org</a>), the US International Standard
 Book Number (ISBN) Agency (<a href="http://www.isbn.org/">http://www.isbn.org</a>),
-and the PubMed Identifiers (PMID) on the PubMed website (<a
-href="https://pubmed.ncbi.nlm.nih.gov">https://pubmed.ncbi.nlm.nih.gov</a>). </p>
-
+and the PubMed Identifiers (PMID) on the PubMed website (<a href="https://pubmed.ncbi.nlm.nih.gov">https://pubmed.ncbi.nlm.nih.gov</a>). 
 </div>
-	    
-	    
-
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
 </div>
-</body>
-</html>
+</div>

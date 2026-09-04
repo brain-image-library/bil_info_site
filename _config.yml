@@ -1,0 +1,26 @@
+title: Brain Image Library
+description: A BRAIN Initiative data archive helping neuroscientists preserve, analyze, and share microscopy data.
+url: https://www.brainimagelibrary.org
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - docs/
+  - scripts/
+  - tests/
+  - node_modules/
+  - vendor/
+  - .github/
+  - "*.xlsx"
+
+keep_files:
+  - .nojekyll
+
+plugins: []

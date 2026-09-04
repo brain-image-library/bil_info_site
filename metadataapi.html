@@ -1,62 +1,34 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>Brain Image Library: Metadata API</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: Metadata API
+description: The BIL metadata API.
+---
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/my.css" />
-        <script src="/js/jquery.min.js"></script>
-    </head>
-
-    <body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-    <div class="jumbotron">
-
-      <h1 id="Identifiers" data-id="Identifiers" style=""><span>Metadata API</span></h1>
-
-      <p><span>The </span><strong><span>Brain Image Library (BIL)</span></strong>
+<div class="container my-5">
+  <div class="content-card content-card--wide">
+<h1 data-id="Identifiers" id="Identifiers" style=""><span>Metadata API</span></h1>
+<p><span>The </span><strong><span>Brain Image Library (BIL)</span></strong>
       provides both a metadata API and web portal that uses the API to search and 
       return metadata and links to datasets in BIL.
       The metadata API is extremely flexible and capable of full-text searching 
       or individual metadata fields.</p>
-     
-  <p>The metadata API has two primary user-facing endpoints:
+<p>The metadata API has two primary user-facing endpoints:
   <ul>
-    <li><strong>query</strong> - the query endpoint will query the system and return a json document with matching entry. 
+<li><strong>query</strong> - the query endpoint will query the system and return a json document with matching entry. 
     Queries use GET formatted URLs, which can be pasted in a web browser, utilized at the command-line through tools such as curl, or called programmatically. Query URLs take the form of:
-    <br />
-	/query/metadatadivision?metadataelement=querystring</li><br />
-
-    <li><strong>retrieve</strong> - the retrieve endpoint will return the metadata as a json document for the given ids. 
+    <br/>
+	/query/metadatadivision?metadataelement=querystring</li><br/>
+<li><strong>retrieve</strong> - the retrieve endpoint will return the metadata as a json document for the given ids. 
     Retrieve queries can be either GET formatted urls (for retrieving metadata for a single entry) or a POST 
     request with a json payload. The json POST payload may be the results of an earlier query. 
-    The basic forms of the retrieve GET url are:<br /><br />
-    <i>/retrieve?bildid=the_desired_id_to_retreive_metadata_for</i> <br /><br />
-    For example:<br /> <br />
+    The basic forms of the retrieve GET url are:<br/><br/>
+<i>/retrieve?bildid=the_desired_id_to_retreive_metadata_for</i> <br/><br/>
+    For example:<br/> <br/>
     https://api.brainimagelibrary.org/retrieve?bildid=ace-cot-pad
-    </li>  
-  </ul>
-      
-  <p>To make full programatic use of the Metadata API, we recommend that interested users first familiarize
-    yourself with <a href="newmetadatamodel.html">BIL's metadata model</a></p>   
-
+    </li>
+</ul>
+<p>To make full programatic use of the Metadata API, we recommend that interested users first familiarize
+    yourself with <a href="newmetadatamodel.html">BIL's metadata model</a></p>
 <h4>Example Results</h4>
 <p>
 All successful queries will return a json file, that will all have the
@@ -69,11 +41,11 @@ following json keys:
            used in the query</li>
 </ul>
 There will be other keys in the json payload, based on the metadata element
-and the search string. Here are a few examples:<br /><br />
+and the search string. Here are a few examples:<br/><br/>
 <ul>
 <li>Query:</li>
 <a href="https://api.brainimagelibrary.org/query/contributors?affiliation=Broad">https://api.brainimagelibrary.org/query/contributors?affiliation=Broad</a>
-<br />    
+<br/>    
 Result: 
 <pre>
 	
@@ -93,7 +65,7 @@ Result:
 </pre>
 <li>Query:</li>
 <a href="https://api.brainimagelibrary.org/query/image?gbytes=17.0">https://api.brainimagelibrary.org/query/image?gbytes=17.0</a>
-<br />
+<br/>
 Result: 
 <pre>
 {
@@ -115,7 +87,7 @@ When one retreives an entry, the json payload returned will look like:
 <ul>
 <li>Query:</li>
 <a href="https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut">https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut</a>
-<br /> 
+<br/> 
 Result:
 <pre>
    {
@@ -271,7 +243,7 @@ Result:
 </ul>
 Note that if one retreives MULTIPLE entries via a PUT request, there will be
 multiple objects returned in the retjson array
-<br /><br />
+<br/><br/>
 <h4>Errors</h4>
 
 When the API detects an error it will return a json message indicating the
@@ -282,10 +254,10 @@ error. typical keys returned in the json payload include:
 <li>message -- a user-friendly message, describing why the error happened.</li>
 </ul>
 Here is an example (using CURL) if a POST was issued instead of GET:
-<ul>	    
+<ul>
 <li>Query:</li>  
 curl -X POST  http://localhost:8100/query/contributors?affiliation=Broad
-<br />
+<br/>
 Result:
 <pre>
 	{
@@ -297,11 +269,11 @@ Result:
 Handling Partial Sucesss/ Partial Failure: This currently will only happen if one uses the /retreive endpoint with a post
 request. In such cases keys:
 <ul>
-        <li>success -- this will be "true" NOT "false".</li>
-        <li>message -- will state that the POST was partially successful.</li>
-        <li>status  -- (key,value)- will be "true" for ID's returned in
+<li>success -- this will be "true" NOT "false".</li>
+<li>message -- will state that the POST was partially successful.</li>
+<li>status  -- (key,value)- will be "true" for ID's returned in
                    "retjson", otherwise "false"</li>
-        <li>retjson -- will only contain metadata for the entries found.</li>
+<li>retjson -- will only contain metadata for the entries found.</li>
 </ul>
 Here is a brief example of what the beginning of the returned json document
 will look like:
@@ -321,34 +293,34 @@ will look like:
      }
 </pre>
 <h4> Additional Examples</h4>
-Some examples using the web browser: <br /><br />
+Some examples using the web browser: <br/><br/>
 <a href="https://api.brainimagelibrary.org/query/fulltext?text=broad">https://api.brainimagelibrary.org/query/fulltext?text=broad</a>
-<br /><a href="https://api.brainimagelibrary.org/query/funders?award_number=1-RF1-MH-124598-01">https://api.brainimagelibrary.org/query/funders?award_number=1-RF1-MH-124598-01</a>
-<br /><a href="https://api.brainimagelibrary.org/query/submission?doi=rut">https://api.brainimagelibrary.org/query/submission?doi=rut</a>
-<br /><a href="https://api.brainimagelibrary.org/query/submission?method=ingest_1">https://api.brainimagelibrary.org/query/submission?method=ingest_1</a>
-<br /><a href="https://api.brainimagelibrary.org/query/submission?submission_uuid=0cc643f6e5fd70cc">https://api.brainimagelibrary.org/query/submission?submission_uuid=0cc643f6e5fd70cc</a>
-<br /><a href="https://api.brainimagelibrary.org/query/submission?consortium=BICAN">https://api.brainimagelibrary.org/query/submission?consortium=BICAN</a>
-<br /><a href="https://api.brainimagelibrary.org/query/submission?project=RF1 Kim: Dev Mouse Brain CCF">https://api.brainimagelibrary.org/query/submission?project=RF1 Kim: Dev Mouse Brain CCF</a>
-<br /><a href="https://api.brainimagelibrary.org/query/contributors?affiliation=Broad">https://api.brainimagelibrary.org/query/contributors?affiliation=Broad</a>
-<br /><a href="https://api.brainimagelibrary.org/query/contributors?creator=Yes">https://api.brainimagelibrary.org/query/contributors?creator=Yes</a>
-<br /><a href="https://api.brainimagelibrary.org/query/contributors?affiliationidentifier=https://ror.org/00dcv1019">https://api.brainimagelibrary.org/query/contributors?affiliationidentifier=https://ror.org/00dcv1019"</a>
-<br /><a href="https://api.brainimagelibrary.org/query/contributors?contributortype=ProjectLeader">https://api.brainimagelibrary.org/query/contributors?contributortype=ProjectLeader</a>
-<br /><a href="https://api.brainimagelibrary.org/query/contributors?contributorname=Tasic, Bosiljka">https://api.brainimagelibrary.org/query/contributors?contributorname=Tasic, Bosiljka</a>
-<br /><a href="https://api.brainimagelibrary.org/query/instrument?microscopetype=upright">https://api.brainimagelibrary.org/query/instrument?microscopetype=upright</a>
-<br /><a href="https://api.brainimagelibrary.org/query/instrument?objectivename=olympus">https://api.brainimagelibrary.org/query/instrument?objectivename=olympus</a>
-<br /><a href="https://api.brainimagelibrary.org/query/specimen?localid=f024">https://api.brainimagelibrary.org/query/specimen?localid=f024</a>
-<br /><a href="https://api.brainimagelibrary.org/query/specimen/linkage?xid=DO-FXXJ3038">https://api.brainimagelibrary.org/query/specimen/linkage?xid=DO-FXXJ3038</a>
-<br /><a href="https://api.brainimagelibrary.org/query/specimen/linkage?type=cubie_tissue">https://api.brainimagelibrary.org/query/specimen/linkage?type=cubie_tissue</a>
-<br /><a href="https://api.brainimagelibrary.org/query/specimen/linkage?relationship=slab">https://api.brainimagelibrary.org/query/specimen/linkage?relationship=slab</a>
-<br /><a href="https://api.brainimagelibrary.org/query/specimen/linkage?relationship=donor">https://api.brainimagelibrary.org/query/specimen/linkage?relationship=donor</a>
-<br /><a href="https://api.brainimagelibrary.org/query/specimen/linkage?class=xref">https://api.brainimagelibrary.org/query/specimen/linkage?class=xref</a>
-<br /><a href="https://api.brainimagelibrary.org/query/dataset?title=mouse">https://api.brainimagelibrary.org/query/dataset?title=mouse</a>
-<br /><a href="https://api.brainimagelibrary.org/query/image?gbytes=17.0">https://api.brainimagelibrary.org/query/image?gbytes=17.0</a>
-<br /><a href="https://api.brainimagelibrary.org/query/publication?relatedidentifier=doi">https://api.brainimagelibrary.org/query/publication?relatedidentifier=doi</a>
-<br /><a href="https://api.brainimagelibrary.org/retrieve?bildid=rut">https://api.brainimagelibrary.org/retrieve?bildid=rut</a>
-<br /><a href="https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut">https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut</a>	    
-<br /><br />
-Some examples accessing the API using curl are shown below: </br></br>
+<br/><a href="https://api.brainimagelibrary.org/query/funders?award_number=1-RF1-MH-124598-01">https://api.brainimagelibrary.org/query/funders?award_number=1-RF1-MH-124598-01</a>
+<br/><a href="https://api.brainimagelibrary.org/query/submission?doi=rut">https://api.brainimagelibrary.org/query/submission?doi=rut</a>
+<br/><a href="https://api.brainimagelibrary.org/query/submission?method=ingest_1">https://api.brainimagelibrary.org/query/submission?method=ingest_1</a>
+<br/><a href="https://api.brainimagelibrary.org/query/submission?submission_uuid=0cc643f6e5fd70cc">https://api.brainimagelibrary.org/query/submission?submission_uuid=0cc643f6e5fd70cc</a>
+<br/><a href="https://api.brainimagelibrary.org/query/submission?consortium=BICAN">https://api.brainimagelibrary.org/query/submission?consortium=BICAN</a>
+<br/><a href="https://api.brainimagelibrary.org/query/submission?project=RF1 Kim: Dev Mouse Brain CCF">https://api.brainimagelibrary.org/query/submission?project=RF1 Kim: Dev Mouse Brain CCF</a>
+<br/><a href="https://api.brainimagelibrary.org/query/contributors?affiliation=Broad">https://api.brainimagelibrary.org/query/contributors?affiliation=Broad</a>
+<br/><a href="https://api.brainimagelibrary.org/query/contributors?creator=Yes">https://api.brainimagelibrary.org/query/contributors?creator=Yes</a>
+<br/><a href="https://api.brainimagelibrary.org/query/contributors?affiliationidentifier=https://ror.org/00dcv1019">https://api.brainimagelibrary.org/query/contributors?affiliationidentifier=https://ror.org/00dcv1019"</a>
+<br/><a href="https://api.brainimagelibrary.org/query/contributors?contributortype=ProjectLeader">https://api.brainimagelibrary.org/query/contributors?contributortype=ProjectLeader</a>
+<br/><a href="https://api.brainimagelibrary.org/query/contributors?contributorname=Tasic, Bosiljka">https://api.brainimagelibrary.org/query/contributors?contributorname=Tasic, Bosiljka</a>
+<br/><a href="https://api.brainimagelibrary.org/query/instrument?microscopetype=upright">https://api.brainimagelibrary.org/query/instrument?microscopetype=upright</a>
+<br/><a href="https://api.brainimagelibrary.org/query/instrument?objectivename=olympus">https://api.brainimagelibrary.org/query/instrument?objectivename=olympus</a>
+<br/><a href="https://api.brainimagelibrary.org/query/specimen?localid=f024">https://api.brainimagelibrary.org/query/specimen?localid=f024</a>
+<br/><a href="https://api.brainimagelibrary.org/query/specimen/linkage?xid=DO-FXXJ3038">https://api.brainimagelibrary.org/query/specimen/linkage?xid=DO-FXXJ3038</a>
+<br/><a href="https://api.brainimagelibrary.org/query/specimen/linkage?type=cubie_tissue">https://api.brainimagelibrary.org/query/specimen/linkage?type=cubie_tissue</a>
+<br/><a href="https://api.brainimagelibrary.org/query/specimen/linkage?relationship=slab">https://api.brainimagelibrary.org/query/specimen/linkage?relationship=slab</a>
+<br/><a href="https://api.brainimagelibrary.org/query/specimen/linkage?relationship=donor">https://api.brainimagelibrary.org/query/specimen/linkage?relationship=donor</a>
+<br/><a href="https://api.brainimagelibrary.org/query/specimen/linkage?class=xref">https://api.brainimagelibrary.org/query/specimen/linkage?class=xref</a>
+<br/><a href="https://api.brainimagelibrary.org/query/dataset?title=mouse">https://api.brainimagelibrary.org/query/dataset?title=mouse</a>
+<br/><a href="https://api.brainimagelibrary.org/query/image?gbytes=17.0">https://api.brainimagelibrary.org/query/image?gbytes=17.0</a>
+<br/><a href="https://api.brainimagelibrary.org/query/publication?relatedidentifier=doi">https://api.brainimagelibrary.org/query/publication?relatedidentifier=doi</a>
+<br/><a href="https://api.brainimagelibrary.org/retrieve?bildid=rut">https://api.brainimagelibrary.org/retrieve?bildid=rut</a>
+<br/><a href="https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut">https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut</a>
+<br/><br/>
+Some examples accessing the API using curl are shown below: 
 <pre>
 curl -k -X GET  'https://api.brainimagelibrary.org/query/fulltext?text=broad'
 curl -k -X GET  'https://api.brainimagelibrary.org/query/funders?award_number=1-RF1-MH-124598-01'
@@ -370,22 +342,6 @@ curl -k -X GET  'https://api.brainimagelibrary.org/query/publication?relatediden
 curl -k -X GET  'https://api.brainimagelibrary.org/retrieve?bildid=rut'
 curl -k -X GET  'https://api.brainimagelibrary.org/retrieve?doi=https://doi.org/10.35077/rut'
 </pre>
-
-		    
+</p></p>
+  </div>
 </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </body>
-</html>

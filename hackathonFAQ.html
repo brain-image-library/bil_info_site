@@ -1,37 +1,12 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-        <title>Brain Image Library: Analysis Ecosystem</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: Hackathon FAQ
+description: Hackathon documentation and getting started.
+---
 
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron">
-      <H1>Get Your Brain Straight Hackathon</h1> 
+<div class="container my-5">
+  <div class="content-card">
+<h1>Get Your Brain Straight Hackathon</h1> 
 			  This page describes site-specific information about the Brain Image Library that hackathon 
 			  participants may find useful. If your question is NOT answered here please check to see if 
 			  it is answered on the <a href="https://insightsoftwareconsortium.github.io/GetYourBrainStraight/HCK01_2022_Virtual/">
@@ -41,19 +16,19 @@
 			To submit a troubleticket, send email to: <i>bil-support@psc.edu</i> . It would be helpful to include that you are
 			a hackathon participant in the email message and include the word "Hackathon" in the subject line. 
      
-			<h2>Username/Password</H2>
+			<h2>Username/Password</h2>
       If you requested an account, you should have received an email from grants@psc.edu with your username and 
       instructions on how to <a href="https://www.brainimagelibrary.org/password.html">change your password</a>. 
       <i>All BIL systems use the same username and password.</i>
       If you can not find the email or do not know what your username is, please email bil-support@psc.edu for assistance.
       
         
-      <H2>Hackathon Data</H2>
+      <h2>Hackathon Data</h2>
       The BIL Filesystem, which is a lustre based filesystem, is mounted on all BIL systems at: /bil . 
       The hackathon data itself can be found at:  /bil/proj/hackathon/2022_GYBS/ Please read the README 
 			file in this directory for instructions on where to find the data and where to place your results.  
         
-      <H2>BIL Hackathon Documentation</H2>
+      <h2>BIL Hackathon Documentation</h2>
       We highly recommend that participants <a href="https://hackmd.io/@biomed-apps/B1B8mQCb5">review the BIL 
       hackathon documentation</a>. The BIL Hackathon documentation goes over several items to be aware of using 
       the BIL analysis ecosystem, including how to connect using <a href="software/X2Go.html">X2Go</a>
@@ -61,75 +36,73 @@
 			are two <i>important</i>items to review and understand
 			from the tutorial: 
         <ul>
-        <li>SLURM is an open source, fault-tolerant, and highly scalable cluster management and job 
+<li>SLURM is an open source, fault-tolerant, and highly scalable cluster management and job 
           scheduling system.</li>
-        <li>LMOD is software to manage software emvironments. It is used to make software available for use.</li> 
-        </ul>
-		<p>	  <i> Note 1: There are a few sample SLURM scripts(aka jobs) that use LMOD Modules that you can examine and 
-					submit on the BIL analysis ecosystem at: /bil/proj/hackathon/2022_GYBS/BIL/slurm</i>  
-			<br /></p>
-	    <p><i>Note 2: The BIL SLURM system has been 100% reserved for the hackathon. You will need to specify the reservation and 
+<li>LMOD is software to manage software emvironments. It is used to make software available for use.</li>
+</ul>
+<p> <i> Note 1: There are a few sample SLURM scripts(aka jobs) that use LMOD Modules that you can examine and 
+					submit on the BIL analysis ecosystem at: /bil/proj/hackathon/2022_GYBS/BIL/slurm</i>
+<br/></p>
+<p><i>Note 2: The BIL SLURM system has been 100% reserved for the hackathon. You will need to specify the reservation and 
 		the hackathon charge account for your SLURM submissions. (e.g.1 interact -A tra220018p --reservation hackathon)
 		(e.g.2 #SBATCH -A tra220018p --reservation hackathon) <b>If you have trouble using SLURM and/or interact, please contact us at bil-support@psc.edu</b></i>
-		    <br /></p>
-        <p>The hackathon documentation also goes into detail outlining several ways to containerize codes and also
+<br/></p>
+<p>The hackathon documentation also goes into detail outlining several ways to containerize codes and also
         gives examples on how to run select software packages installed on the BIL system including MATLAB.  
 	    </p>
-
-      <h2>Analysis Ecosystem</H2>
-      <p>The Brain Image Library analysis ecosystem provides an integrated computational and visualization system to  
+<h2>Analysis Ecosystem</h2>
+<p>The Brain Image Library analysis ecosystem provides an integrated computational and visualization system to  
       explore, visualize, and and access data without having to download it. The underlying operating system runs Unix (CentOS).  
       It consists of several parts including:</p>
-      <ul>
-        <li><b>BIL Login Node:</b> <i>login.brainimagelibrary.org</i> The BIL login node provides command line, secure 
+<ul>
+<li><b>BIL Login Node:</b> <i>login.brainimagelibrary.org</i> The BIL login node provides command line, secure 
           shell (ssh) terminal access to BIL data.  The login node is 
           not intended for heavy computation or visualization, but rather to provide convenient shell access to
 	        BIL data and enable interactive and batch use of the <u>BIL Computational Cluster</u>. </li>
-        <li><b>BIL Workshop Node:</b> <i>workshop.brainimagelibrary.org</i> The BIL Workshop node is a 56 multi-core VM 
+<li><b>BIL Workshop Node:</b> <i>workshop.brainimagelibrary.org</i> The BIL Workshop node is a 56 multi-core VM 
           node with about 2.6Tb of memory. It is intended to run desktop-visualization applications. It also acts as a 
           front-end running <i>SLURM and interact</i> to enable interactive and batch use of the 
           <u>BIL Computational Cluster</u>. Some notes about using the workshop node:
 	      <ul>
-		      <li>Any number of users can ssh in for command-line access</li>
-		      <li>To run graphical applications, we recommend that you 
+<li>Any number of users can ssh in for command-line access</li>
+<li>To run graphical applications, we recommend that you 
                            connect using <a href="software/X2Go.html">X2Go</a> . Any number of users can use X2Go
 			   to get a remote desktop. Many 
 			  graphical applications will work fine in X2Go (e.g. Matlab, Fiji, vaa3d) and
                          some applications that require advanced OpenGL features will not 
 			 (e.g. NVidia sample CUDA applications such as volumeRender, marchingCubes, 
 			      and Mandelbrot;  VisRTX interactive viewer)</li>
-                      <li>A single user can use TGX Receiver (available in /bil/packages/TGX/2.2/)
+<li>A single user can use TGX Receiver (available in /bil/packages/TGX/2.2/)
 			      to get a remote desktop with GPU capabilities. All graphical 
 			      applications should work fine in this except for ones requiring 
 			      the most recent NVidia driver (e.g. VisRTX interactive viewer) </li>
-	      <li>Multiple processes can make use of the GPU at the same time</li>
-		      <li>Please note that if a user has an X2Go session open, they should 
+<li>Multiple processes can make use of the GPU at the same time</li>
+<li>Please note that if a user has an X2Go session open, they should 
 				not try to start a TGX session and vice versa.  This will 
 				cause your logins to get wedged, and it is a hassle to clean
 				this up.</li>
-
-	    </ul>      
-        <li><b>BIL Workshop GPU Node:</b> <i>workshop2.brainimagelibrary.org</i> The BIL Workshop GPU node is a 
+</ul>
+<li><b>BIL Workshop GPU Node:</b> <i>workshop2.brainimagelibrary.org</i> The BIL Workshop GPU node is a 
           multi-core (72 physical, 144 virtual cores) machine containing two V100
 		(32Gb) GPUS and about 1.5Tb of memory. Some notes about using the workshop node: 
-	  	<ul>		
-			<li>Any number of users can ssh in for command-line access</li>
-    			<li>Any number of users can use <a href="software/X2Go.html">X2Go</a> to get a remote desktop. 
+	  	<ul>
+<li>Any number of users can ssh in for command-line access</li>
+<li>Any number of users can use <a href="software/X2Go.html">X2Go</a> to get a remote desktop. 
                             Many graphical applications will work fine in this (e.g. Matlab, 
 			    Fiji, vaa3d) and some applications that require advanced OpenGL
 			    features will not (e.g. NVidia sample CUDA applications such 
 			    as volumeRender, marchingCubes, and Mandelbrot;  VisRTX 
 				interactive viewer).</li>
-    			<li>A single user can use TGX Receiver (available in /bil/packages/TGX/2.2/)
+<li>A single user can use TGX Receiver (available in /bil/packages/TGX/2.2/)
 			    to get a remote desktop with GPU capabilities, all graphical 
 			    applications should work fine in this (including the VisRTX 
 				interactive viewer)</li>
-			<li>multiple processes can make use of the GPUs at the same time</li>
-			<li>Please note that if a user has an X2Go session open, they should 
+<li>multiple processes can make use of the GPUs at the same time</li>
+<li>Please note that if a user has an X2Go session open, they should 
 				not try to start a TGX session and vice versa.  This will 
 				cause your logins to get wedged, and it is a hassle to clean
 				this up.</li>
-		</ul>
+</ul>
 
 		
 		
@@ -139,8 +112,8 @@
 				<li><b>BIL Computational Cluster:</b> The BIL Computational cluster consists of eight nodes 
 	  			with 3 terabytes of RAM each. The computational cluster runs SLURM and is avaiable for 
           both batch and interactive access from the <u>BIL login node</u> and the <u>BIL Workshop Node</u>.
-	  			SLURM jobs can request a maximum of 75 cores per node</li>       
-        <li><b>Other Systems:</b> The BIL analysis ecosystem includes other machines that we will 
+	  			SLURM jobs can request a maximum of 75 cores per node</li>
+<li><b>Other Systems:</b> The BIL analysis ecosystem includes other machines that we will 
 	  			not be using for the hackathon including personalized VMs, the Bridges2 HPC system, and Neocortex a 
 	  			Cerebras advanced AI computing system. If you are interested in these systems, please see 
 					<a href="https://www.brainimagelibrary.org/computevisual.html"> this page</a> or contact 
@@ -149,32 +122,14 @@
 				These dedicated data transfer nodes can be used to move files to and from the BIL filesystem. 
 				There are many supported ways to upload and download files into your /bil home directory from 
 					the data transfer nodes, including rsync, Globus, sftp, and scp. </li>
-			</ul>
-<H2>MATLAB Software</H2>
-	   <p> If you desire to use MATLAB on the BIL analysis ecosystem please be sure to 
+</li></li></li></ul>
+<h2>MATLAB Software</h2>
+<p> If you desire to use MATLAB on the BIL analysis ecosystem please be sure to 
 	    <a href="https://www.psc.edu/resources/software/matlab/permission-form">fill out this form</a> prior to the hackathon if possible.
-	    </p> 
-	   
-	 <H2>Hackathon Tutorial</H2>
-	   <p> The Hackathon tutorial presented by Ivan can be <a href="https://hackmd.io/@biomed-apps/ryuab8M79#/">found here</a>
-	    </p> 
-<p>&nbsp;</p>
-	   
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+	    </p>
+<h2>Hackathon Tutorial</h2>
+<p> The Hackathon tutorial presented by Ivan can be <a href="https://hackmd.io/@biomed-apps/ryuab8M79#/">found here</a>
+</p>
+<p> </p>
+  </div>
 </div>
-</body>
-</html>
-

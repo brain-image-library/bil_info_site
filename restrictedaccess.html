@@ -1,48 +1,21 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-        <title>Brain Image Library: Access to Restricted Data</title>
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: Restricted Data
+description: Restricted-access datasets and how to request them.
+---
 
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-     <link rel="stylesheet" href="/css/bootstrap.css" />
-     <link rel="stylesheet" href="/css/styles.css" />
-     <link rel="stylesheet" href="/my.css" />
-     <script src="/js/jquery.min.js"></script>
-
-</head>
-
-<body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-    <div class="jumbotron">
-
+<div class="container my-5">
+  <div class="content-card content-card--wide">
 <h1>Access to Restricted Data</h1>
-
 <p><b>Access to all restricted data is controlled by the data 
 contributor/project
 leader. This section provides an overview of the process to 
 grant and gain access to different types of restricted datasets.
-</b></p> 
+</b></p>
 <ol>
 <li><a href="#Prerelease">Pre-Release Entries:</a> Pre-release datasets are 
 datasets that have not completed the submission process into the Brain 
-Image Library.</li> 
+Image Library.</li>
 <ol type="A">
 <li><a href="#PREnable">Enabling Access:</a> How the data contributor/project leader can set up private pre-release access.</li>
 <ol type="1">
@@ -59,12 +32,12 @@ entries that have been submitted, but are not yet publically availiable.</li>
 <li><a href="#Restricted">Restricted Entries:</a> Restricted entries are 
 entries that due to their sensitive nature, require successfully completion 
 of special access procedures.</li>
-</ol>  
-<H2>Access Steps</H2>
+</ol>
+<h2>Access Steps</h2>
 <p>If you need assistance with anything, please email:
 <a href="mailto:bil-support@psc.edu">bil-support@psc.edu</a>. 
 If the issue is time-critical, you may phone the PSC hotline at: 412-268-6350.
-Please note that we are located in the Eastern Time zone. </p> 
+Please note that we are located in the Eastern Time zone. </p>
 <ol>
 <li id="#Prerelease"><b>Pre-release Entries</b></li>
 <ol type="A">
@@ -106,7 +79,7 @@ authenticated access via sftp, scp, and rsync:</li>
 <ul>
 <li>Using sftp to upload.brainimagelibrary.org: An example logging into the project space as testuser@upload.brainimagelibrary.org is shown below. The put command is used to upload data (data1.tiff) and the get command is used to download data (data2.tiff):
 <div class="card bg-light">
-<div class="card-body text-left">
+<div class="card-body text-start">
 <p class="card-text">
 <pre>
 <code>
@@ -117,31 +90,29 @@ Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added 'upload.brainimagelibrary.org,128.182.108.164' (ECDSA) to the list of known hosts.
 testuser@upload.brainimagelibrary.org's password:
 Connected to upload.brainimagelibrary.org.
-sftp> cd /bil/proj/testproj
+sftp&gt; cd /bil/proj/testproj
 
-sftp> put data1.tiff
+sftp&gt; put data1.tiff
 Uploading data1.tiff to /bil/proj/testproj/data1.tiff
 data1.tiff                                      0%    0     0.0KB/s   --:-- ETA
 data1.tiff                                    100% 1324KB   1.3MB/s   00:00
 
-sftp> get data2.tiff
+sftp&gt; get data2.tiff
 Fetching /bil/proj/testproj/data2.tiff to data2.tiff
 /bil/proj/testproj/data2.tiff                   0%    0     0.0KB/s   --:-- ETA
 /bil/proj/testproj/data2.tiff                 100%  764KB 763.8KB/s   00:00
-sftp> exit
+sftp&gt; exit
 </code>
 </pre>
 </p>
 </div>
-</div> 
-
+</div>
 </li>
-
 <li>Using scp to upload.brainimagelibrary.org: An example uploading data 
 (data1.tiff) and downloading data (data2.tiff) from the project space as 
 testuser@upload.brainimagelibrary.org is shown below: 
 <div class="card bg-light">
-<div class="card-body text-left">
+<div class="card-body text-start">
 <p class="card-text">
 <pre>
 <code>
@@ -158,13 +129,13 @@ data2.tiff                                                                    10
 </pre>
 </p>
 </div>
-</div> 
+</div>
 </li>
 <li>Using rsync to upload.brainimagelibrary.org: An example uploading data 
 (data1.tiff) and downloading data (data2.tiff) from the project space as 
 testuser@upload.brainimagelibrary.org is shown below: 
 <div class="card bg-light">
-<div class="card-body text-left">
+<div class="card-body text-start">
 <p class="card-text">
 <pre>
 <code>
@@ -176,7 +147,6 @@ data1.tiff
 
 sent 4752 bytes  received 7051 bytes  7868.67 bytes/sec
 total size is 1356122  speedup is 114.90
-
 
 testuser@test.psc.edu:~$ rsync -lrtpDvP data2.tiff testuser@upload.brainimagelibrary.org:/bil/proj/testproj/data2.tiff
 sending incremental file list
@@ -190,7 +160,7 @@ total size is 782160  speedup is 86.97
 </pre>
 </p>
 </div>
-</div> 
+</div>
 </li>
 </ul>
 </ol>
@@ -200,7 +170,7 @@ access</li>
 <li>The data contributor/project leader must have an XSEDE Portal account 
 (<a href="http://portal.xsede.org/">create one here if you don't already 
 have one</a>)</li>
-<li>The data contributor/project leader needs to <a href="compute.html#apply">apply for access to Bridges by following these instructions</a>.</li> 
+<li>The data contributor/project leader needs to <a href="compute.html#apply">apply for access to Bridges by following these instructions</a>.</li>
 <li>The data contributor/project leader should send an email request to:
 <a href="mailto:bil-support@psc.edu">bil-support@psc.edu</a>. This request should include the following information:
 <ul>
@@ -221,7 +191,7 @@ be added.)
 <i>/bil/proj/&lt;projectname&gt;</i> where <i>&lt;projectname&gt;</i> is 
 the projectname of the project. 
 
-</li> 
+</li>
 </ol>
 <li id="#PRRequest">Requesting Access:</li>
 <ol type="a">
@@ -235,7 +205,7 @@ pre-release data.
 account to enable access. <a href="http://portal.xsede.org/">Create one here 
 if you don't already have one</a>.</li>
 <li>Send the XSEDE portal id to the data contributor/project leader who can 
-grant you access by sending email to <a href="mailto:bil-support@psc.edu">bil-support@psc.edu</a> (see above).</li> 
+grant you access by sending email to <a href="mailto:bil-support@psc.edu">bil-support@psc.edu</a> (see above).</li>
 <li>If access is granted, you can find the project's shared data down the 
 following path: 
 <i>/bil/proj/&lt;projectname&gt;</i> where <i>&lt;projectname&gt;</i> is 
@@ -253,7 +223,7 @@ entries that have been submitted, but are not yet publically availiable.
 At the current time access to embargoed entries is not enabled. 
 </p>
 </div>
-</div> 
+</div>
 <li id="#Restricted">Restricted Data</li> Restricted entries are 
 entries that due to their sensitive nature, require successfully completion 
 of detailed access procedures before access may be granted.
@@ -263,25 +233,8 @@ of detailed access procedures before access may be granted.
 At the current time access to restricted entries is not enabled. 
 </p>
 </div>
-</div> 
-
-</ol>  
-
-<p>&nbsp;</p>
-    </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
 </div>
-</body>
-</html>
+</ol>
+<p> </p>
+  </div>
+</div>

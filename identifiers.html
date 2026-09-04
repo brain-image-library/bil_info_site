@@ -1,40 +1,18 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>Brain Image Library: Identifiers</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: BIL Identifiers
+description: The BIL identifier scheme.
+---
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/my.css" />
-        <script src="/js/jquery.min.js"></script>
-    </head>
-
-    <body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-        </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
-    </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-    <div class="jumbotron">
-<h1 id="Identifiers" data-id="Identifiers" style=""><span>Identifiers used by the Brain Image Library</span></h1>
+<div class="container my-5">
+  <div class="content-card">
+<h1 data-id="Identifiers" id="Identifiers" style=""><span>Identifiers used by the Brain Image Library</span></h1>
 <p><span>The </span><strong><span>Brain Image Library (BIL)</span></strong>
 <span> uses several persistant identifiers to identify data assets. These include:</span></p>
 <ul>
 <li><strong>Submission Identifiers.</strong> BIL assigns a unique id to all data that is part of a submission to the archive. 
 The submission identifier is a 16 digit hexidecimal string. An example of a BIL submission identifier is 
-abcdef0123456789.</li> 
+abcdef0123456789.</li>
 <li><strong>Dataset Identifier.</strong> All datasets in BIL are assigned unique identifiers. These identifiers consists of 
 a string of (English) pronouncable triplets. An example of a BIL dataset identifier is "ace-cot-new".</li>
 <li><strong>Traced Neuron Identifier.</strong> BIL assigns unique identifiers to traced neurons 
@@ -47,21 +25,6 @@ doi prefix (10.35077) plus the BIL data identifier. An example BIL dataset DOI i
 into a collection. (For example, to group multiple datasets in BIL for a publication.)  These DOIs begin with a "g." 
 	followed by a number. An example of a BIL group DOI is: 
 "https://doi.brainimagelibrary.org/doi/10.35077/g.948"</li>
-
+</li></ul>
+  </div>
 </div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
-    </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
-
-
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </body>
-</html>

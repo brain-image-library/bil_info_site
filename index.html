@@ -1,308 +1,188 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <title>Brain Image Library: A public resource enabling researchers to deposit, analyze, mine, share and interact with large brain image datasets.</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+layout: default
+title: Home
+description: A public archive of high-resolution brain microscopy data - free for researchers everywhere.
+home_announcement: true
+---
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1YK9CG4GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R1YK9CG4GL');
-</script>
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/css/bootstrap.css" />
-        <link rel="stylesheet" href="/my.css" />
-        <link rel="icon" href="assets/BIL_logo.png" />
-        <!--<link rel="stylesheet" href="/css/styles.css"> -->
-        <script src="/js/jquery.min.js"></script>
-    </head>
-<style>
-p {
-    font-size: 16px;
-    padding-right: 80px;
-    padding-left: 80px;
-    text-align: center;
-    color: white;
-}
-
-</style>
-    <body class="bg">
-        <div class="container">
-            <p>&nbsp;</p>
-
-          <!--  <img src="assets/brainicon.png">
-            <img src="assets/BIL_logo.png"> -->
-        </div>
-    <div class="container">
-    <!--Navigation bar-->
-    <div id="topmenu">
+<section class="hero">
+<div class="container-hero">
+<div>
+<div class="eyebrow">The open archive for brain microscopy</div>
+<h1 class="hero-title">Find, explore, and download brain imaging data.</h1>
+<p class="hero-lead">
+        The Brain Image Library is a BRAIN Initiative data archive of
+        high-resolution microscopy - petabytes of open data across organisms,
+        techniques, and scales, free for researchers everywhere.
+      </p>
+<div class="hero-cta">
+<a class="btn btn-outline-secondary" href="{{ '/submission.html' | relative_url }}">
+          Submit your data
+          <i class="bi bi-arrow-right ms-1"></i>
+</a>
+</div>
+</div>
+<div>
+      {% include stats-block.html %}
     </div>
-    <script>
-        $(function(){
-          $("#topmenu").load("menu.html");
-        });
-    </script>
-    <!--end of Navigation bar-->
-
-<div class="jumbotron mainjumbotron">
-	<!-- <div><p>&nbsp</p></div> -->
-
-	
-<!-- ...................................... -->
-<!-- Use this card format for announcements -->
-<!-- ...................................... -->
- <div class="card bg-light text-dark">
-	<div class="card-header text-center">
-		For help selecting BIL metadata fields to search, please see the 
-		<a href="https://www.brainimagelibrary.org/newmetadatamodel.html" 
-			class="link-secondary">metadata model description</a>
-	</div>
-	<div class="card-body text-left text-light">	
-           <!-- <form action="list" id="myform"> -->
-           <p class="card-text text-left text-light">
-			   <iframe src="https://api.brainimagelibrary.org/web/search.html"
-          width="100%"
-          height="140"
-          frameborder="0"
-          scrolling="no">
-  </iframe>
-	 <!--
-		<form action="https://api.brainimagelibrary.org/web/searching" id="myform">	   
-		            <div class="form-row">
-                        <div class="form-group col-md-3">
-                           <select name="fields" id="inputState" class="form-control">
-                              <option selected value="FullText">All Metadata (Full Text)</option>
-                              <option value="Name">Names</option>
-                              <option Value="Grant">Grant Number</option>
-                              <option Value="Title">Dataset Title</option>
-                              <option Value="Abstract">Dataset Abstract</option>
-                              <option Value="Contributors">All Contributor Fields</option>
-                              <option Value="Funders">All Funder Fields</option>
-                              <option Value="Publications">All Publication Fields</option>
-                              <option Value="Instrument">All Instrument Fields</option>
-                              <option Value="Specimen">All Specimen Fields</option>
-                              <option Value="Dataset">All Dataset Fields</option>
-                              <option Value="Image">All Image Fields</option>
-                              <option Value="Id">BIL Id Fields (exact match)</option>
-                           </select>
-                        </div>
-                        <div class="form-group col-md-8">
-                             <input type="text" class="form-control" id="text" name="searchtxt"  
-				     placeholder="search txt" aria-label="Search For Text" 
-				     aria-describedby="basic-addon2">
-
-                        </div>
-                        <div class="form-group col-md-1">
-                             <button type="submit" class="btn btn-primary" id="submitbutton">Search</button>
-                        </div>
-                    </div>
-               </form>		
--->
-		   </p>
-	</div>
- </div>
-	
-
-<script>
-function showThis(item) {
-  document.getElementById("searchitem").innerHTML = item.innerHTML;
-  }
-function showThis2(item) {
-  document.getElementById("searchitem2").innerHTML = item.innerHTML;
-  }
-
-
-</script>
-<!--
+</div>
+</section>
+<section class="search-band">
+<div class="search-band-in">
+<div class="section-eyebrow">Search the archive</div>
+<h2 class="section-title mb-3">Find datasets by keyword, name, DOI, or ID</h2>
+<div class="search-band-frame">
+<iframe height="140" src="https://api.brainimagelibrary.org/web/search.html" title="Search the Brain Image Library" width="100%"></iframe>
+</div>
+</div>
+</section>
+<section class="container my-5">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="content-card">
+<div class="section-eyebrow">Distribution</div>
+<h2 class="section-title">Datasets by organism</h2>
+<p class="section-sub">Common names, sorted by dataset count. Synonyms are merged in the archive index.</p>
+<div class="bar-list mt-3" id="bil-species-bars"></div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="content-card">
+<div class="section-eyebrow">Distribution</div>
+<h2 class="section-title">Datasets by modality</h2>
+<p class="section-sub">Imaging and analysis modalities represented across the archive.</p>
+<div class="bar-list mt-3" id="bil-modality-bars"></div>
 </div>
 </div>
 </div>
--->
-	<p>&nbsp;</p>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-    <!--<li data-target="#carouselExampleIndicators" data-slide-to="7"></li>-->
-	<!--<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>-->
-  </ol>
- <div class="carousel-item">
-     <img src="assets/getyourbrainstraight.png" alt="Image9" width="60%" height="60%" class="mx-auto d-block">
-     <div class="carousel-caption">
-     </div>
-   </div>
+</section>
 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/BILPurpose.png" alt="Image1" width="60%" height="60%" class="mx-auto d-block">
-    </div>
-
-    <!--
-     <div class="carousel-item">
-       <img src="assets/BIL_DSWS_8_2021.png" alt="Image10" width="60%" height="60%" class="mx-auto d-block">
-       <div class="carousel-caption">
-       </div>
-    </div>
-    -->
-    <div class="carousel-item">
-      <img src="assets/brain1.jpg" alt="Image5" width="60%" height="60%" class="mx-auto d-block">
-      <div class="carousel-caption">
-		<p>Cell counting, Imaging, STPT</p>
-      </div>
-    </div>
-    <!--
-   <div class="carousel-item">
-     <img src="assets/getyourbrainstraight.png" alt="Image9" width="60%" height="60%" class="mx-auto d-block">
-     <div class="carousel-caption">
-     </div>
-   </div>
-   -->
-
-    <div class="carousel-item">
-     <img src="assets/brain2.jpg" alt="Image6" width="60%" height="60%" class="mx-auto d-block">
-     <div class="carousel-caption">
-		<p>Cell counting, Imaging, STPT</p>
-     </div>
-    </div>
-    <div class="carousel-item">
-	<img src="assets/brain3.jpg" alt="Image7" width="60%" height="60%" class="mx-auto d-block">
-
-        <div class="carousel-caption">
-		<p>Connectivity, TRIO, Triple Injection, Monosynaptic-Transsynaptic</p>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <img src="assets/brain4.jpg" alt="Image8" width="60%" height="60%" class="mx-auto d-block">
-        <div class="carousel-caption">
-        </div>
-   </div>
-   <div class="carousel-item">
-        <img src="assets/brain5.png" alt="Image9" width="60%" height="60%" class="mx-auto d-block">
-        <div class="carousel-caption">
-            <p>Neuron morphologies overlaid on fMOST dataset</p>
-        </div>
-   </div>
-   <div class="carousel-item">
-     <img src="assets/hpcaward.PNG" alt="Image8" width="60%" height="60%" class="mx-auto d-block">
-     <div class="carousel-caption">
-     </div>
-   </div>
-
-
+<section class="container my-5">
+  <div class="content-card">
+    <div class="section-eyebrow">Impact</div>
+    <h2 class="section-title">Most cited datasets</h2>
+    <p class="section-sub">The datasets behind the most publications.</p>
+    <ol class="cited-list mt-3">
+      <li class="cited-item">
+        <a class="cited-link" href="https://api.brainimagelibrary.org/web/view?bildid=ace-ban-win" target="_blank" rel="noopener">
+          <span class="cited-rank">1</span>
+          <span class="cited-thumb"></span>
+          <div class="cited-meta">
+            <div class="cited-title">Mouse primary motor cortex - spatial transcriptomics (zhuang_merfish_MOp)</div>
+            <div class="cited-tags">
+              <span class="cited-id">ace-ban-win</span>
+              <span class="cited-tag">Mouse</span>
+              <span class="cited-tag">MERFISH</span>
+            </div>
+          </div>
+          <div class="cited-count"><b>36</b><span>articles</span></div>
+        </a>
+      </li>
+      <li class="cited-item">
+        <a class="cited-link" href="https://api.brainimagelibrary.org/web/view?bildid=ace-den-fix" target="_blank" rel="noopener">
+          <span class="cited-rank">2</span>
+          <span class="cited-thumb"></span>
+          <div class="cited-meta">
+            <div class="cited-title">Mouse whole-brain transcriptomic cell type atlas - MERSCOPE v1 (sample 638850)</div>
+            <div class="cited-tags">
+              <span class="cited-id">ace-den-fix</span>
+              <span class="cited-tag">Mouse</span>
+              <span class="cited-tag">MERFISH</span>
+            </div>
+          </div>
+          <div class="cited-count"><b>26</b><span>articles</span></div>
+        </a>
+      </li>
+      <li class="cited-item">
+        <a class="cited-link" href="https://api.brainimagelibrary.org/web/view?bildid=ace-den-fly" target="_blank" rel="noopener">
+          <span class="cited-rank">3</span>
+          <span class="cited-thumb"></span>
+          <div class="cited-meta">
+            <div class="cited-title">Mouse whole-brain transcriptomic cell type atlas - MERSCOPE v1 (sample 609882)</div>
+            <div class="cited-tags">
+              <span class="cited-id">ace-den-fly</span>
+              <span class="cited-tag">Mouse</span>
+              <span class="cited-tag">MERFISH</span>
+            </div>
+          </div>
+          <div class="cited-count"><b>26</b><span>articles</span></div>
+        </a>
+      </li>
+      <li class="cited-item">
+        <a class="cited-link" href="https://api.brainimagelibrary.org/web/view?bildid=ace-den-fog" target="_blank" rel="noopener">
+          <span class="cited-rank">4</span>
+          <span class="cited-thumb"></span>
+          <div class="cited-meta">
+            <div class="cited-title">Mouse whole-brain transcriptomic cell type atlas - MERSCOPE v1 (sample 609889)</div>
+            <div class="cited-tags">
+              <span class="cited-id">ace-den-fog</span>
+              <span class="cited-tag">Mouse</span>
+              <span class="cited-tag">MERFISH</span>
+            </div>
+          </div>
+          <div class="cited-count"><b>26</b><span>articles</span></div>
+        </a>
+      </li>
+    </ol>
   </div>
+</section>
 
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div>
-	<p>&nbsp;</p>
-</div>
-<!-- ...................................... -->
-<!-- Use this card format for announcements -->
-<!-- ...................................... -->
-<!--
- <div class="card bg-success text-light">
-		<p class="card-text text-left text-dark">
-		This repository is under review for potential modification in compliance with Administration directives.	
-		</p>
- </div>
--->
-<!--
- <div class="card bg-success text-light">
-	<div class="card-header text-center">
-		Announcements
-	</div>
-	<div class="card-body text-left text-light">	
-<strong>Notice: March 11th Downtime: <br></strong>March 11, starting at 8am - for networking and software updates. We hope to be back up by 5pm, if not earlier that day. All services will be offline, including data transfers, websites, and access to data in the /bil filesystem.<br>            
--->
-
-<!--            <p class="card-text text-left text-dark">
-			BIL systems will be undergoing maintenance on Wednesday, November 1, 2023.  
-		</p>
--->
-
-<!--             <p class="card-text text-left text-dark">
-			We are currently undergoing maintenance on the BIL file system and its associated services. Services may be partially operational or completely unavailable. We apologize for the inconvenience. 
-		</p>
--->
-<!--		<p class="card-text text-left text-dark">
-			<a href="training.html"><b>Data Submission Virtual Workshop: </b></a>
-    			June 27, 2023 1-4pm Eastern</br>
-	                This virtual workshop presents a hands-on walk through of the data submission 
-			process and how to use the BIL Analysis Ecosystem for pre-submission exploration, 
-			sharing, and processing. The targeted audience for the workshop includes data 
-			submitters, PI's, data managers, and microscopy lab personnel. </br>
-                </p>
--->
-<!--
-	    	<p class="card-text text-left text-dark">
-		    <b>Brain Image Library</b> featured in the 
-		    <a href="https://www.braininitiative.org/wp-content/uploads/2023/05/BIA_Toolmakers_Newsletter_Issue-10_final.pdf">
-			BRAIN Initiative Alliance Toolmakers May Newsletter</a> 
-		</p>
--->
-<!--		<p class="card-text text-left text-dark">
-		<b>Workshop: Interoperable Workflows Using Workflow Management Systems and Singularity Containers</b><br />
-		Wednesday September 6, 2023 -- 11 am – 5 pm Eastern time. Application deadline: August 25, 2023.<br /><br />
-		Sponsored by the National Institute of Health’s Common Fund Data Ecosystem, and in partnership with 
-    		the HuBMAP Consortium and the Brain Image Library, PSC is proud to present a workshop on using 
-    		Common Workflow Language (CWL) to create interoperable workflows.
-		<br /><br />More information:<a href='https://www.psc.edu/events/workshop-interoperable-workflows-using-cwl/'>
-    		https://www.psc.edu/events/workshop-interoperable-workflows-using-cwl/ </a>
-		</p>
-<!--
-                <p class="card-text text-left text-dark">
-			All systems are available. Contact us at bil-support@psc.edu if you notice any issues.
-		</p>
--->
-
-		<!--
-		<p class="card-text text-left text-dark">
-			<b>Hackathon:</b> Get Your Brain Straight Hackathon<br />
-			Hosted by: Alan Institute for Brain Science, Brain Image Library, Brain Initiative Cell Census Network, Kitware, University of North Carolina
-			Dates: Monday April 4th to Thursday, April 7th <br />
-			Registration Deadline: April 2nd. <br />
-			More Information and Registration: <a href="https://www.brainimagelibrary.org/hackathon.html" class="text-muted">https://www.brainimagelibrary.org/hackathon.html</a> <br />
-			<b>NEW:</b> BIL Hackathon Documentation / Getting Started <a href="https://www.brainimagelibrary.org/hackathonFAQ.html">https://www.brainimagelibrary.org/hackathonFAQ.html</a> <br />
-		</p>
-                -->
-	</div>
-</div>
-<div>
-	<p>&nbsp;</p>
-    	<p>Brain Image Library RRID: SCR_017272</p>
-</div>
-</div>
-    <!--Bottom Footer -->
-    <div id="bottomfooter">
+<section class="container my-5">
+  <div class="content-card">
+    <div class="section-eyebrow">Reach</div>
+    <h2 class="section-title">Where BIL data goes</h2>
+    <p class="section-sub">A global user base pulls data from BIL every day.</p>
+    <div class="dot-legend mt-3">
+      <span><i style="background:#2f7fd1"></i>Downloaded via HTTPS</span>
+      <span><i style="background:#e0413a"></i>Downloaded via anonymous FTP (discontinued)</span>
     </div>
-    <script>
-        $(function(){
-          $("#bottomfooter").load("footer.html");
-        });
-    </script>
-    <!--end of bottomfooter-->
+    <div class="map-wrap mt-3">
+      <img src="{{ '/assets/downloads-map.png' | relative_url }}"
+           alt="Global map of BIL data downloads by IP location"
+           loading="lazy">
+    </div>
+    <p class="map-cap">
+      <span class="map-cap-lead">Geolocation of IP addresses downloading BIL data.</span>
+      While many chose to access BIL data through our analysis ecosystem, others elect to
+      download specific datasets of interest. This figure shows the geographic distribution
+      of the 12 petabytes of public data downloaded from BIL. Blue indicates data downloaded
+      via HTTPS, red indicates data downloaded via anonymous FTP (discontinued service).
+    </p>
+  </div>
+</section>
 
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </body>
-</html>
+<section class="container my-5">
+<header class="mb-4">
+<div class="section-eyebrow">Featured</div>
+<h2 class="section-title">From the archive</h2>
+</header>
+<div class="feature-grid">
+  <a class="feature-card" href="https://api.brainimagelibrary.org/web/view?bildid=ace-nut-gel" target="_blank" rel="noopener">
+    <img src="{{ '/assets/feature-ace-nut-gel.png' | relative_url }}"
+         alt="Confocal microscopy of mouse hippocampal neurons - ace-nut-gel"
+         loading="lazy">
+    <div class="feature-card-body">
+      <p class="feature-card-caption">Kinase inhibitor screen · Mouse hippocampus · Confocal</p>
+      <span class="feature-card-id">ace-nut-gel</span>
+    </div>
+  </a>
+  <a class="feature-card" href="https://api.brainimagelibrary.org/web/view?bildid=ace-bug-wit" target="_blank" rel="noopener">
+    <img src="{{ '/assets/feature-ace-bug-wit.png' | relative_url }}"
+         alt="Whole-brain confocal imaging of mouse retrograde transynaptic tracing - ace-bug-wit"
+         loading="lazy">
+    <div class="feature-card-body">
+      <p class="feature-card-caption">Whole-brain retrograde tracing · Mouse · Confocal connectivity</p>
+      <span class="feature-card-id">ace-bug-wit</span>
+    </div>
+  </a>
+  <a class="feature-card" href="https://api.brainimagelibrary.org/web/view?bildid=ace-bag-job" target="_blank" rel="noopener">
+    <img src="{{ '/assets/feature-ace-bag-job.png' | relative_url }}"
+         alt="fMOST whole-brain cell morphology imaging of mouse - ace-bag-job"
+         loading="lazy">
+    <div class="feature-card-body">
+      <p class="feature-card-caption">Whole-brain cell morphology · Mouse · fMOST</p>
+      <span class="feature-card-id">ace-bag-job</span>
+    </div>
+  </a>
+</div>
+</section>

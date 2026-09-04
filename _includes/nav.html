@@ -1,0 +1,62 @@
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="logo" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/brainicon.png' | relative_url }}" alt="" height="30">
+      <span>Brain Image Library</span>
+    </a>
+
+    <nav class="navbar navbar-expand-lg topbar-nav" aria-label="Primary">
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#bilPrimaryNav"
+              aria-controls="bilPrimaryNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bilPrimaryNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ '/about.html' | relative_url }}">About BIL</a></li>
+              <li><a class="dropdown-item" href="{{ '/people.html' | relative_url }}">BIL Staff</a></li>
+              <li><a class="dropdown-item" href="{{ '/partners.html' | relative_url }}">Partners</a></li>
+              <li><a class="dropdown-item" href="{{ '/braindataarchives.html' | relative_url }}">BRAIN Initiative Data Archives</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Data Submission</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ '/datarequirements.html' | relative_url }}">Data Depositor FAQ</a></li>
+              <li><a class="dropdown-item" href="{{ '/submission.html' | relative_url }}">Instructions</a></li>
+              <li><a class="dropdown-item" href="{{ '/account.html' | relative_url }}">Create Account</a></li>
+              <li><a class="dropdown-item" href="{{ '/datadirbp.html' | relative_url }}">Submission Best Practices</a></li>
+              <li><a class="dropdown-item" href="https://submit.brainimagelibrary.org/">Data Submission Portal</a></li>
+              <li><a class="dropdown-item" href="{{ '/newmetadatamodel.html' | relative_url }}">Metadata Model</a></li>
+              <li><a class="dropdown-item" href="{{ '/training.html' | relative_url }}">Training</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Data Access</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://api.brainimagelibrary.org/web">Search Brain Inventory</a></li>
+              <li><a class="dropdown-item" href="{{ '/download.html' | relative_url }}">Downloading Data</a></li>
+              <li><a class="dropdown-item" href="{{ '/identifiers.html' | relative_url }}">BIL Identifiers</a></li>
+              <li><a class="dropdown-item" href="{{ '/computevisual.html' | relative_url }}">Computing and Visualization</a></li>
+              <li><a class="dropdown-item" href="{{ '/visual.html' | relative_url }}">Web Visualization</a></li>
+              <li><a class="dropdown-item" href="{{ '/analysis_ecosystem.html' | relative_url }}">Analysis Ecosystem</a></li>
+              <li><a class="dropdown-item" href="{{ '/restrictedaccess.html' | relative_url }}">Restricted Data</a></li>
+              <li><a class="dropdown-item" href="{{ '/metadataapi.html' | relative_url }}">Metadata API</a></li>
+              <li><a class="dropdown-item" href="{{ '/citation.html' | relative_url }}">Citing Data</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/contact.html' | relative_url }}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
