@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-10-02T11:50:56Z",
+  "generated_at": "2026-10-03T11:04:11Z",
   "source": "https://api.brainimagelibrary.org/stats?type=all",
   "headline": {
-    "datasets": 14234,
-    "consortia": 5,
-    "species": 11,
+    "datasets": 16386,
+    "consortia": 4,
+    "species": 15,
     "modalities": 5
   },
   "species": [
     {
       "name": "Mouse",
-      "count": 12178
+      "count": 13539
     },
     {
       "name": "Human",
-      "count": 1383
+      "count": 1924
     },
     {
       "name": "Macaque",
-      "count": 626
+      "count": 849
     },
     {
       "name": "Marmoset",
@@ -31,6 +31,10 @@
     {
       "name": "Fruit fly",
       "count": 169
+    },
+    {
+      "name": "Spiny Mouse",
+      "count": 155
     },
     {
       "name": "Ant",
@@ -49,57 +53,64 @@
       "count": 19
     },
     {
+      "name": "Callithrix Jacchus (Common Marmoset)",
+      "count": 18
+    },
+    {
       "name": "Spider",
       "count": 16
+    },
+    {
+      "name": "Mus Musculus (House Mouse)",
+      "count": 3
+    },
+    {
+      "name": "M. Mulatta (Rhesus Macaque)",
+      "count": 2
     }
   ],
   "modalities": [
     {
       "name": "Morphology",
-      "count": 5291
+      "count": 6471
     },
     {
       "name": "Imaging",
-      "count": 5229
+      "count": 5828
     },
     {
       "name": "Anatomy/Morphology",
-      "count": 2032
+      "count": 2087
     },
     {
       "name": "Other",
-      "count": 1082
+      "count": 1225
     },
     {
       "name": "Spatial transcriptomics",
-      "count": 595
+      "count": 770
     }
   ],
   "consortia": [
     {
       "label": "Brain Initiative Cell Census Network (BICCN)",
       "value": "BICCN",
-      "count": 10960
+      "count": 11324
     },
     {
       "label": "Brain Initiative Cell Atlas Network (BICAN)",
       "value": "BICAN",
-      "count": 850
+      "count": 1695
     },
     {
       "label": "Aligning Science Across Parkinson’s (ASAP)",
       "value": "ASAP",
-      "count": 92
-    },
-    {
-      "label": "Brain Initiative Cell Atlas Network",
-      "value": "Brain Initiative Cell Atlas Network",
-      "count": 9
+      "count": 398
     },
     {
       "label": "Scalable and Systematic Neurobiology of Psychiatric and Neurodevelopmental Disorder Risk Genes (SSPsyGene)",
       "value": "SSPsyGene",
-      "count": 1
+      "count": 2
     }
   ]
 }
